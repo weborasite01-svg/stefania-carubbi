@@ -40,7 +40,6 @@
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-.lock,.admin-link{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:calc(var(--fs,100)*1%)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.03rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 img,video{max-width:100%;display:block}
@@ -733,7 +732,7 @@ body.is-admin #admin{display:block}
       </div>
       <div class="bottom">
         <span id="legal"></span>
-        <span><button type="button" data-modal="privacy">Privacy</button></span>
+        <span><button type="button" data-modal="privacy">Privacy</button> · <a href="#area-riservata">Area riservata</a></span>
       </div>
     </div>
   </footer>
@@ -1238,7 +1237,7 @@ $("#logout").addEventListener("click", () => {
 
 const toTop = () => { try { window.scrollTo({top:0, left:0, behavior:"instant"}); } catch { window.scrollTo(0,0); } };
 function route(){
-  const admin = false;
+  const admin = location.hash === "#area-riservata";
   const dirtyNow = JSON.stringify(C) !== savedJSON;
   document.body.classList.toggle("is-admin", admin);
   $("#previewBar").classList.toggle("show", !admin && loggedIn && dirtyNow);
@@ -1586,7 +1585,7 @@ function alertBox(msg){ const d = $("#dirty"); d.textContent = msg; d.classList.
 renderSite();
 initMotion();
 addEventListener("hashchange", route);
-
+if (location.hash === "#area-riservata") route();
 (async () => {
   await store.init();
   const saved = await store.loadContent();
