@@ -40,6 +40,7 @@
 
 *{box-sizing:border-box}
 [hidden]{display:none!important}
+.lock{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;font-size:calc(var(--fs,100)*1%)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;font-size:1.03rem;line-height:1.75;-webkit-font-smoothing:antialiased}
 img,video{max-width:100%;display:block}
@@ -732,7 +733,7 @@ body.is-admin #admin{display:block}
       </div>
       <div class="bottom">
         <span id="legal"></span>
-        <span><button type="button" data-modal="privacy">Privacy</button> · <a href="#area-riservata">Area riservata</a></span>
+        <span><button type="button" data-modal="privacy">Privacy</button></span>
       </div>
     </div>
   </footer>
@@ -761,7 +762,7 @@ body.is-admin #admin{display:block}
       <label class="check" for="keep" style="justify-content:center;font-size:.88rem;color:var(--muted)"><input type="checkbox" id="keep" checked>Resta collegata su questo dispositivo</label>
       <p class="ferr" id="pwErr" role="alert"></p>
       <button class="btn btn-primary" type="submit">Entra</button>
-      <a class="back" href="#top">← Torna al sito</a>
+      <a class="back" href="index.html">← Torna al sito</a>
     </form>
   </div>
   <div class="app" id="app" hidden>
