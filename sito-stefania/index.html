@@ -566,6 +566,80 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
 .hist-item small.due{color:#9B3B3B}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:120}
 .toast.show{opacity:1;transform:translate(-50%,0)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:none;padding:9px 14px;font:500 .88rem var(--body);cursor:pointer;color:var(--muted)}
+.seg button.on{background:var(--ink);color:#fff}
+.filters select{font:inherit;font-size:.88rem;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:200px}
+.crow.crm{grid-template-columns:auto minmax(160px,1.3fr) minmax(160px,1.2fr) auto auto}
+.cnext{min-width:0;overflow:hidden}
+.nexta{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.nexta svg{width:14px;height:14px;flex:none}
+.nexta.today{color:#8A5A1F;font-weight:600}.nexta.late{color:#9B3B3B;font-weight:600}
+@media (max-width:900px){.crow.crm{grid-template-columns:auto 1fr auto}.crow.crm .cnext,.crow.crm .pill.fase-nuovo,.crow.crm > .pill:first-of-type{display:none}}
+.pill.fase-nuovo{background:#F6EBD9;color:#8A5A1F}.pill.fase-fissato{background:var(--accent-soft);color:var(--accent-deep)}.pill.fase-valutazione{background:#E3ECF8;color:#2F5A8F}.pill.fase-orientamento{background:#E8E3F4;color:#5B4A8B}.pill.fase-sintesi{background:color-mix(in srgb,var(--brand) 22%,#fff);color:var(--brand-deep)}.pill.fase-followup{background:#E1F0EE;color:#2E6B63}.pill.fase-concluso{background:#ECEDEA;color:#5E655E}.pill.fase-perso{background:#F3E6E6;color:#8A4B4B}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;padding-bottom:10px}
+.bcol{background:var(--mist);border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:240px;border:2px dashed transparent;transition:border-color .2s,background .2s}
+.bcol.over{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,var(--mist))}
+.bhead{display:flex;justify-content:space-between;align-items:center;padding:2px 4px 6px}
+.bhead small{color:var(--muted);font-weight:600}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:4px;cursor:grab;font-size:.9rem}
+.bcard:hover{border-color:var(--brand)}
+.bcard.dragging{opacity:.5}
+.bcard b{font-weight:600}
+.bcard small{color:var(--muted);font-size:.78rem}
+.bcard .pill{align-self:flex-start;font-size:.7rem}
+.bempty{text-align:center;padding:14px 0}
+.back2{margin-bottom:12px;font-size:.92rem}
+.shead{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 24px;margin-bottom:20px}
+.avatar.big{width:64px;height:64px;font-size:1.3rem}
+.shmain h2{font-size:1.9rem;line-height:1.1}
+.shmeta{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;font-size:.88rem}
+.shmeta a,.shmeta span{display:inline-flex;align-items:center;gap:6px;color:var(--brand-deep);text-decoration:none}
+.shmeta span{color:var(--muted)}
+.shmeta svg{width:15px;height:15px}
+.shside{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fasesel{font:600 .88rem var(--body);padding:8px 12px;border-radius:999px;border:0;cursor:pointer}
+@media (max-width:800px){.shead{grid-template-columns:auto 1fr}.shside{grid-column:1/-1;align-items:flex-start}}
+.scols{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:start}
+@media (max-width:1100px){.scols{grid-template-columns:1fr}}
+.bxh{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.bxh h3{margin:0}
+.noteadd{display:grid;grid-template-columns:140px 1fr auto;gap:8px;align-items:start;margin-bottom:16px}
+.noteadd select,.noteadd textarea{font:inherit;font-size:.9rem;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.noteadd textarea{resize:vertical;min-height:42px}
+@media (max-width:600px){.noteadd{grid-template-columns:1fr}}
+.tline{display:flex;flex-direction:column;position:relative}
+.tline::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tl{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:start;padding:8px 0;position:relative}
+.tlic{width:32px;height:32px;border-radius:50%;background:var(--mist);display:grid;place-items:center;color:var(--brand-deep);position:relative;z-index:1}
+.tlic svg{width:15px;height:15px}
+.tl-fase .tlic{background:var(--accent-soft);color:var(--accent-deep)}.tl-app .tlic{background:#E3ECF8;color:#2F5A8F}.tl-pag .tlic{background:#E5EFE3;color:#3E6A42}.tl-sito .tlic{background:#F6EBD9;color:#8A5A1F}
+.tlbody small{font-size:.75rem;color:var(--muted)}
+.tlbody p{font-size:.92rem;white-space:pre-wrap;margin-top:2px}
+.mini-x{border:0;background:none;color:var(--muted);font-size:1.1rem;cursor:pointer;line-height:1;padding:4px 6px;border-radius:6px}
+.mini-x:hover{background:#F8E3DF;color:#9B3B3B}
+.todos{display:flex;flex-direction:column;gap:6px}
+.todo{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;background:var(--paper);border:1px solid var(--line);cursor:pointer}
+.todo input{width:18px;height:18px;accent-color:var(--brand-deep)}
+.todo span{display:flex;flex-direction:column;font-size:.92rem}
+.todo small{font-size:.76rem;color:var(--muted)}
+.todo.done span{text-decoration:line-through;opacity:.55}
+.todo.late small{color:#9B3B3B;font-weight:600}
+.facts{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:0;font-size:.92rem}
+.facts dt{color:var(--muted)}.facts dd{margin:0}
+.doclist{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+.doclist .sname{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.doclist svg{width:16px;height:16px;color:var(--brand-deep)}
+.hist-item.lateitem small{color:#9B3B3B}
+.banner{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;margin-bottom:18px;font-size:.93rem;flex-wrap:wrap}
+.banner svg{width:22px;height:22px;flex:none}
+.banner span{flex:1;min-width:200px}
+.banner.warn{background:#F6EBD9;color:#6E4716}
+.banner.ok{background:#E5EFE3;color:#2F5A34}
+.bkgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:900px){.bkgrid{grid-template-columns:1fr}}
+.steps-mini{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:.93rem;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}
 @media (max-width:900px){
   .app{grid-template-columns:1fr}
@@ -887,9 +961,10 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
       <span class="grp">Il lavoro</span>
       <button class="tab" data-tab="panoramica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>Panoramica</button>
       <button class="tab" data-tab="calendario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/></svg>Calendario</button>
-      <button class="tab" data-tab="clienti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>Clienti</button>
+      <button class="tab" data-tab="clienti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>CRM</button>
       <button class="tab" data-tab="pagamenti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>Pagamenti</button>
       <button class="tab" data-tab="richieste"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H8l-4 4V5Z"/></svg>Richieste<span class="count" id="newCount" hidden></span></button>
+      <button class="tab" data-tab="backup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Copia di sicurezza</button>
       <span class="grp">Il sito</span>
       <button class="tab" data-tab="testi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h4L19 9l-4-4L4 16v4Z"/></svg>Testi del sito</button>
       <button class="tab" data-tab="foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 8"/></svg>Foto e video</button>
@@ -1419,7 +1494,7 @@ $("#newReq").addEventListener("click", () => { $("#doneOk").hidden = true; $("#f
 /* ============ AREA RISERVATA ============ */
 let tab = "panoramica", requests = [], reqFilter = "tutte";
 let loggedIn = ssGet("sc_auth") === "1" || lsGet("sc_auth_keep") === "1";
-const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"Clienti", pagamenti:"Pagamenti", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
+const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"CRM", pagamenti:"Pagamenti", backup:"Copia di sicurezza", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
 const DEMO_REQ = {id:"esempio", demo:true, nome:"Laura Bianchi", telefono:"+39 333 000 0000", email:"laura@example.com", citta:"Milano", perChi:"Mia madre", esigenza:"Valutare una badante h24", modalita:"Milano", messaggio:"Mia madre ha 84 anni e vive da sola. Dopo una caduta abbiamo bisogno di capire che tipo di assistenza serve e quanto costa.", stato:"nuova", note:"", ricevuta:new Date(Date.now()-3600e3*5).toISOString()};
 
 async function sha256(s){
@@ -1524,7 +1599,7 @@ function goTab(t){
   $$(".tab[data-tab]").forEach(x => x.classList.toggle("on", x.dataset.tab === t));
   renderPanel(); toTop();
 }
-$(".side").addEventListener("click", e => { const b = e.target.closest(".tab[data-tab]"); if (b) goTab(b.dataset.tab); });
+$(".side").addEventListener("click", e => { const b = e.target.closest(".tab[data-tab]"); if (b){ if (b.dataset.tab === "clienti") crmOpen = null; goTab(b.dataset.tab); } });
 
 function markDirty(){
   const d = JSON.stringify(C) !== savedJSON;
@@ -1612,6 +1687,7 @@ function renderPanel(){
   if (tab === "richieste"){ renderRequests(); return; }
   if (tab === "panoramica"){ renderOverview(); return; }
   if (tab === "clienti"){ renderClienti(); return; }
+  if (tab === "backup"){ renderBackup(); return; }
   if (tab === "pagamenti"){ renderPagamenti(); return; }
   if (tab === "calendario"){ renderCalendario(); return; }
   let h = "";
@@ -1771,7 +1847,6 @@ const eur = n => (Number(n)||0).toLocaleString("it-IT",{style:"currency",currenc
 const ISO = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const todayISO = () => ISO(new Date());
 const monthISO = d => ISO(d).slice(0,7);
-const STATI_CLIENTE = {contatto:"Primo contatto", fissata:"Consulenza fissata", corso:"In corso", concluso:"Concluso"};
 const METODI = ["Contanti","Bonifico","Carta / POS","Satispay","PayPal","Altro"];
 const LUOGHI = ["Milano","Padova","Online","Telefono","A domicilio","Altro"];
 const inClaude = !!(window.claude && typeof window.claude.use === "function");
@@ -1846,54 +1921,248 @@ $("#sheetBody").addEventListener("change", e => {
   if (e.target.id === "p-tariffa"){ const t = W.tariffe.find(x => x.id === e.target.value); if (t){ $("#p-importo").value = t.importo; if (!val("p-descr")) $("#p-descr").value = t.nome; } }
 });
 
-/* --- clienti --- */
+/* --- CRM --- */
+const FASI = {nuovo:"Nuovo contatto", fissato:"Primo colloquio fissato", valutazione:"Ascolto e valutazione", orientamento:"Orientamento", sintesi:"Sintesi consegnata", followup:"Follow-up", concluso:"Concluso", perso:"Non proseguito"};
+const FASI_ATTIVE = ["nuovo","fissato","valutazione","orientamento","sintesi","followup"];
+const OLD_FASE = {contatto:"nuovo", fissata:"fissato", corso:"valutazione", concluso:"concluso"};
+const TIPI_NOTA = {telefonata:"Telefonata", colloquio:"Colloquio", email:"Email", whatsapp:"WhatsApp", nota:"Nota", sito:"Dal sito", fase:"Cambio di fase"};
+const TIPI_ICON = {telefonata:"phone", colloquio:"user", email:"mail", whatsapp:"wa", nota:"clip", sito:"doc", fase:"path", app:"cal", pag:"star"};
+const BISOGNI = ["Da definire","Badante h24","Badante a ore","OSS","Assistenza notturna","Struttura / RSA","Altro"];
+const VIVE = ["Da definire","Da sola/o","Con il coniuge","Con i figli","Con altri familiari","In struttura","Altro"];
+function normCliente(c){
+  if (!c) return c;
+  if (!c.fase) c.fase = OLD_FASE[c.stato] || "nuovo";
+  if (typeof c.assistito === "string" || !c.assistito) c.assistito = {nome:"", relazione:typeof c.assistito === "string" ? c.assistito : "", eta:"", vive:"Da definire", bisogno:"Da definire", note:""};
+  ["diario","todo","familiari","documenti"].forEach(k => { if (!Array.isArray(c[k])) c[k] = []; });
+  if (!c.privacy) c.privacy = {data:"", fonte:""};
+  return c;
+}
+const getCliente = id => normCliente(W.clienti.find(c => c.id === id));
+const nextTodo = c => (c.todo || []).filter(t => !t.fatto).sort((a,b) => (a.data||"9999").localeCompare(b.data||"9999"))[0];
+const todoBadge = t => { if (!t) return ""; const late = t.data && t.data < todayISO(), today = t.data === todayISO(); return `<span class="nexta ${late?"late":today?"today":""}">${ic("cal")}${t.data ? esc(fmtDate(t.data+"T12:00",{day:"numeric",month:"short"})) + " · " : ""}${esc(t.testo)}</span>`; };
+async function saveCliente(c){ c.aggiornato = new Date().toISOString(); await coll.put("clienti", c); }
+async function setFase(c, fase){
+  if (!fase || c.fase === fase) return;
+  c.diario.push({id:uid(), data:new Date().toISOString(), tipo:"fase", testo:`${FASI[c.fase] || c.fase} → ${FASI[fase]}`});
+  c.fase = fase; await saveCliente(c);
+}
+
+/* modulo dati anagrafici */
 function editCliente(c, preset={}){
-  const isNew = !c; c = c || {id:uid(), nome:"", telefono:"", email:"", citta:"", assistito:"", fonte:"", stato:"contatto", note:"", creato:new Date().toISOString(), ...preset};
-  let hist = "";
-  if (!isNew){
-    const apps = W.appuntamenti.filter(a => a.clienteId === c.id).sort((a,b) => (b.data+b.ora).localeCompare(a.data+a.ora));
-    const pags = W.pagamenti.filter(p => p.clienteId === c.id).sort((a,b) => b.data.localeCompare(a.data));
-    const s = saldo(c.id);
-    hist = `<div class="hist">
-      <div class="hist-head"><b>Situazione</b><span class="pill ${s ? "money-due" : "money-ok"}">${s ? "Da pagare " + eur(s) : "In regola con i pagamenti"}</span></div>
-      <div class="hist-cols">
-        <div><div class="hist-title">Appuntamenti <button type="button" class="linkbtn" data-sheet-go="app|${c.id}">+ Nuovo</button></div>${apps.length ? apps.slice(0,8).map(a => `<button type="button" class="hist-item" data-sheet-go="openapp|${a.id}"><span>${esc(fmtDate(a.data+"T12:00",{day:"numeric",month:"short",year:"numeric"}))} ${esc(a.ora||"")}</span><small>${esc(a.titolo)} · ${esc(a.luogo||"")}</small></button>`).join("") : `<p class="hint">Nessun appuntamento.</p>`}</div>
-        <div><div class="hist-title">Pagamenti <button type="button" class="linkbtn" data-sheet-go="pag|${c.id}">+ Registra</button></div>${pags.length ? pags.slice(0,8).map(p => `<button type="button" class="hist-item" data-sheet-go="openpag|${p.id}"><span>${esc(fmtDate(p.data+"T12:00",{day:"numeric",month:"short"}))} · ${eur(p.importo)}</span><small class="${p.stato==="da"?"due":""}">${p.stato==="da"?"Da incassare":"Pagato"} · ${esc(p.descr||"")}</small></button>`).join("") : `<p class="hint">Nessun pagamento.</p>`}</div>
-      </div></div>`;
-  }
-  openSheet(isNew ? "Nuovo cliente" : c.nome,
-    `<div class="two">${F.text("c-nome","Nome e cognome *",c.nome)}${F.sel("c-stato","Stato del percorso",Object.entries(STATI_CLIENTE),c.stato)}</div>
+  const isNew = !c;
+  c = normCliente(c || {id:uid(), nome:"", telefono:"", email:"", citta:"", indirizzo:"", fonte:"", inviatoDa:"", fase:"nuovo", creato:new Date().toISOString(), ...preset});
+  openSheet(isNew ? "Nuovo cliente" : "Dati del cliente",
+    `<div class="two">${F.text("c-nome","Nome e cognome *",c.nome)}${F.sel("c-fase","Fase del percorso",Object.entries(FASI),c.fase)}</div>
      <div class="two">${F.text("c-tel","Telefono",c.telefono,"tel")}${F.text("c-email","Email",c.email,"email")}</div>
-     <div class="two">${F.text("c-citta","Città",c.citta)}${F.text("c-assistito","Persona da assistere","" + (c.assistito||""),"text",'placeholder="Es. la madre, 84 anni"')}</div>
-     ${F.text("c-fonte","Come mi ha conosciuta",c.fonte,"text",'placeholder="Es. passaparola, Facebook, incontro informativo"')}
-     ${F.area("c-note","Note",c.note,"Situazione, esigenze, cose da ricordare…")}${hist}`,
+     <div class="two">${F.text("c-citta","Città",c.citta)}${F.text("c-ind","Indirizzo",c.indirizzo||"")}</div>
+     <div class="two">${F.text("c-fonte","Come mi ha conosciuta",c.fonte,"text",'placeholder="Es. passaparola, Facebook, sito"')}${F.text("c-inviato","Chi l'ha mandato (facoltativo)",c.inviatoDa||"","text",'placeholder="Es. il medico di base"')}</div>
+     ${isNew ? `<div class="two">${F.text("a-rel","Persona da assistere","","text",'placeholder="Es. la madre"')}${F.text("a-eta","Età","","number",'min="0" max="120"')}</div>` : ""}
+     ${isNew ? F.text("c-privacy","Consenso privacy ricevuto il",todayISO(),"date") : ""}`,
     async () => {
       if (!val("c-nome")){ $("#sheetErr").textContent = "Scrivi almeno il nome."; return false; }
-      Object.assign(c, {nome:val("c-nome"), stato:val("c-stato"), telefono:val("c-tel"), email:val("c-email"), citta:val("c-citta"), assistito:val("c-assistito"), fonte:val("c-fonte"), note:val("c-note")});
-      await coll.put("clienti", c); toast(isNew ? "Cliente aggiunto" : "Cliente aggiornato");
-    },
-    isNew ? null : async () => { await coll.del("clienti", c.id); toast("Cliente eliminato"); });
+      const nuovaFase = val("c-fase");
+      Object.assign(c, {nome:val("c-nome"), telefono:val("c-tel"), email:val("c-email"), citta:val("c-citta"), indirizzo:val("c-ind"), fonte:val("c-fonte"), inviatoDa:val("c-inviato")});
+      if (isNew){ c.fase = nuovaFase; c.assistito.relazione = val("a-rel"); c.assistito.eta = val("a-eta"); c.privacy = {data:val("c-privacy"), fonte:"Raccolto da Stefania"}; c.diario.push({id:uid(), data:new Date().toISOString(), tipo:"nota", testo:"Cliente inserito"}); await saveCliente(c); toast("Cliente aggiunto"); crmOpen = c.id; setTimeout(() => goTab("clienti"), 0); }
+      else { if (nuovaFase !== c.fase) await setFase(c, nuovaFase); await saveCliente(c); toast("Dati aggiornati"); }
+    });
 }
-let cFilter = "tutti", cQuery = "";
-function clientRows(){
-  const q = cQuery.toLowerCase();
-  const list = W.clienti.filter(c => (cFilter === "tutti" || (cFilter === "dapagare" ? saldo(c.id) > 0 : c.stato === cFilter)) && (!q || [c.nome,c.telefono,c.email,c.citta,c.assistito].join(" ").toLowerCase().includes(q)))
-    .sort((a,b) => (b.creato||"").localeCompare(a.creato||""));
-  if (!W.clienti.length) return `<div class="empty">Non hai ancora clienti. Aggiungine uno, oppure trasforma una richiesta arrivata dal sito in cliente con un clic.</div>`;
-  if (!list.length) return `<div class="empty">Nessun cliente corrisponde alla ricerca.</div>`;
-  return list.map(c => { const s = saldo(c.id); return `<button type="button" class="crow" data-open-cliente="${c.id}">
+function editAssistito(c){
+  const a = c.assistito;
+  openSheet("Persona assistita",
+    `<div class="two">${F.text("as-nome","Nome",a.nome)}${F.text("as-rel","Chi è per il cliente",a.relazione,"text",'placeholder="Es. la madre"')}</div>
+     <div class="three">${F.text("as-eta","Età",a.eta,"number",'min="0" max="120"')}${F.sel("as-vive","Dove e con chi vive",VIVE.map(v => [v,v]),a.vive)}${F.sel("as-bis","Tipo di bisogno",BISOGNI.map(v => [v,v]),a.bisogno)}</div>
+     ${F.area("as-note","Situazione e note",a.note,"Autonomia, salute generale, abitudini, cosa preoccupa la famiglia…")}`,
+    async () => { Object.assign(c.assistito, {nome:val("as-nome"), relazione:val("as-rel"), eta:val("as-eta"), vive:val("as-vive"), bisogno:val("as-bis"), note:val("as-note")}); await saveCliente(c); toast("Salvato"); });
+}
+function editFamiliare(c, f){
+  const isNew = !f; f = f || {id:uid(), nome:"", relazione:"", telefono:"", email:""};
+  openSheet(isNew ? "Aggiungi familiare" : "Familiare",
+    `<div class="two">${F.text("fa-nome","Nome *",f.nome)}${F.text("fa-rel","Relazione",f.relazione,"text",'placeholder="Es. fratello del cliente"')}</div><div class="two">${F.text("fa-tel","Telefono",f.telefono,"tel")}${F.text("fa-email","Email",f.email,"email")}</div>`,
+    async () => { if (!val("fa-nome")){ $("#sheetErr").textContent = "Scrivi il nome."; return false; } Object.assign(f, {nome:val("fa-nome"), relazione:val("fa-rel"), telefono:val("fa-tel"), email:val("fa-email")}); if (isNew) c.familiari.push(f); await saveCliente(c); },
+    isNew ? null : async () => { c.familiari = c.familiari.filter(x => x.id !== f.id); await saveCliente(c); });
+}
+function editPrivacy(c){
+  openSheet("Consenso privacy", `<p class="hint">Annota quando il cliente ha dato il consenso al trattamento dei suoi dati.</p><div class="two">${F.text("pr-data","Data del consenso",c.privacy.data,"date")}${F.text("pr-fonte","Come è stato raccolto",c.privacy.fonte,"text",'placeholder="Es. modulo firmato, modulo del sito"')}</div>`,
+    async () => { c.privacy = {data:val("pr-data"), fonte:val("pr-fonte")}; await saveCliente(c); });
+}
+
+/* elenco e bacheca */
+let crmView = lsGet("sc_crmview") || "elenco", crmOpen = null;
+const CF = {q:"", fase:"attivi", citta:"", fonte:"", extra:""};
+function crmFiltered(){
+  const q = CF.q.toLowerCase(), t = todayISO();
+  return W.clienti.map(normCliente).filter(c => {
+    if (CF.fase === "attivi" && !FASI_ATTIVE.includes(c.fase)) return false;
+    if (CF.fase !== "attivi" && CF.fase !== "tutti" && c.fase !== CF.fase) return false;
+    if (CF.citta && (c.citta||"").toLowerCase() !== CF.citta.toLowerCase()) return false;
+    if (CF.fonte && (c.fonte||"") !== CF.fonte) return false;
+    if (CF.extra === "dapagare" && !(saldo(c.id) > 0)) return false;
+    if (CF.extra === "oggi"){ const n = nextTodo(c); if (!n || !n.data || n.data > t) return false; }
+    if (q && ![c.nome, c.telefono, c.email, c.citta, c.indirizzo, c.assistito.nome, c.assistito.relazione, c.fonte, ...(c.familiari||[]).map(f => f.nome + " " + f.telefono)].join(" ").toLowerCase().includes(q)) return false;
+    return true;
+  }).sort((a,b) => (b.aggiornato || b.creato || "").localeCompare(a.aggiornato || a.creato || ""));
+}
+function crmRow(c){
+  const s = saldo(c.id);
+  return `<button type="button" class="crow crm" data-open-cliente="${c.id}">
     <span class="avatar">${esc(initials(c.nome))}</span>
-    <span class="cmain"><b>${esc(c.nome)}</b><small>${esc([c.telefono, c.citta, c.assistito].filter(Boolean).join(" · ") || "—")}</small></span>
-    <span class="pill st-${c.stato}">${STATI_CLIENTE[c.stato] || c.stato}</span>
-    <span class="pill ${s ? "money-due" : "money-ok"}">${s ? "Da pagare " + eur(s) : "In regola"}</span></button>`; }).join("");
+    <span class="cmain"><b>${esc(c.nome)}</b><small>${esc([c.telefono, c.citta, c.assistito.relazione ? "per " + c.assistito.relazione : ""].filter(Boolean).join(" · ") || "—")}</small></span>
+    <span class="cnext">${todoBadge(nextTodo(c)) || `<span class="hint">Nessuna attività in programma</span>`}</span>
+    <span class="pill fase-${c.fase}">${FASI[c.fase]}</span>
+    <span class="pill ${s ? "money-due" : "money-ok"}">${s ? "Da pagare " + eur(s) : "In regola"}</span></button>`;
+}
+function crmListHTML(){
+  const list = crmFiltered();
+  if (!W.clienti.length) return `<div class="empty">Non hai ancora clienti. Aggiungine uno con “+ Nuovo cliente”, oppure trasforma una richiesta arrivata dal sito.</div>`;
+  if (crmView === "bacheca"){
+    const fasi = CF.fase === "attivi" ? FASI_ATTIVE : (CF.fase === "tutti" ? Object.keys(FASI) : [CF.fase]);
+    return `<div class="board">${fasi.map(f => { const items = list.filter(c => c.fase === f); return `<div class="bcol" data-drop="${f}"><div class="bhead"><span class="pill fase-${f}">${FASI[f]}</span><small>${items.length}</small></div>
+      ${items.map(c => { const s = saldo(c.id), n = nextTodo(c); return `<div class="bcard" draggable="true" data-drag="${c.id}" data-open-cliente="${c.id}" tabindex="0"><b>${esc(c.nome)}</b><small>${esc([c.citta, c.assistito.relazione].filter(Boolean).join(" · "))}</small>${n ? todoBadge(n) : ""}${s ? `<span class="pill money-due">Da pagare ${eur(s)}</span>` : ""}</div>`; }).join("") || `<p class="hint bempty">Trascina qui un cliente</p>`}</div>`; }).join("")}</div>`;
+  }
+  if (!list.length) return `<div class="empty">Nessun cliente corrisponde ai filtri.</div>`;
+  return `<div class="clist">${list.map(crmRow).join("")}</div>`;
 }
 async function renderClienti(){
   const P = $("#panel"); P.innerHTML = `<div class="empty">Caricamento…</div>`;
   await loadWork(); if (tab !== "clienti") return;
-  const counts = {tutti:W.clienti.length, dapagare:W.clienti.filter(c => saldo(c.id) > 0).length}; Object.keys(STATI_CLIENTE).forEach(k => counts[k] = W.clienti.filter(c => c.stato === k).length);
-  P.innerHTML = `<div class="toolbar"><input type="search" id="cSearch" placeholder="Cerca per nome, telefono, città…" value="${esc(cQuery)}" aria-label="Cerca cliente"><button class="btn btn-primary small" data-new="cliente">+ Nuovo cliente</button></div>
-    <div class="sumrow">${[["tutti","Tutti"],...Object.entries(STATI_CLIENTE),["dapagare","Da pagare"]].map(([k,l]) => `<button class="filt ${cFilter===k?"on":""}" data-cf="${k}">${l} · ${counts[k]||0}</button>`).join("")}</div>
-    <div class="clist" id="clist">${clientRows()}</div>`;
+  if (crmOpen && W.clienti.some(c => c.id === crmOpen)){ renderScheda(crmOpen); return; }
+  crmOpen = null;
+  $("#panelTitle").textContent = "CRM";
+  const all = W.clienti.map(normCliente), t = todayISO(), m = monthISO(new Date());
+  const attivi = all.filter(c => FASI_ATTIVE.includes(c.fase)).length;
+  const nuovi = all.filter(c => (c.creato||"").startsWith(m)).length;
+  const oggi = all.reduce((n,c) => n + c.todo.filter(x => !x.fatto && x.data && x.data <= t).length, 0);
+  const due = W.pagamenti.filter(p => p.stato === "da").reduce((s,p) => s + Number(p.importo||0), 0);
+  const citta = [...new Set(all.map(c => (c.citta||"").trim()).filter(Boolean))].sort();
+  const fonti = [...new Set(all.map(c => (c.fonte||"").trim()).filter(Boolean))].sort();
+  P.innerHTML = `<div class="tiles">
+      <div class="tile static"><small>Clienti attivi</small><b>${attivi}</b><span>${all.length} in totale</span></div>
+      <div class="tile static"><small>Nuovi questo mese</small><b>${nuovi}</b><span>${esc(new Date().toLocaleDateString("it-IT",{month:"long"}))}</span></div>
+      <button class="tile" data-cfx="oggi"><small>Da fare oggi</small><b class="${oggi?"due":""}">${oggi}</b><span>attività in scadenza o in ritardo</span></button>
+      <button class="tile" data-cfx="dapagare"><small>Da incassare</small><b class="${due?"due":""}">${eur(due)}</b><span>vedi chi deve pagare</span></button>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="cSearch" placeholder="Cerca per nome, telefono, città, email, persona assistita…" value="${esc(CF.q)}" aria-label="Cerca cliente">
+      <div class="seg" role="group" aria-label="Vista"><button class="${crmView==="elenco"?"on":""}" data-view="elenco">Elenco</button><button class="${crmView==="bacheca"?"on":""}" data-view="bacheca">Bacheca</button></div>
+      <button class="btn btn-primary small" data-new="cliente">+ Nuovo cliente</button>
+    </div>
+    <div class="toolbar filters">
+      <select id="cfFase" aria-label="Fase"><option value="attivi" ${CF.fase==="attivi"?"selected":""}>Clienti attivi</option><option value="tutti" ${CF.fase==="tutti"?"selected":""}>Tutte le fasi</option>${Object.entries(FASI).map(([k,l]) => `<option value="${k}" ${CF.fase===k?"selected":""}>${l}</option>`).join("")}</select>
+      <select id="cfCitta" aria-label="Città"><option value="">Tutte le città</option>${citta.map(x => `<option ${CF.citta===x?"selected":""}>${esc(x)}</option>`).join("")}</select>
+      <select id="cfFonte" aria-label="Come mi ha conosciuta"><option value="">Tutte le provenienze</option>${fonti.map(x => `<option ${CF.fonte===x?"selected":""}>${esc(x)}</option>`).join("")}</select>
+      <button class="filt ${CF.extra==="oggi"?"on":""}" data-cfx="oggi">Da fare oggi</button>
+      <button class="filt ${CF.extra==="dapagare"?"on":""}" data-cfx="dapagare">Da pagare</button>
+      ${(CF.q||CF.citta||CF.fonte||CF.extra||CF.fase!=="attivi") ? `<button class="linkbtn" data-cfreset="1">Azzera filtri</button>` : ""}
+      <span class="sp"></span>
+      <button class="btn btn-ghost small" id="crmXls">${ic("doc")}Esporta clienti in Excel</button>
+    </div>
+    <div id="clist">${crmListHTML()}</div>`;
+}
+
+/* scheda del cliente */
+function timeline(c){
+  const items = c.diario.map(d => ({data:d.data, tipo:d.tipo, testo:d.testo, id:d.id, del:d.tipo !== "fase"}));
+  W.appuntamenti.filter(a => a.clienteId === c.id).forEach(a => items.push({data:a.data + "T" + (a.ora || "09:00"), tipo:"app", testo:`Appuntamento: ${a.titolo}${a.luogo ? " · " + a.luogo : ""}`, ref:a.id}));
+  W.pagamenti.filter(p => p.clienteId === c.id).forEach(p => items.push({data:p.data + "T12:00", tipo:"pag", testo:`${p.stato === "da" ? "Da incassare" : "Pagamento"} ${eur(p.importo)}${p.descr ? " · " + p.descr : ""}`, ref:p.id}));
+  return items.sort((a,b) => (b.data||"").localeCompare(a.data||""));
+}
+function renderScheda(id){
+  const c = getCliente(id); if (!c){ crmOpen = null; renderClienti(); return; }
+  crmOpen = id; $("#panelTitle").textContent = c.nome;
+  const s = saldo(c.id), wa = (c.telefono||"").replace(/\D/g,""), a = c.assistito, t = todayISO();
+  const apps = W.appuntamenti.filter(x => x.clienteId === c.id).sort((x,y) => (y.data+y.ora).localeCompare(x.data+x.ora));
+  const pags = W.pagamenti.filter(p => p.clienteId === c.id).sort((x,y) => y.data.localeCompare(x.data));
+  const todos = c.todo.slice().sort((x,y) => (x.fatto - y.fatto) || (x.data||"9999").localeCompare(y.data||"9999"));
+  const tl = timeline(c);
+  $("#panel").innerHTML = `<button class="linkbtn back2" data-crmback="1">← Tutti i clienti</button>
+  <div class="shead">
+    <span class="avatar big">${esc(initials(c.nome))}</span>
+    <div class="shmain"><h2>${esc(c.nome)}</h2>
+      <div class="shmeta">${c.telefono ? `<a href="${telLink(c.telefono)}">${ic("phone")}${esc(c.telefono)}</a>` : ""}${wa ? `<a href="https://wa.me/${wa.startsWith("39") || wa.length > 11 ? wa : "39" + wa}" target="_blank" rel="noopener">${ic("wa")}WhatsApp</a>` : ""}${c.email ? `<a href="mailto:${esc(c.email)}">${ic("mail")}${esc(c.email)}</a>` : ""}${c.citta ? `<span>${ic("pin")}${esc(c.citta)}</span>` : ""}</div>
+    </div>
+    <div class="shside">
+      <label class="sr" for="sFase">Fase</label><select id="sFase" class="fasesel fase-${c.fase}">${Object.entries(FASI).map(([k,l]) => `<option value="${k}" ${c.fase===k?"selected":""}>${l}</option>`).join("")}</select>
+      <span class="pill ${s ? "money-due" : "money-ok"}">${s ? "Da pagare " + eur(s) : "In regola con i pagamenti"}</span>
+      <div class="imgbtns"><button class="btn btn-ghost small" data-cedit="1">Modifica dati</button><span data-delwrap="cl"><button class="linkbtn danger" data-cdel="1">Elimina cliente</button></span></div>
+    </div>
+  </div>
+  <div class="scols">
+    <div>
+      <div class="box"><h3>Diario</h3><p class="sub">Telefonate, colloqui, messaggi e note: tutta la storia del cliente in ordine di data.</p>
+        <div class="noteadd"><select id="nTipo" aria-label="Tipo di nota">${["telefonata","colloquio","whatsapp","email","nota"].map(k => `<option value="${k}">${TIPI_NOTA[k]}</option>`).join("")}</select><textarea id="nTesto" rows="2" placeholder="Cosa è successo? Es. Sentita la figlia, preferisce badante a ore al mattino…" aria-label="Testo della nota"></textarea><button class="btn btn-primary small" data-noteadd="1">Aggiungi</button></div>
+        <div class="tline">${tl.length ? tl.map(x => `<div class="tl tl-${x.tipo}"><span class="tlic">${ic(TIPI_ICON[x.tipo] || "clip")}</span><div class="tlbody"><small>${esc(fmtDate(x.data,{day:"numeric",month:"short",year:"numeric"}))}${/T\d\d:\d\d/.test(x.data) && x.tipo !== "pag" ? " · " + esc(new Date(x.data).toLocaleTimeString("it-IT",{hour:"2-digit",minute:"2-digit"})) : ""} · ${esc(x.tipo === "app" ? "Appuntamento" : x.tipo === "pag" ? "Pagamento" : TIPI_NOTA[x.tipo] || "")}</small><p>${esc(x.testo)}</p></div>${x.del ? `<button class="mini-x" data-notedel="${x.id}" aria-label="Elimina nota">×</button>` : x.ref ? `<button class="linkbtn" data-${x.tipo === "app" ? "open-app" : "open-pag"}="${x.ref}">Apri</button>` : ""}</div>`).join("") : `<p class="hint">Ancora nessuna voce nel diario.</p>`}</div>
+      </div>
+      <div class="box"><h3>Documenti</h3><p class="sub">Sintesi scritte, preventivi, documenti ricevuti dalla famiglia.</p>
+        <div class="doclist">${c.documenti.length ? c.documenti.map(d => `<div class="srow"><span class="sname">${ic("doc")} ${esc(d.nome)} <small class="hint">· ${esc(fmtDate(d.data,{day:"numeric",month:"short",year:"numeric"}))}${d.size ? " · " + Math.max(1, Math.round(d.size/1024)) + " KB" : ""}</small></span><span class="imgbtns"><button class="linkbtn" data-docget="${d.id}">Scarica</button><span data-delwrap="d${d.id}"><button class="linkbtn danger" data-docdel="${d.id}">Elimina</button></span></span></div>`).join("") : `<p class="hint">Nessun documento.</p>`}</div>
+        <label class="add" for="docFile" style="display:block;text-align:center">+ Carica un documento</label><input type="file" id="docFile" hidden>
+        <p class="hint" id="docSt"></p>
+      </div>
+    </div>
+    <div>
+      <div class="box"><h3>Da fare</h3>
+        <div class="todos">${todos.length ? todos.map(x => `<label class="todo ${x.fatto?"done":""} ${!x.fatto && x.data && x.data < t ? "late" : ""}"><input type="checkbox" data-todo="${x.id}" ${x.fatto?"checked":""}><span>${esc(x.testo)}${x.data ? `<small>${esc(fmtDate(x.data+"T12:00",{weekday:"short",day:"numeric",month:"short"}))}</small>` : ""}</span><button type="button" class="mini-x" data-tododel="${x.id}" aria-label="Elimina">×</button></label>`).join("") : `<p class="hint">Niente in programma per questo cliente.</p>`}</div>
+        <div class="addtar"><input id="tdTesto" placeholder="Es. Richiamare per fissare il colloquio" aria-label="Cosa fare"><input id="tdData" type="date" value="${t}" aria-label="Entro quando" style="flex:0 0 150px"><button class="btn btn-primary small" data-todoadd="1">Aggiungi</button></div>
+      </div>
+      <div class="box"><div class="bxh"><h3>Persona assistita</h3><button class="linkbtn" data-asedit="1">Modifica</button></div>
+        <dl class="facts">${[["Nome", a.nome],["Chi è", a.relazione],["Età", a.eta ? a.eta + " anni" : ""],["Vive", a.vive !== "Da definire" ? a.vive : ""],["Bisogno", a.bisogno !== "Da definire" ? a.bisogno : ""]].map(([k,v]) => `<dt>${k}</dt><dd>${esc(v || "—")}</dd>`).join("")}</dl>
+        ${a.note ? `<p class="req-msg" style="margin-top:10px">${esc(a.note)}</p>` : ""}
+      </div>
+      <div class="box"><div class="bxh"><h3>Altri familiari coinvolti</h3><button class="linkbtn" data-famadd="1">+ Aggiungi</button></div>
+        ${c.familiari.length ? c.familiari.map(f => `<button type="button" class="hist-item" data-famedit="${f.id}"><span>${esc(f.nome)}${f.relazione ? ` <small>· ${esc(f.relazione)}</small>` : ""}</span><small>${esc([f.telefono, f.email].filter(Boolean).join(" · ") || "—")}</small></button>`).join("") : `<p class="hint">Nessuno.</p>`}
+      </div>
+      <div class="box"><div class="bxh"><h3>Appuntamenti</h3><button class="linkbtn" data-sheet-go="app|${c.id}">+ Nuovo</button></div>
+        ${apps.length ? apps.slice(0,6).map(x => `<button type="button" class="hist-item" data-open-app="${x.id}"><span>${esc(fmtDate(x.data+"T12:00",{weekday:"short",day:"numeric",month:"short",year:"numeric"}))} ${esc(x.ora||"")}</span><small>${esc(x.titolo)} · ${esc(x.luogo||"")}${x.data >= t ? " · in programma" : ""}</small></button>`).join("") : `<p class="hint">Nessun appuntamento.</p>`}
+      </div>
+      <div class="box"><div class="bxh"><h3>Pagamenti</h3><button class="linkbtn" data-sheet-go="pag|${c.id}">+ Registra</button></div>
+        ${pags.length ? pags.slice(0,8).map(p => `<button type="button" class="hist-item" data-open-pag="${p.id}"><span>${esc(fmtDate(p.data+"T12:00",{day:"numeric",month:"short",year:"numeric"}))} · ${eur(p.importo)}</span><small class="${p.stato==="da"?"due":""}">${p.stato==="da"?"Da incassare":"Pagato"}${p.descr ? " · " + esc(p.descr) : ""}</small></button>`).join("") : `<p class="hint">Nessun pagamento.</p>`}
+      </div>
+      <div class="box"><div class="bxh"><h3>Privacy</h3><button class="linkbtn" data-predit="1">Modifica</button></div>
+        <p class="hint">${c.privacy.data ? `Consenso al trattamento dei dati ricevuto il <b>${esc(fmtDate(c.privacy.data+"T12:00",{day:"numeric",month:"long",year:"numeric"}))}</b>${c.privacy.fonte ? " · " + esc(c.privacy.fonte) : ""}.` : `<span style="color:#9B3B3B">Consenso privacy non ancora registrato.</span>`}</p>
+      </div>
+    </div>
+  </div>`;
+  toTop();
+}
+
+/* documenti */
+async function uploadDoc(c, file){
+  const st = $("#docSt"); st.textContent = "Caricamento in corso…";
+  try {
+    if (file.size > 20 * 1024 * 1024) throw new Error("big");
+    const d = {id:uid(), nome:file.name, size:file.size, tipo:file.type, data:new Date().toISOString()};
+    if (store.sb){
+      const safe = file.name.normalize("NFD").replace(/[^\w.\-]+/g, "_").slice(-80);
+      d.path = `${c.id}/${d.id}-${safe}`;
+      const {error} = await store.sb.storage.from("documenti").upload(d.path, file, {contentType:file.type || "application/octet-stream", upsert:false});
+      if (error) throw error;
+    } else if (store.assets){ const r = await store.assets.upload(file); d.url = "/_blob/" + r.id; d.assetId = r.id; }
+    else throw new Error("nostorage");
+    c.documenti.push(d); c.diario.push({id:uid(), data:new Date().toISOString(), tipo:"nota", testo:"Documento caricato: " + file.name});
+    await saveCliente(c); toast("Documento caricato"); renderScheda(c.id);
+  } catch (e) {
+    st.textContent = e && e.message === "big" ? "Il file è troppo grande (massimo 20 MB)." : e && e.message === "nostorage" ? "Per caricare documenti serve l'area riservata collegata all'archivio online." : "Caricamento non riuscito. Se è la prima volta, controlla di aver creato la cartella “documenti” in Supabase.";
+  }
+}
+async function docBlob(d){
+  if (store.sb && d.path){ const {data, error} = await store.sb.storage.from("documenti").download(d.path); if (error) throw error; return data; }
+  if (d.url){ const r = await fetch(d.url); if (!r.ok) throw new Error("dl"); return await r.blob(); }
+  throw new Error("dl");
+}
+
+/* esportazione clienti */
+function clientiRowsForXls(){
+  return [["Nome","Fase","Telefono","Email","Città","Indirizzo","Come mi ha conosciuta","Inviato da","Persona assistita","Chi è","Età","Vive","Bisogno","Note sulla situazione","Altri familiari","Da pagare (€)","Prossima attività","Consenso privacy","Inserito il"],
+    ...W.clienti.map(normCliente).sort((a,b) => a.nome.localeCompare(b.nome)).map(c => { const n = nextTodo(c); return [c.nome, FASI[c.fase], c.telefono||"", c.email||"", c.citta||"", c.indirizzo||"", c.fonte||"", c.inviatoDa||"", c.assistito.nome||"", c.assistito.relazione||"", c.assistito.eta||"", c.assistito.vive||"", c.assistito.bisogno||"", c.assistito.note||"", c.familiari.map(f => [f.nome, f.relazione, f.telefono, f.email].filter(Boolean).join(" – ")).join("; "), saldo(c.id), n ? `${n.data||""} ${n.testo}`.trim() : "", c.privacy.data ? `${c.privacy.data} (${c.privacy.fonte||""})` : "", (c.creato||"").slice(0,10)]; })];
+}
+function sheetFrom(rows, widths){ const ws = XLSX.utils.aoa_to_sheet(rows); ws["!cols"] = (widths || rows[0].map(() => 18)).map(w => ({wch:w})); return ws; }
+async function exportClienti(){
+  try {
+    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js");
+    const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, sheetFrom(clientiRowsForXls()), "Clienti");
+    const out = XLSX.write(wb, {bookType:"xlsx", type:"array"});
+    const ok = await saveFile(`Clienti ${C.brand.name} ${todayISO()}.xlsx`, new Blob([out], {type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+    toast(ok ? "Elenco clienti scaricato" : "Download annullato");
+  } catch { toast("Non sono riuscita a creare il file"); }
 }
 
 /* --- pagamenti --- */
@@ -1988,7 +2257,7 @@ function editAppuntamento(a, preset={}){
       if (!val("a-titolo") || !val("a-data")){ $("#sheetErr").textContent = "Servono almeno titolo e data."; return false; }
       Object.assign(a, {titolo:val("a-titolo"), clienteId:val("a-cliente"), data:val("a-data"), ora:val("a-ora"), durata:Number(val("a-durata"))||60, luogo:val("a-luogo"), note:val("a-note")});
       await coll.put("appuntamenti", a); calDay = a.data; calMonth = new Date(a.data + "T12:00"); calMonth.setDate(1);
-      const c = W.clienti.find(x => x.id === a.clienteId); if (c && c.stato === "contatto" && a.data >= todayISO()){ c.stato = "fissata"; await coll.put("clienti", c); }
+      const c = getCliente(a.clienteId); if (c && c.fase === "nuovo" && a.data >= todayISO()) await setFase(c, "fissato");
       await G.push(a); toast(isNew ? "Appuntamento aggiunto" : "Appuntamento aggiornato");
     },
     isNew ? null : async () => { await G.remove(a); await coll.del("appuntamenti", a.id); toast("Appuntamento eliminato"); });
@@ -2093,8 +2362,13 @@ async function renderOverview(){
   const nNew = requests.filter(r => r.stato === "nuova").length;
   const upcoming = []; for (let i = 0; i < 7; i++){ const d = new Date(); d.setDate(d.getDate()+i); dayItems(ISO(d)).forEach(it => upcoming.push({...it, iso:ISO(d)})); }
   const debitori = W.clienti.filter(c => saldo(c.id) > 0).sort((a,b) => saldo(b.id) - saldo(a.id)).slice(0,5);
+  const tday = todayISO(), in7 = ISO(new Date(Date.now() + 7*864e5));
+  const daFare = []; W.clienti.map(normCliente).forEach(c => c.todo.filter(x => !x.fatto && x.data && x.data <= in7).forEach(x => daFare.push({...x, cid:c.id, cn:c.nome})));
+  daFare.sort((a,b) => a.data.localeCompare(b.data));
+  const lb = lastBackup(), bkDays = daysSince(lb);
   const h = new Date().getHours(), saluto = h < 13 ? "Buongiorno" : h < 18 ? "Buon pomeriggio" : "Buonasera";
   P.innerHTML = `<p class="help">${saluto} Stefania! Ecco la tua giornata e quello che ti aspetta.</p>
+    ${W.clienti.length && bkDays > 30 ? `<div class="banner warn">${ic("clock")}<span>${lb ? "È passato più di un mese dall'ultima copia di sicurezza." : "Non hai ancora scaricato una copia di sicurezza dei tuoi dati."} Scaricala sul computer: ci vuole un attimo.</span><button class="btn btn-primary small" data-gobackup="1">Scarica la copia</button></div>` : ""}
     <div class="tiles">
       <button class="tile" data-go="calendario"><small>Oggi</small><b>${oggi.length}</b><span>${oggi.length === 1 ? "appuntamento" : "appuntamenti"}</span></button>
       <button class="tile" data-go="pagamenti"><small>Incassato a ${esc(new Date().toLocaleDateString("it-IT",{month:"long"}))}</small><b>${eur(incM)}</b><span>vedi i pagamenti</span></button>
@@ -2105,6 +2379,7 @@ async function renderOverview(){
       <div class="box"><h3>Prossimi 7 giorni</h3><div class="agenda">${upcoming.length ? upcoming.map(it => `<div class="agday">${esc(fmtDate(it.iso+"T12:00",{weekday:"long",day:"numeric",month:"short"}))}</div>` + agendaItem(it)).join("") : `<p class="hint">Nessun appuntamento in programma.</p>`}</div>
         <button class="add" data-new="appuntamento">+ Nuovo appuntamento</button></div>
       <div>
+        <div class="box"><h3>Da fare</h3>${daFare.length ? daFare.slice(0,8).map(x => `<button type="button" class="hist-item ${x.data < tday ? "lateitem" : ""}" data-opentodo="${x.cid}"><span>${esc(x.testo)}</span><small>${esc(x.cn)} · ${x.data < tday ? "in ritardo, " : x.data === tday ? "oggi, " : ""}${esc(fmtDate(x.data+"T12:00",{weekday:"short",day:"numeric",month:"short"}))}</small></button>`).join("") : `<p class="hint">Niente in scadenza nei prossimi 7 giorni.</p>`}</div>
         <div class="box"><h3>Da incassare</h3>${debitori.length ? debitori.map(c => `<button type="button" class="crow slim" data-open-cliente="${c.id}"><span class="avatar">${esc(initials(c.nome))}</span><span class="cmain"><b>${esc(c.nome)}</b><small>${esc(c.telefono||"")}</small></span><span class="pill money-due">${eur(saldo(c.id))}</span></button>`).join("") : `<p class="hint">Tutti in regola.</p>`}</div>
         <div class="box"><h3>Azioni veloci</h3><div class="quick">
           <button data-new="cliente">${ic("user")}Nuovo cliente</button>
@@ -2122,10 +2397,9 @@ async function renderOverview(){
 panel.addEventListener("click", async e => {
   const n = e.target.closest("[data-new]");
   if (n){ await loadWork(); if (n.dataset.new === "cliente") editCliente(); if (n.dataset.new === "pagamento") editPagamento(); if (n.dataset.new === "appuntamento") editAppuntamento(); return; }
-  const oc = e.target.closest("[data-open-cliente]"); if (oc){ editCliente(W.clienti.find(c => c.id === oc.dataset.openCliente)); return; }
+  const oc = e.target.closest("[data-open-cliente]"); if (oc){ crmOpen = oc.dataset.openCliente; if (tab !== "clienti") goTab("clienti"); else renderScheda(crmOpen); return; }
   const op = e.target.closest("[data-open-pag]"); if (op){ editPagamento(W.pagamenti.find(p => p.id === op.dataset.openPag)); return; }
   const oa = e.target.closest("[data-open-app]"); if (oa){ editAppuntamento(W.appuntamenti.find(a => a.id === oa.dataset.openApp)); return; }
-  const cf = e.target.closest("[data-cf]"); if (cf){ cFilter = cf.dataset.cf; renderClienti(); return; }
   const pm = e.target.closest("[data-pm]"); if (pm){ const d = new Date(pMonth + "-15T12:00"); d.setMonth(d.getMonth() + Number(pm.dataset.pm)); pMonth = monthISO(d); renderPagamenti(); return; }
   const cm = e.target.closest("[data-cm]"); if (cm){ if (cm.dataset.cm === "0"){ calMonth = new Date(); calMonth.setDate(1); calDay = todayISO(); } else calMonth.setMonth(calMonth.getMonth() + Number(cm.dataset.cm)); renderCalendario(); return; }
   const dd = e.target.closest("[data-day]"); if (dd){ calDay = dd.dataset.day; const d = new Date(calDay + "T12:00"); if (d.getMonth() !== calMonth.getMonth()){ calMonth = d; calMonth.setDate(1); } renderCalendario(); return; }
@@ -2142,13 +2416,140 @@ panel.addEventListener("click", async e => {
   const tc = e.target.closest("[data-tocliente]");
   if (tc){
     await loadWork(); const r = requests.find(x => x.id === tc.dataset.tocliente); if (!r) return;
-    const c = {id:uid(), nome:r.nome && r.nome !== "Richiesta guida" ? r.nome : (r.email || "Nuovo cliente"), telefono:r.telefono||"", email:r.email||"", citta:r.citta||"", assistito:r.perChi && r.perChi !== "—" ? r.perChi : "", fonte:r.tipo === "guida" ? "Richiesta della guida dal sito" : "Modulo del sito", stato:"contatto", note:[r.esigenza, r.modalita && r.modalita !== "—" ? "Preferisce: " + r.modalita : "", r.messaggio].filter(Boolean).join("\n"), creato:new Date().toISOString(), daRichiesta:r.id};
-    try { await coll.put("clienti", c); if (r.stato === "nuova") await store.updateRequest(r.id, {stato:"contatto"}); toast("Cliente creato dalla richiesta"); tab = "clienti"; goTab("clienti"); setTimeout(() => editCliente(c), 300); } catch { toast("Non è stato possibile creare il cliente"); }
+    const rel = {"Mia madre":"la madre","Mio padre":"il padre","Entrambi i genitori":"i genitori","Un altro familiare":"un familiare","Me stesso/a":"sé stesso/a"}[r.perChi] || "";
+    const bis = /h24/i.test(r.esigenza||"") ? "Badante h24" : /a ore/i.test(r.esigenza||"") ? "Badante a ore" : /OSS/.test(r.esigenza||"") ? "OSS" : "Da definire";
+    const c = normCliente({id:uid(), nome:r.nome && r.nome !== "Richiesta guida" ? r.nome : (r.email || "Nuovo cliente"), telefono:r.telefono||"", email:r.email||"", citta:r.citta||"", indirizzo:"", fonte:r.tipo === "guida" ? "Richiesta della guida dal sito" : "Modulo del sito", inviatoDa:"", fase:"nuovo", creato:new Date().toISOString(), daRichiesta:r.id,
+      assistito:{nome:"", relazione:rel, eta:"", vive:"Da definire", bisogno:bis, note:""},
+      privacy:{data:(r.ricevuta||"").slice(0,10), fonte:"Consenso dato nel modulo del sito"},
+      diario:[{id:uid(), data:r.ricevuta || new Date().toISOString(), tipo:"sito", testo:[r.esigenza, r.modalita && r.modalita !== "—" ? "Preferisce: " + r.modalita : "", r.messaggio].filter(Boolean).join("\n") || "Richiesta dal sito"}],
+      todo:[{id:uid(), testo:"Primo contatto: richiamare", data:todayISO(), fatto:false}]});
+    try { await coll.put("clienti", c); if (r.stato === "nuova") await store.updateRequest(r.id, {stato:"contatto"}); toast("Cliente creato dalla richiesta"); crmOpen = c.id; goTab("clienti"); } catch { toast("Non è stato possibile creare il cliente"); }
   }
 });
-panel.addEventListener("input", e => { if (e.target.id === "cSearch"){ cQuery = e.target.value; $("#clist").innerHTML = clientRows(); } });
 panel.addEventListener("change", e => { if (e.target.id === "pMonth" && e.target.value){ pMonth = e.target.value; renderPagamenti(); } });
 
+
+/* --- copia di sicurezza --- */
+const lastBackup = () => { const b = W.impostazioni.find(x => x.id === "backup"); return b && b.ultima ? b.ultima : ""; };
+const daysSince = iso => iso ? Math.floor((Date.now() - new Date(iso).getTime()) / 864e5) : Infinity;
+async function renderBackup(){
+  const P = $("#panel"); P.innerHTML = `<div class="empty">Caricamento…</div>`;
+  await loadWork(); if (tab !== "backup") return;
+  const lb = lastBackup(), d = daysSince(lb);
+  const nDocs = W.clienti.map(normCliente).reduce((n,c) => n + c.documenti.length, 0);
+  P.innerHTML = `<p class="help">Tutti i dati sono già salvati online in modo sicuro. Una copia sul computer, o su una chiavetta, è una garanzia in più: se un giorno internet non funziona o succede qualcosa all'archivio online, hai comunque tutto con te. Consiglio: scaricala una volta al mese.</p>
+    <div class="banner ${d > 30 ? "warn" : "ok"}">${ic(d > 30 ? "clock" : "shield")}<span>${lb ? `Ultima copia scaricata il <b>${esc(fmtDate(lb,{day:"numeric",month:"long",year:"numeric"}))}</b> (${d === 0 ? "oggi" : d === 1 ? "ieri" : d + " giorni fa"}).` : "Non hai ancora scaricato nessuna copia di sicurezza."}${d > 30 ? " È ora di farne una nuova." : ""}</span></div>
+    <div class="bkgrid">
+      <div class="box"><h3>Copia dei dati (Excel)</h3><p class="sub">Un unico file Excel con un foglio per ogni cosa: clienti, diario, cose da fare, appuntamenti, pagamenti, richieste dal sito e tariffe. Si apre con Excel, Numbers o Google Fogli.</p>
+        <button class="btn btn-primary" data-backup="xlsx">${ic("doc")}Scarica copia Excel</button></div>
+      <div class="box"><h3>Copia completa con documenti (ZIP)</h3><p class="sub">La stessa copia Excel più tutti i documenti caricati nelle schede dei clienti (${nDocs} ${nDocs === 1 ? "documento" : "documenti"}), divisi in cartelle per cliente.</p>
+        <button class="btn btn-ghost" data-backup="zip">${ic("doc")}Scarica copia completa (ZIP)</button></div>
+    </div>
+    <p class="hint" id="bkMsg"></p>
+    <div class="box"><h3>Come conservarla</h3><ol class="steps-mini"><li>Il file finisce nella cartella <b>Download</b> del computer.</li><li>Spostalo in una cartella dedicata, ad esempio “Copie sito Stefania”, oppure su una chiavetta USB.</li><li>Tieni almeno le copie degli ultimi 3 mesi.</li><li>Ricorda che contiene dati personali dei clienti: tienila in un posto sicuro e non mandarla per email se non serve.</li></ol></div>`;
+}
+async function doBackup(kind){
+  const msg = $("#bkMsg"); msg.textContent = "Preparazione della copia…";
+  try {
+    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js");
+    await Promise.all([loadWork(true), loadRequests()]);
+    const cl = W.clienti.map(normCliente), name = id => clientName(id) || "—", day = todayISO();
+    const diario = [], todo = [], docs = [];
+    cl.forEach(c => { c.diario.forEach(d => diario.push([ (d.data||"").slice(0,16).replace("T"," "), c.nome, TIPI_NOTA[d.tipo] || d.tipo, d.testo ])); c.todo.forEach(t => todo.push([t.data||"", c.nome, t.testo, t.fatto ? "Fatto" : "Da fare"])); c.documenti.forEach(d => docs.push([c.nome, d.nome, (d.data||"").slice(0,10), `Documenti/${c.nome}/${d.nome}`])); });
+    diario.sort((a,b) => b[0].localeCompare(a[0])); todo.sort((a,b) => a[0].localeCompare(b[0]));
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Copia di sicurezza – " + C.brand.name], ["Creata il", new Date().toLocaleString("it-IT")], [], ["Clienti", cl.length], ["Voci di diario", diario.length], ["Cose da fare", todo.length], ["Appuntamenti", W.appuntamenti.length], ["Pagamenti", W.pagamenti.length], ["Richieste dal sito", requests.length], ["Documenti", docs.length]], [28, 24]), "Riepilogo");
+    XLSX.utils.book_append_sheet(wb, sheetFrom(clientiRowsForXls()), "Clienti");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Cliente","Tipo","Testo"], ...diario], [17,24,16,80]), "Diario");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Entro il","Cliente","Attività","Stato"], ...todo], [12,24,50,10]), "Da fare");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Ora","Durata (min)","Cliente","Titolo","Luogo","Note"], ...W.appuntamenti.slice().sort((a,b) => (a.data+a.ora).localeCompare(b.data+b.ora)).map(a => [a.data, a.ora||"", a.durata||"", name(a.clienteId), a.titolo, a.luogo||"", a.note||""])], [12,7,10,24,26,14,40]), "Appuntamenti");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Cliente","Servizio","Importo (€)","Metodo","Stato","N. fattura","Note"], ...W.pagamenti.slice().sort((a,b) => a.data.localeCompare(b.data)).map(p => [p.data, name(p.clienteId), p.descr||"", Number(p.importo)||0, p.metodo||"", p.stato === "da" ? "Da incassare" : "Pagato", p.fattura||"", p.note||""])], [12,24,28,12,14,13,11,30]), "Pagamenti");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Ricevuta il","Nome","Telefono","Email","Città","Per chi","Esigenza","Colloquio","Messaggio","Stato"], ...requests.map(r => [(r.ricevuta||"").slice(0,16).replace("T"," "), r.nome||"", r.telefono||"", r.email||"", r.citta||"", r.perChi||"", r.esigenza||"", r.modalita||"", r.messaggio||"", ST[r.stato] || r.stato || ""])], [17,22,16,24,14,16,26,12,60,12]), "Richieste dal sito");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Tariffa","Importo (€)"], ...W.tariffe.map(t => [t.nome, Number(t.importo)||0])], [30,12]), "Tariffe");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Cliente","File","Caricato il","Nella copia ZIP"], ...docs], [24,36,12,50]), "Documenti");
+    const xbuf = XLSX.write(wb, {bookType:"xlsx", type:"array"});
+    const base = `Copia di sicurezza ${C.brand.name} ${day}`;
+    let ok;
+    if (kind === "zip"){
+      await loadScript("https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js");
+      const zip = new JSZip(); zip.file(base + ".xlsx", xbuf);
+      let i = 0, failed = 0; const total = cl.reduce((n,c) => n + c.documenti.length, 0), used = new Set();
+      for (const c of cl) for (const d of c.documenti){
+        i++; msg.textContent = `Raccolgo i documenti… ${i} di ${total}`;
+        const folder = (c.nome || "Cliente").replace(/[\\/:*?"<>|]+/g, " ").trim();
+        let fname = (d.nome || "documento").replace(/[\\/:*?"<>|]+/g, " ").trim(), p = `Documenti/${folder}/${fname}`, k = 2;
+        while (used.has(p)){ p = `Documenti/${folder}/${k++}-${fname}`; } used.add(p);
+        try { zip.file(p, await docBlob(d)); } catch { failed++; }
+      }
+      msg.textContent = "Creo il file ZIP…";
+      const zblob = await zip.generateAsync({type:"blob"});
+      ok = await saveFile(base + ".zip", zblob);
+      if (ok && failed) toast(`${failed} documenti non sono stati scaricati`);
+    } else {
+      ok = await saveFile(base + ".xlsx", new Blob([xbuf], {type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+    }
+    if (ok){ await coll.put("impostazioni", {id:"backup", ultima:new Date().toISOString()}); toast("Copia di sicurezza scaricata"); renderBackup(); }
+    else msg.textContent = "Download annullato.";
+  } catch { msg.textContent = "Non sono riuscita a creare la copia. Controlla la connessione e riprova."; }
+}
+
+/* --- eventi CRM e copia di sicurezza --- */
+const crmRefreshList = () => { const el = $("#clist"); if (el) el.innerHTML = crmListHTML(); };
+panel.addEventListener("click", async e => {
+  const t = e.target;
+  if (t.closest("[data-crmback]")){ crmOpen = null; renderClienti(); return; }
+  const v = t.closest("[data-view]"); if (v){ crmView = v.dataset.view; lsSet("sc_crmview", crmView); renderClienti(); return; }
+  const fx = t.closest("[data-cfx]"); if (fx){ CF.extra = CF.extra === fx.dataset.cfx ? "" : fx.dataset.cfx; if (fx.dataset.cfx === "dapagare" || fx.dataset.cfx === "oggi") CF.fase = CF.extra ? "tutti" : "attivi"; renderClienti(); return; }
+  if (t.closest("[data-cfreset]")){ Object.assign(CF, {q:"", fase:"attivi", citta:"", fonte:"", extra:""}); renderClienti(); return; }
+  if (t.closest("#crmXls")){ exportClienti(); return; }
+  const bk = t.closest("[data-backup]"); if (bk){ bk.disabled = true; await doBackup(bk.dataset.backup); bk.disabled = false; return; }
+  if (t.closest("[data-gobackup]")){ goTab("backup"); return; }
+  const td = t.closest("[data-opentodo]"); if (td){ crmOpen = td.dataset.opentodo; goTab("clienti"); return; }
+  const sg = t.closest("#panel [data-sheet-go]"); if (sg){ const [k, id] = sg.dataset.sheetGo.split("|"); if (k === "pag") editPagamento(null, {clienteId:id}); if (k === "app") editAppuntamento(null, {clienteId:id}); return; }
+  if (!crmOpen) return;
+  const c = getCliente(crmOpen); if (!c) return;
+  if (t.closest("[data-cedit]")){ editCliente(c); return; }
+  if (t.closest("[data-asedit]")){ editAssistito(c); return; }
+  if (t.closest("[data-famadd]")){ editFamiliare(c); return; }
+  const fe = t.closest("[data-famedit]"); if (fe){ editFamiliare(c, c.familiari.find(f => f.id === fe.dataset.famedit)); return; }
+  if (t.closest("[data-predit]")){ editPrivacy(c); return; }
+  if (t.closest("[data-cdel]")){ $('[data-delwrap="cl"]').innerHTML = `<span class="confirm">Eliminare ${esc(c.nome)} e tutti i suoi dati? <button class="yes" data-cdelyes="1">Elimina</button><button class="no" data-cdelno="1">Annulla</button></span>`; return; }
+  if (t.closest("[data-cdelno]")){ renderScheda(c.id); return; }
+  if (t.closest("[data-cdelyes]")){
+    try {
+      if (store.sb && c.documenti.length){ try { await store.sb.storage.from("documenti").remove(c.documenti.map(d => d.path).filter(Boolean)); } catch {} }
+      await coll.del("clienti", c.id); crmOpen = null; toast("Cliente eliminato"); renderClienti();
+    } catch { toast("Eliminazione non riuscita"); }
+    return;
+  }
+  if (t.closest("[data-noteadd]")){ const testo = $("#nTesto").value.trim(); if (!testo){ $("#nTesto").focus(); return; } c.diario.push({id:uid(), data:new Date().toISOString(), tipo:$("#nTipo").value, testo}); await saveCliente(c); toast("Nota aggiunta"); renderScheda(c.id); return; }
+  const nd = t.closest("[data-notedel]"); if (nd){ c.diario = c.diario.filter(d => d.id !== nd.dataset.notedel); await saveCliente(c); renderScheda(c.id); return; }
+  if (t.closest("[data-todoadd]")){ const testo = $("#tdTesto").value.trim(); if (!testo){ $("#tdTesto").focus(); return; } c.todo.push({id:uid(), testo, data:$("#tdData").value, fatto:false}); await saveCliente(c); toast("Aggiunto a “Da fare”"); renderScheda(c.id); return; }
+  const tdd = t.closest("[data-tododel]"); if (tdd){ e.preventDefault(); c.todo = c.todo.filter(x => x.id !== tdd.dataset.tododel); await saveCliente(c); renderScheda(c.id); return; }
+  const dg = t.closest("[data-docget]"); if (dg){ const d = c.documenti.find(x => x.id === dg.dataset.docget); try { const b = await docBlob(d); await saveFile(d.nome, b); } catch { toast("Download non riuscito"); } return; }
+  const dd = t.closest("[data-docdel]"); if (dd){ $(`[data-delwrap="d${dd.dataset.docdel}"]`).innerHTML = `<span class="confirm">Eliminare il documento? <button class="yes" data-docdelyes="${dd.dataset.docdel}">Elimina</button><button class="no" data-cdelno="1">No</button></span>`; return; }
+  const dy = t.closest("[data-docdelyes]"); if (dy){ const d = c.documenti.find(x => x.id === dy.dataset.docdelyes); if (store.sb && d && d.path){ try { await store.sb.storage.from("documenti").remove([d.path]); } catch {} } c.documenti = c.documenti.filter(x => x.id !== dy.dataset.docdelyes); await saveCliente(c); toast("Documento eliminato"); renderScheda(c.id); return; }
+});
+panel.addEventListener("change", async e => {
+  const t = e.target;
+  if (t.id === "cfFase"){ CF.fase = t.value; renderClienti(); return; }
+  if (t.id === "cfCitta"){ CF.citta = t.value; renderClienti(); return; }
+  if (t.id === "cfFonte"){ CF.fonte = t.value; renderClienti(); return; }
+  if (!crmOpen) return;
+  const c = getCliente(crmOpen); if (!c) return;
+  if (t.id === "sFase"){ await setFase(c, t.value); toast("Fase aggiornata"); renderScheda(c.id); return; }
+  if (t.id === "docFile" && t.files && t.files[0]){ await uploadDoc(c, t.files[0]); return; }
+  if (t.dataset.todo){ const x = c.todo.find(y => y.id === t.dataset.todo); if (x){ x.fatto = t.checked; if (t.checked) c.diario.push({id:uid(), data:new Date().toISOString(), tipo:"nota", testo:"Fatto: " + x.testo}); await saveCliente(c); renderScheda(c.id); } }
+});
+panel.addEventListener("input", e => { if (e.target.id === "cSearch"){ CF.q = e.target.value; crmRefreshList(); } });
+panel.addEventListener("dragstart", e => { const d = e.target.closest && e.target.closest("[data-drag]"); if (d){ e.dataTransfer.setData("text/plain", d.dataset.drag); e.dataTransfer.effectAllowed = "move"; d.classList.add("dragging"); } });
+panel.addEventListener("dragend", e => { const d = e.target.closest && e.target.closest("[data-drag]"); if (d) d.classList.remove("dragging"); $$(".bcol.over").forEach(x => x.classList.remove("over")); });
+panel.addEventListener("dragover", e => { const col = e.target.closest && e.target.closest("[data-drop]"); if (col){ e.preventDefault(); $$(".bcol.over").forEach(x => x !== col && x.classList.remove("over")); col.classList.add("over"); } });
+panel.addEventListener("drop", async e => {
+  const col = e.target.closest && e.target.closest("[data-drop]"); if (!col) return; e.preventDefault();
+  const c = getCliente(e.dataTransfer.getData("text/plain")); if (!c) return;
+  await setFase(c, col.dataset.drop); toast(`${c.nome}: ${FASI[col.dataset.drop]}`); renderClienti();
+});
 
 /* --- richieste --- */
 const ST = {nuova:"Nuova", contatto:"In contatto", chiusa:"Chiusa"};
