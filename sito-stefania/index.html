@@ -641,6 +641,13 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
 @media (max-width:900px){.bkgrid{grid-template-columns:1fr}}
 .steps-mini{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:.93rem;color:var(--muted)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.guidefile{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:14px;border:1px dashed var(--brand);background:var(--paper);margin-top:6px}
+.gfic{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;color:var(--brand-deep)}
+.gfic svg{width:22px;height:22px}
+.gfmain{display:flex;flex-direction:column;min-width:0}
+.gfmain b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gfmain small{color:var(--muted);font-size:.8rem}
+@media (max-width:700px){.guidefile{grid-template-columns:auto 1fr}.guidefile .imgbtns{grid-column:1/-1}}
 .empty{padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:20px}
 @media (max-width:900px){
   .app{grid-template-columns:1fr}
@@ -790,7 +797,7 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
             <h2 data-t="guide.title"></h2>
             <p data-t="guide.text"></p>
           </div>
-          <a class="btn btn-primary" href="#contatti" id="guideBtn"><span data-t="guide.cta"></span></a>
+          <a class="btn btn-primary" href="#contatti" id="guideBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg><span data-t="guide.cta"></span></a>
         </div>
       </div>
     </section>
@@ -1059,7 +1066,7 @@ const DEFAULTS = {
       {t:"Un punto di riferimento", d:"Supporto anche dopo la consulenza, quando la nuova organizzazione entra nella vita di tutti i giorni.", i:"heart"}
     ]
   },
-  guide:{title:"La Bussola dell'Assistenza H24", text:"Guida pratica per orientarsi nella gestione della cura familiare, dal primo impatto alla normalità quotidiana.", cta:"Ricevi la guida", link:""},
+  guide:{title:"La Bussola dell'Assistenza H24", text:"Guida pratica per orientarsi nella gestione della cura familiare, dal primo impatto alla normalità quotidiana.", cta:"Scarica ora", link:"", file:null, askEmail:false},
   events:{
     title:"Incontri informativi gratuiti",
     text:"Momenti informali, davanti a un caffè, per chi si prende cura dei propri genitori anziani.",
@@ -1271,6 +1278,7 @@ function upcomingEvents(){
 const safeLink = u => { u = String(u||"").trim(); if (!u) return ""; if (/^(https?:|mailto:|tel:|#)/i.test(u)) return u; return "https://" + u; };
 function renderSite(){
   applyTheme();
+  if (/^(Ricevi|Richiedi) la guida$/i.test(C.guide.cta || "")) C.guide.cta = "Scarica ora";
   $$("[data-t]").forEach(el => {
     const v = get(C, el.dataset.t);
     if (el.hasAttribute("data-rich")) el.innerHTML = rich(v); else el.textContent = v ?? "";
@@ -1431,8 +1439,16 @@ document.addEventListener("click", e => {
 });
 addEventListener("keydown", e => { if (e.key === "Escape") $$(".modal").forEach(x => x.classList.remove("open")); });
 $("#burger").addEventListener("click", () => { const o = $("#menu").classList.toggle("open"); $("#burger").setAttribute("aria-expanded", o); });
+function guideHref(){ const f = C.guide.file; return f && f.url ? f.url : safeLink(C.guide.link); }
+function startGuideDownload(){
+  const href = guideHref(); if (!href) return false;
+  const a = document.createElement("a"); a.href = href; a.rel = "noopener";
+  if (C.guide.file && C.guide.file.url) a.download = C.guide.file.nome || "guida"; else a.target = "_blank";
+  document.body.appendChild(a); a.click(); setTimeout(() => a.remove(), 500); return true;
+}
 $("#guideBtn").addEventListener("click", e => {
   e.preventDefault();
+  if (guideHref() && !C.guide.askEmail){ startGuideDownload(); return; }
   $("#gForm").hidden = false; $("#gDone").hidden = true; $("#gErr").textContent = "";
   $("#modal-guida").classList.add("open"); setTimeout(() => $("#g-email").focus(), 50);
 });
@@ -1445,11 +1461,12 @@ $("#guideForm").addEventListener("submit", async e => {
   const r = {nome: nome || "Richiesta guida", telefono:"", email, citta:"", perChi:"—", esigenza:"Ricevere la guida “" + C.guide.title + "”", modalita:"—", messaggio:"", tipo:"guida", stato:"nuova", note:"", ricevuta:new Date().toISOString()};
   let saved = false; try { await store.addRequest(r); saved = true; } catch {}
   b.disabled = false;
-  const link = safeLink(C.guide.link), btns = $("#gDoneBtns");
+  const link = guideHref(), btns = $("#gDoneBtns");
   if (link){
     $("#gDoneTitle").textContent = "Ecco la tua guida";
-    $("#gDoneText").textContent = "Puoi aprirla e scaricarla subito. Se hai domande, scrivimi quando vuoi.";
-    btns.innerHTML = `<a class="btn btn-primary" href="${esc(link)}" target="_blank" rel="noopener">Apri la guida</a><button class="btn btn-ghost" type="button" data-close>Chiudi</button>`;
+    $("#gDoneText").textContent = "Il download parte subito. Se non parte, premi il pulsante qui sotto. Se hai domande, scrivimi quando vuoi.";
+    setTimeout(startGuideDownload, 150);
+    btns.innerHTML = `<a class="btn btn-primary" href="${esc(link)}" ${C.guide.file && C.guide.file.url ? "" : 'target="_blank"'} rel="noopener" ${C.guide.file && C.guide.file.nome ? `download="${esc(C.guide.file.nome)}"` : ""}>Scarica ora</a><button class="btn btn-ghost" type="button" data-close>Chiudi</button>`;
     if (!saved){ const t = `Buongiorno Stefania, ho scaricato la guida “${C.guide.title}”. ${nome ? "Mi chiamo " + nome + ". " : ""}La mia email è ${email}.`; btns.insertAdjacentHTML("beforeend", `<a class="btn btn-ghost" href="${waLink(t)}" target="_blank" rel="noopener">Lasciami i tuoi contatti su WhatsApp</a>`); }
   } else {
     $("#gDoneTitle").textContent = saved ? "Grazie, richiesta ricevuta" : "Ultimo passaggio";
@@ -1703,7 +1720,7 @@ function renderPanel(){
       box("Chi sono", "La foto si cambia in “Foto e video”.", fld("about.title","Titolo") + fld("about.text","Presentazione","textarea","Lascia una riga vuota per iniziare un nuovo paragrafo.") + fld("about.education","Formazione") + fld("about.years","Anni di esperienza","number")) +
       box("Perché scegliermi", "", listEd("indep.pillars","Punto",[["t","Titolo"],["d","Descrizione","textarea"]])) +
       box("Frase al centro della pagina", "", fld("band.eyebrow","Riga piccola") + fld("band.title","Titolo","textarea") + fld("band.text","Testo","textarea")) +
-      box("Guida “La Bussola”", "Chi la chiede lascia la sua email (la trovi tra le Richieste) e apre subito il documento.", fld("guide.title","Titolo") + fld("guide.text","Descrizione","textarea") + fld("guide.cta","Testo del pulsante") + fld("guide.link","Link al documento della guida","url","Carica il PDF su Google Drive, condividilo con “Chiunque abbia il link” e incolla qui il link. Finché è vuoto, chi la chiede riceve un messaggio di attesa.")) +
+      box("Guida “La Bussola”", "Carica qui il file della guida (PDF o immagine): chi preme il pulsante sul sito lo scarica subito.", guideFileHTML() + fld("guide.title","Titolo") + fld("guide.text","Descrizione","textarea") + fld("guide.cta","Testo del pulsante") + checkFld("guide.askEmail","Chiedi nome ed email prima del download (li ritrovi tra le Richieste)")) +
       box("Fondo pagina", "", fld("footer.text","Breve descrizione","textarea") + fld("brand.role","Qualifica completa (firma e fondo pagina)"));
   }
   if (tab === "foto"){
@@ -1814,6 +1831,46 @@ function addCustom(){
   o.splice(ci < 0 ? o.length : ci, 0, "c-"+id); C.layout.order = o;
   changed();
 }
+
+/* --- file della guida --- */
+function guideFileHTML(){
+  const f = C.guide.file;
+  return `<div class="guidefile">
+    <div class="gfic">${ic("doc")}</div>
+    <div class="gfmain">${f && f.url ? `<b>${esc(f.nome)}</b><small>${f.size ? Math.max(1, Math.round(f.size/1024)) + " KB · " : ""}caricato il ${esc(fmtDate(f.data,{day:"numeric",month:"long",year:"numeric"}))}</small>` : `<b>Nessun file caricato</b><small>Finché non carichi un file, chi preme il pulsante può lasciarti la sua email e riceve un messaggio di attesa.</small>`}</div>
+    <div class="imgbtns">
+      <label class="btn btn-primary small" for="guideFile">${f && f.url ? "Sostituisci file" : "Carica file"}</label>
+      <input type="file" id="guideFile" accept="application/pdf,image/*" hidden>
+      ${f && f.url ? `<a class="btn btn-ghost small" href="${esc(f.url)}" target="_blank" rel="noopener">Prova il download</a><button type="button" class="linkbtn danger" data-guiderm="1">Rimuovi</button>` : ""}
+    </div>
+  </div><p class="hint" id="guideSt"></p>`;
+}
+async function uploadPublicFile(file){
+  const safe = file.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^\w.\-]+/g, "_").slice(-80) || "guida";
+  if (store.sb){
+    const path = "guida/" + rid().slice(0,8) + "-" + safe;
+    const {error} = await store.sb.storage.from("foto").upload(path, file, {contentType:file.type || "application/octet-stream", upsert:false});
+    if (error) throw new Error("perm");
+    return {url: store.sb.storage.from("foto").getPublicUrl(path, {download: safe}).data.publicUrl, path};
+  }
+  if (store.assets){ const r = await store.assets.upload(file); return {url:"/_blob/" + r.id}; }
+  if (store.mode === "local" && file.size < 1500000){ return {url: await new Promise((res, rej) => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.onerror = rej; fr.readAsDataURL(file); })}; }
+  throw new Error("perm");
+}
+panel.addEventListener("change", async e => {
+  if (e.target.id !== "guideFile" || !e.target.files || !e.target.files[0]) return;
+  const file = e.target.files[0], st = $("#guideSt");
+  if (!/pdf|image/i.test(file.type || "") && !/\.(pdf|jpe?g|png|webp)$/i.test(file.name)){ st.textContent = "Puoi caricare un PDF oppure un'immagine (JPG, PNG)."; return; }
+  if (file.size > 25 * 1024 * 1024){ st.textContent = "Il file è troppo grande (massimo 25 MB)."; return; }
+  st.textContent = "Caricamento in corso…";
+  try {
+    const r = await uploadPublicFile(file);
+    C.guide.file = {url:r.url, path:r.path || "", nome:file.name, tipo:file.type, size:file.size, data:new Date().toISOString()};
+    changed(); renderPanel();
+    setTimeout(() => { const s2 = $("#guideSt"); if (s2) s2.textContent = "File caricato. Premi “Salva e pubblica” in alto per metterlo online."; }, 50);
+  } catch { st.textContent = "Caricamento non riuscito. Controlla di essere collegata e riprova."; }
+});
+panel.addEventListener("click", e => { if (e.target.closest("[data-guiderm]")){ C.guide.file = null; changed(); renderPanel(); } });
 
 /* --- caricamento foto --- */
 async function uploadImage(file){
