@@ -1085,6 +1085,7 @@ const DEFAULTS = {
     phone:"+39 348 443 6138", whatsapp:"393484436138", email:"stefania.carubbi@gmail.com",
     places:"Milano|Colloqui in presenza, su appuntamento\nPadova|Colloqui in presenza, su appuntamento\nOnline|Videochiamata, in tutta Italia"
   },
+  notify:{on:true, email:""},
   form:{title:"Richiedi una consulenza", text:"Raccontami in poche righe la tua situazione. Ti richiamo io per una prima telefonata, senza impegno."},
   footer:{text:"Orientamento per famiglie e caregiver nella scelta dell'assistenza domiciliare."},
   legal:{albo:"Albo Nazionale Psicologi, Sezione A, Ordine del Veneto, n° 5719", piva:""},
@@ -1468,6 +1469,7 @@ $("#guideForm").addEventListener("submit", async e => {
   let saved = false; try { await store.addRequest(r); saved = true; } catch {}
   b.disabled = false;
   const link = guideHref(), btns = $("#gDoneBtns");
+  if (!link || !saved) notifyNew(r, !saved);
   if (link){
     $("#gDoneTitle").textContent = "Ecco la tua guida";
     $("#gDoneText").textContent = "Il download parte subito. Se non parte, premi il pulsante qui sotto. Se hai domande, scrivimi quando vuoi.";
@@ -1482,6 +1484,23 @@ $("#guideForm").addEventListener("submit", async e => {
   }
   $("#gForm").hidden = true; $("#gDone").hidden = false; $("#guideForm").reset();
 });
+
+/* ---------- Avviso via email ---------- */
+function notifyNew(r, full){
+  try {
+    const n = C.notify || {}; if (n.on === false) return;
+    const to = String(n.email || C.contact.email || "").trim(); if (!/^\S+@\S+\.\S+$/.test(to)) return;
+    const area = location.origin + location.pathname.replace(/[^/]*$/, "") + "gestione.html";
+    const guida = r.tipo === "guida";
+    const body = {_subject: guida ? `Nuova richiesta della guida da ${r.nome}` : `Nuova richiesta di consulenza da ${r.nome}`, _template:"table", _captcha:"false",
+      "Nome": r.nome, "Telefono": r.telefono || "—", "Email": r.email || "—"};
+    if (!guida) Object.assign(body, {"Città": r.citta || "—", "Per chi": r.perChi || "—", "Esigenza": r.esigenza || "—", "Colloquio": r.modalita || "—"});
+    else body["Richiesta"] = r.esigenza;
+    if (full && r.messaggio) body["Messaggio"] = r.messaggio;
+    body["Dove la trovi"] = full ? "La richiesta non è stata salvata nell'area riservata: questo è l'unico promemoria, conservalo." : `Il messaggio completo è nell'area riservata, sezione Richieste: ${area}`;
+    fetch("https://formsubmit.co/ajax/" + encodeURIComponent(to), {method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body:JSON.stringify(body), keepalive:true}).catch(() => {});
+  } catch {}
+}
 
 /* ---------- Modulo di richiesta ---------- */
 function requestText(r){
@@ -1503,8 +1522,10 @@ $("#reqForm").addEventListener("submit", async e => {
   const btn = $("#sendBtn"); btn.disabled = true; btn.firstChild.textContent = "Invio in corso…";
   try {
     await store.addRequest(r);
+    notifyNew(r, false);
     $("#formWrap").hidden = true; $("#doneOk").hidden = false; f.reset();
   } catch {
+    notifyNew(r, true);
     const txt = requestText(r);
     $("#altWa").href = waLink(txt);
     $("#altMail").href = `mailto:${C.contact.email}?subject=${encodeURIComponent("Richiesta di consulenza")}&body=${encodeURIComponent(txt)}`;
@@ -1769,6 +1790,7 @@ function renderPanel(){
   if (tab === "contatti"){
     h = box("Recapiti", "", fld("contact.phone","Telefono","tel") + fld("contact.whatsapp","Numero WhatsApp","tel","Con prefisso, senza spazi: ad esempio 393484436138.") + fld("contact.email","Email","email") + fld("contact.intro","Frase introduttiva","textarea") + fld("contact.places","Dove ricevi","textarea","Una sede per riga, nel formato Luogo|descrizione.")) +
       box("Modulo di richiesta", "", fld("form.title","Titolo") + fld("form.text","Testo","textarea")) +
+      box("Avviso via email", "Quando qualcuno chiede una consulenza ti arriva un'email con nome, telefono e motivo. Il messaggio completo resta qui, in Richieste.", checkFld("notify.on","Mandami un'email per ogni nuova richiesta") + fld("notify.email","Email a cui mandare l'avviso","email","Se lo lasci vuoto uso l'email dei recapiti. La prima volta arriva un'email di attivazione da FormSubmit: aprila e premi “Activate Form”.")) +
       box("Dati professionali", "Compaiono in fondo alla pagina. Per uno studio di psicologia sono richiesti.", fld("legal.albo","Iscrizione all'Albo","text","Ad esempio: Iscritta all'Ordine degli Psicologi della Lombardia n. 00000") + fld("legal.piva","Partita IVA"));
   }
   if (tab === "aspetto"){
