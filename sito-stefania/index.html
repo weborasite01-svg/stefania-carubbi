@@ -637,6 +637,67 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
 .banner span{flex:1;min-width:200px}
 .banner.warn{background:#F6EBD9;color:#6E4716}
 .banner.ok{background:#E5EFE3;color:#2F5A34}
+.tile b.out{color:#8A5A80}
+.fintop{gap:12px}
+.finseg{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.finseg button{white-space:nowrap}
+.yearlbl{font-family:var(--display);font-weight:var(--display-weight);font-size:1.25rem;min-width:56px;text-align:center;color:var(--brand-deep)}
+.boxhead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.box > .boxhead h3{font-size:1.4rem;margin:0}
+.boxhead .tot{font-size:1.15rem;color:#8A5A80;font-variant-numeric:tabular-nums}
+.legend{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block;margin-left:8px}
+.chartwrap{overflow-x:auto;margin:0 -6px;padding:0 6px}
+.finchart{width:100%;min-width:560px;height:auto;display:block}
+@media (max-width:640px){.fintiles{grid-template-columns:1fr 1fr;gap:10px}.fintiles .tile{padding:14px 14px}.fintiles .tile b{font-size:1.45rem}.fintiles .tile small{font-size:.66rem;letter-spacing:.08em}.fintiles .tile span{font-size:.76rem}}
+.finchart .gl{stroke:var(--line);stroke-width:1}
+.finchart .gt{fill:var(--muted);font:11px var(--body)}
+.fingrid{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:start}
+.fingrid > .box,.finside > .box{margin-bottom:20px}
+@media (max-width:900px){.fingrid{grid-template-columns:1fr;gap:0}}
+.catbars{display:flex;flex-direction:column;gap:6px}
+.catbar{display:grid;grid-template-columns:1fr auto;gap:6px 12px;border:0;background:none;padding:8px 6px;border-radius:10px;text-align:left;font:inherit;font-size:.9rem;color:var(--ink);cursor:pointer}
+.catbar:hover{background:var(--paper)}
+.catbar .cl{display:flex;align-items:center;gap:8px}
+.catbar .cl i,.cpill i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.catbar .cv{font-variant-numeric:tabular-nums;font-weight:500}
+.catbar .cv small{color:var(--muted);font-weight:400;margin-left:4px}
+.catbar .track{grid-column:1/-1;height:8px;border-radius:99px;background:var(--mist);overflow:hidden}
+.catbar .track span{display:block;height:100%;border-radius:99px}
+.big{font-family:var(--display);font-weight:var(--display-weight);font-size:2rem;color:var(--brand-deep);line-height:1.1;margin:0 0 6px}
+.nextrow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.nextrow:last-child{border-bottom:0}
+.nextrow span:first-child{display:flex;flex-direction:column}
+.nextrow small{color:var(--muted);font-size:.8rem}
+.fsel{font:inherit;font-size:.9rem;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.mgroup{margin-bottom:8px}
+.mhead{display:flex;justify-content:space-between;padding:14px 10px 6px;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+.frow{display:grid;grid-template-columns:56px 1.5fr 1.2fr 110px;gap:12px;align-items:center;padding:12px 10px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:inherit;font-size:.9rem;color:var(--ink);cursor:pointer;width:100%}
+.frow:hover{background:var(--paper)}
+.frow .d{color:var(--muted);font-variant-numeric:tabular-nums}
+.frow .t{display:flex;flex-direction:column;min-width:0}
+.frow .t b{font-weight:500;overflow:hidden;text-overflow:ellipsis}
+.frow .t small{color:var(--muted);font-size:.8rem}
+.frow .c{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.frow .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.frow.fissa{grid-template-columns:1.6fr 1.2fr 110px}
+.frow.off{opacity:.55}
+.cpill{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;background:var(--mist);border-radius:99px;padding:4px 10px;color:var(--ink)}
+.fx svg{width:15px;height:15px;color:var(--muted);vertical-align:-3px}
+@media (max-width:760px){.frow{grid-template-columns:48px 1fr 90px}.frow .c{display:none}.frow.fissa{grid-template-columns:1fr 90px}}
+.fileline{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--mist);margin-bottom:8px;font-size:.88rem}
+.fileline svg{width:16px;height:16px}
+.fileline span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.adtable{display:flex;flex-direction:column}
+.arow{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:10px;padding:12px 8px;border-bottom:1px solid var(--line);font-size:.9rem;align-items:center}
+.arow.ahead{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.arow.afree{color:var(--muted);border-bottom:0}
+.arow small{color:var(--muted)}
+.arow .num{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:700px){.arow{grid-template-columns:1.3fr 1fr .6fr}.arow > :nth-child(4),.arow > :nth-child(5){display:none}}
+.soglia{height:12px;border-radius:99px;background:var(--mist);overflow:hidden;margin:10px 0 8px}
+.soglia span{display:block;height:100%;background:var(--brand);border-radius:99px}
+.empty.small{padding:22px 10px;font-size:.9rem}
 .pill.money-off{background:#EEE;color:#777;text-decoration:line-through}
 .ricsum{margin-top:14px;border-radius:14px;background:var(--mist);padding:6px 14px;font-size:.92rem}
 .ricsum:empty{display:none}
@@ -977,6 +1038,7 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
       <button class="tab" data-tab="calendario"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3v3H8z"/></svg>Calendario</button>
       <button class="tab" data-tab="clienti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>CRM</button>
       <button class="tab" data-tab="pagamenti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>Pagamenti</button>
+      <button class="tab" data-tab="finanze"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg>Finanze</button>
       <button class="tab" data-tab="richieste"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H8l-4 4V5Z"/></svg>Richieste<span class="count" id="newCount" hidden></span></button>
       <button class="tab" data-tab="backup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Copia di sicurezza</button>
       <span class="grp">Il sito</span>
@@ -1545,7 +1607,7 @@ $("#newReq").addEventListener("click", () => { $("#doneOk").hidden = true; $("#f
 /* ============ AREA RISERVATA ============ */
 let tab = "panoramica", requests = [], reqFilter = "tutte";
 let loggedIn = ssGet("sc_auth") === "1" || lsGet("sc_auth_keep") === "1";
-const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"CRM", pagamenti:"Pagamenti", backup:"Copia di sicurezza", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
+const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"CRM", pagamenti:"Pagamenti", finanze:"Finanze", backup:"Copia di sicurezza", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
 const DEMO_REQ = {id:"esempio", demo:true, nome:"Laura Bianchi", telefono:"+39 333 000 0000", email:"laura@example.com", citta:"Milano", perChi:"Mia madre", esigenza:"Valutare una badante h24", modalita:"Milano", messaggio:"Mia madre ha 84 anni e vive da sola. Dopo una caduta abbiamo bisogno di capire che tipo di assistenza serve e quanto costa.", stato:"nuova", note:"", ricevuta:new Date(Date.now()-3600e3*5).toISOString()};
 
 async function sha256(s){
@@ -1740,6 +1802,7 @@ function renderPanel(){
   if (tab === "clienti"){ renderClienti(); return; }
   if (tab === "backup"){ renderBackup(); return; }
   if (tab === "pagamenti"){ renderPagamenti(); return; }
+  if (tab === "finanze"){ renderFinanze(); return; }
   if (tab === "calendario"){ renderCalendario(); return; }
   let h = "";
   if (tab === "testi"){
@@ -1931,7 +1994,9 @@ async function uploadImage(file){
 }
 
 /* ============ GESTIONALE: clienti, pagamenti, calendario ============ */
-const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], loaded:false};
+const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], spese:[], loaded:false};
+const VIRT = {spese:["impostazioni","spesa-"]};
+const tblOf = c => VIRT[c] ? VIRT[c][0] : c;
 const GCLIENT_DEFAULT = "441938708513-4ahllcfs7tcnukiidcfd9rsn9favre8s.apps.googleusercontent.com";
 const GS = {clientId:"", token:null, exp:0, events:[], connected:false, msg:""};
 const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,7);
@@ -1944,30 +2009,38 @@ const LUOGHI = ["Milano","Padova","Online","Telefono","A domicilio","Altro"];
 const inClaude = !!(window.claude && typeof window.claude.use === "function");
 
 const coll = {
+  async raw(t){
+    if (store.sb) return store.rows(t);
+    if (store.db){ const q = await store.db.collection(t).limit(5000).get(); return q.docs.map(d => ({...clone(d.data()), id:d.id})); }
+    const raw = lsGet("sc_"+t); return raw ? JSON.parse(raw) : [];
+  },
   async list(c){
-    if (store.sb) return store.rows(c);
-    if (store.db){ const q = await store.db.collection(c).limit(1000).get(); return q.docs.map(d => ({...clone(d.data()), id:d.id})); }
-    const raw = lsGet("sc_"+c); return raw ? JSON.parse(raw) : [];
+    const a = await this.raw(tblOf(c));
+    if (VIRT[c]) return a.filter(x => String(x.id).startsWith(VIRT[c][1]));
+    const pre = Object.values(VIRT).filter(v => v[0] === c).map(v => v[1]);
+    return pre.length ? a.filter(x => !pre.some(p => String(x.id).startsWith(p))) : a;
   },
   async put(c, o){
-    if (store.sb){ await store.upsertRow(c, o.id, o); }
-    else if (store.db){ await store.db.collection(c).doc(o.id).set(clone(o)); }
+    const t = tblOf(c);
+    if (store.sb){ await store.upsertRow(t, o.id, o); }
+    else if (store.db){ await store.db.collection(t).doc(o.id).set(clone(o)); }
     else {
-      const a = await this.list(c); const i = a.findIndex(x => x.id === o.id); if (i >= 0) a[i] = o; else a.push(o);
-      if (!lsSet("sc_"+c, JSON.stringify(a))) throw new Error("storage");
+      const a = await this.raw(t); const i = a.findIndex(x => x.id === o.id); if (i >= 0) a[i] = o; else a.push(o);
+      if (!lsSet("sc_"+t, JSON.stringify(a))) throw new Error("storage");
     }
     const arr = W[c]; const j = arr.findIndex(x => x.id === o.id); if (j >= 0) arr[j] = o; else arr.push(o);
   },
   async del(c, id){
-    if (store.sb){ const {error} = await store.sb.from(c).delete().eq("id", id); if (error) throw error; }
-    else if (store.db) await store.db.collection(c).doc(id).delete();
-    else lsSet("sc_"+c, JSON.stringify((await this.list(c)).filter(x => x.id !== id)));
+    const t = tblOf(c);
+    if (store.sb){ const {error} = await store.sb.from(t).delete().eq("id", id); if (error) throw error; }
+    else if (store.db) await store.db.collection(t).doc(id).delete();
+    else lsSet("sc_"+t, JSON.stringify((await this.raw(t)).filter(x => x.id !== id)));
     W[c] = W[c].filter(x => x.id !== id);
   }
 };
 async function loadWork(force){
   if (W.loaded && !force) return;
-  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni"];
+  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni","spese"];
   const res = await Promise.all(names.map(c => coll.list(c).catch(() => [])));
   names.forEach((c,i) => W[c] = res[i]);
   const g = W.impostazioni.find(x => x.id === "google"); GS.clientId = (g && g.clientId) || GCLIENT_DEFAULT;
@@ -2804,13 +2877,15 @@ async function doBackup(kind){
     cl.forEach(c => { c.diario.forEach(d => diario.push([ (d.data||"").slice(0,16).replace("T"," "), c.nome, TIPI_NOTA[d.tipo] || d.tipo, d.testo ])); c.todo.forEach(t => todo.push([t.data||"", c.nome, t.testo, t.fatto ? "Fatto" : "Da fare"])); c.documenti.forEach(d => docs.push([c.nome, d.nome, (d.data||"").slice(0,10), `Documenti/${c.nome}/${d.nome}`])); });
     diario.sort((a,b) => b[0].localeCompare(a[0])); todo.sort((a,b) => a[0].localeCompare(b[0]));
     const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, sheetFrom([["Copia di sicurezza – " + C.brand.name], ["Creata il", new Date().toLocaleString("it-IT")], [], ["Clienti", cl.length], ["Voci di diario", diario.length], ["Cose da fare", todo.length], ["Appuntamenti", W.appuntamenti.length], ["Pagamenti", W.pagamenti.length], ["Richieste dal sito", requests.length], ["Documenti", docs.length]], [28, 24]), "Riepilogo");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Copia di sicurezza – " + C.brand.name], ["Creata il", new Date().toLocaleString("it-IT")], [], ["Clienti", cl.length], ["Voci di diario", diario.length], ["Cose da fare", todo.length], ["Appuntamenti", W.appuntamenti.length], ["Pagamenti", W.pagamenti.length], ["Spese", W.spese.length], ["Richieste dal sito", requests.length], ["Documenti", docs.length]], [28, 24]), "Riepilogo");
     XLSX.utils.book_append_sheet(wb, sheetFrom(clientiRowsForXls()), "Clienti");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Cliente","Tipo","Testo"], ...diario], [17,24,16,80]), "Diario");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Entro il","Cliente","Attività","Stato"], ...todo], [12,24,50,10]), "Da fare");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Ora","Durata (min)","Cliente","Titolo","Luogo","Note"], ...W.appuntamenti.slice().sort((a,b) => (a.data+a.ora).localeCompare(b.data+b.ora)).map(a => [a.data, a.ora||"", a.durata||"", name(a.clienteId), a.titolo, a.luogo||"", a.note||""])], [12,7,10,24,26,14,40]), "Appuntamenti");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Cliente","Servizio","Importo (€)","Metodo","Stato","N. fattura","Note"], ...W.pagamenti.slice().sort((a,b) => a.data.localeCompare(b.data)).map(p => [p.data, name(p.clienteId), p.descr||"", Number(p.importo)||0, p.metodo||"", stLabel(p), p.fattura||"", p.note||""])], [12,24,28,12,14,13,11,30]), "Pagamenti");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Ricevuta il","Nome","Telefono","Email","Città","Per chi","Esigenza","Colloquio","Messaggio","Stato"], ...requests.map(r => [(r.ricevuta||"").slice(0,16).replace("T"," "), r.nome||"", r.telefono||"", r.email||"", r.citta||"", r.perChi||"", r.esigenza||"", r.modalita||"", r.messaggio||"", ST[r.stato] || r.stato || ""])], [17,22,16,24,14,16,26,12,60,12]), "Richieste dal sito");
+    XLSX.utils.book_append_sheet(wb, sheetFrom(speseRowsXls(W.spese.slice().sort((a,b) => a.data.localeCompare(b.data))), [12,34,22,24,18,12,14,10,30]), "Spese");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Spesa fissa","Importo (€)","Ogni quanto","Categoria","Dal","Fino al","Attiva"], ...fissCfg().voci.map(v => [v.nome, Number(v.importo)||0, (FREQ[v.freq]||FREQ.mese)[0], (CAT[v.categoria]||CAT.altro).l, v.inizio||"", v.fine||"", v.attiva ? "Sì" : "No"])], [30,12,14,26,12,12,8]), "Spese fisse");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Tariffa","Importo (€)"], ...W.tariffe.map(t => [t.nome, Number(t.importo)||0])], [30,12]), "Tariffe");
     XLSX.utils.book_append_sheet(wb, sheetFrom([["Cliente","File","Caricato il","Nella copia ZIP"], ...docs], [24,36,12,50]), "Documenti");
     const xbuf = XLSX.write(wb, {bookType:"xlsx", type:"array"});
@@ -2827,6 +2902,11 @@ async function doBackup(kind){
         while (used.has(p)){ p = `Documenti/${folder}/${k++}-${fname}`; } used.add(p);
         try { zip.file(p, await docBlob(d)); } catch { failed++; }
       }
+      for (const sp of W.spese.filter(x => x.file)){
+        const fname = `${sp.data} ${sp.descr || "spesa"} - ${sp.file.nome || "fattura"}`.replace(/[\\/:*?"<>|]+/g, " ").trim();
+        let p = `Spese/${fname}`, k = 2; while (used.has(p)){ p = `Spese/${k++}-${fname}`; } used.add(p);
+        try { zip.file(p, await docBlob(sp.file)); } catch { failed++; }
+      }
       msg.textContent = "Creo il file ZIP…";
       const zblob = await zip.generateAsync({type:"blob"});
       ok = await saveFile(base + ".zip", zblob);
@@ -2838,6 +2918,332 @@ async function doBackup(kind){
     else msg.textContent = "Download annullato.";
   } catch { msg.textContent = "Non sono riuscita a creare la copia. Controlla la connessione e riprova."; }
 }
+
+/* --- finanze --- */
+const CATS = [["pubblicita","Pubblicità","#82947E"],["grafica","Grafica e design","#C9A6C2"],["software","Sito e software","#5E7A8C"],["formazione","Formazione e corsi","#D9B37A"],["albo","Albo, ENPAP e assicurazione","#56684F"],["commercialista","Commercialista","#9C6F93"],["spostamenti","Spostamenti","#A8B5A2"],["studio","Affitto studio","#B98A6E"],["altro","Altro","#B9BDB6"]];
+const CAT = Object.fromEntries(CATS.map(([k,l,c]) => [k, {l, c}]));
+const CANALI = ["Facebook / Instagram","Google","Volantini e stampa","Altro"];
+const FREQ = {mese:["Ogni mese",1], trimestre:["Ogni 3 mesi",3], semestre:["Ogni 6 mesi",6], anno:["Ogni anno",12]};
+const MESI = ["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"];
+let finSub = "riepilogo", finYear = new Date().getFullYear(), finCat = "", finMonth = "";
+
+const fissCfg = () => (W.impostazioni.find(x => x.id === "ricorrenti") || {id:"ricorrenti", voci:[]});
+const fiscoCfg = () => ({inizio:"", aliquota:"auto", coeff:78, enpap:10, ...(W.impostazioni.find(x => x.id === "fisco") || {})});
+function addMonthsISO(iso, k){
+  const [y, m, d] = iso.split("-").map(Number), t = new Date(y, m - 1 + k, 1);
+  const last = new Date(t.getFullYear(), t.getMonth() + 1, 0).getDate();
+  return ISO(new Date(t.getFullYear(), t.getMonth(), Math.min(d, last)));
+}
+function nextOcc(v, after){
+  const step = (FREQ[v.freq] || FREQ.mese)[1];
+  for (let k = 0; k < 600; k++){ const o = addMonthsISO(v.inizio, k * step); if (!after || o > after) return o; }
+  return "9999-12-31";
+}
+async function genRicorrenti(){
+  const R = fissCfg(), t = todayISO(); let changed = false;
+  for (const v of R.voci){
+    if (!v.attiva || !v.inizio) continue;
+    let n = nextOcc(v, v.ultima), guard = 0;
+    while (n <= t && (!v.fine || n <= v.fine) && guard++ < 120){
+      const id = `spesa-rc-${v.id}-${n}`;
+      if (!W.spese.some(s => s.id === id)) await coll.put("spese", {id, data:n, importo:Number(v.importo)||0, descr:v.nome, fornitore:v.fornitore||"", categoria:v.categoria, canale:v.canale||"", metodo:v.metodo||"", note:"", fissaId:v.id});
+      v.ultima = n; changed = true; n = nextOcc(v, n);
+    }
+  }
+  if (changed) await coll.put("impostazioni", R);
+}
+const incBase = p => p.ricevuta && p.ricevuta.n && !p.ricevuta.annullata ? Number(p.ricevuta.comp)||0 : Number(p.importo)||0;
+const pagatiAnno = y => W.pagamenti.filter(p => p.stato === "pagato" && String(p.data||"").startsWith(y));
+const speseAnno = y => W.spese.filter(s => String(s.data||"").startsWith(y));
+const sum = (a, f) => a.reduce((s, x) => s + (Number(f(x))||0), 0);
+const canaleDi = fonte => { const f = String(fonte||""); return /facebook|instagram|\bfb\b|\big\b|meta/i.test(f) ? CANALI[0] : /google/i.test(f) ? CANALI[1] : /volant|stampa|giornal|locandin|manifest/i.test(f) ? CANALI[2] : ""; };
+function fiscoCalc(y){
+  const f = fiscoCfg(), base = r2(sum(pagatiAnno(y), incBase));
+  const inizio = parseInt(f.inizio) || 0;
+  const aliq = f.aliquota === "auto" ? (inizio && y - inizio < 5 ? 5 : inizio ? 15 : 5) : Number(f.aliquota) || 15;
+  const reddito = r2(base * (Number(f.coeff)||78) / 100), enpap = r2(reddito * (Number(f.enpap)||0) / 100);
+  const imposta = r2(Math.max(0, reddito - enpap) * aliq / 100), tot = r2(enpap + imposta);
+  return {base, reddito, enpap, imposta, tot, aliq, coeff:Number(f.coeff)||78, enpapPerc:Number(f.enpap)||0, perc: base ? Math.round(tot / base * 100) : 0, auto:f.aliquota === "auto", inizio};
+}
+
+async function renderFinanze(){
+  const P = $("#panel"); P.innerHTML = `<div class="empty">Caricamento…</div>`;
+  await loadWork(); try { await genRicorrenti(); } catch {} if (tab !== "finanze") return;
+  const subs = [["riepilogo","Riepilogo"],["spese","Spese"],["fisse","Spese fisse"],["pubblicita","Pubblicità"],["tasse","Tasse"]];
+  const head = `<div class="toolbar fintop">
+      <div class="seg finseg" role="tablist" aria-label="Sezioni delle finanze">${subs.map(([k,l]) => `<button type="button" role="tab" aria-selected="${finSub===k}" class="${finSub===k?"on":""}" data-fsub="${k}">${l}</button>`).join("")}</div>
+      <span class="sp"></span>
+      ${finSub === "fisse" ? "" : `<div class="monthnav"><button class="mini-btn" data-fy="-1" aria-label="Anno precedente">${ic("up",'style="transform:rotate(-90deg)"')}</button><b class="yearlbl">${finYear}</b><button class="mini-btn" data-fy="1" aria-label="Anno successivo">${ic("up",'style="transform:rotate(90deg)"')}</button></div>`}
+    </div>`;
+  const body = {riepilogo:finRiepilogo, spese:finSpese, fisse:finFisse, pubblicita:finPubblicita, tasse:finTasse}[finSub]();
+  P.innerHTML = head + body;
+  const cw = $(".chartwrap"); if (cw && finYear === new Date().getFullYear()) cw.scrollLeft = cw.scrollWidth;
+}
+
+function finRiepilogo(){
+  const y = String(finYear), inc = pagatiAnno(y), sp = speseAnno(y);
+  const tIn = sum(inc, p => p.importo), tOut = sum(sp, s => s.importo), net = r2(tIn - tOut);
+  const due = sum(W.pagamenti.filter(p => p.stato === "da"), p => p.importo);
+  const mIn = MESI.map((_, i) => sum(inc.filter(p => p.data.slice(5,7) === String(i+1).padStart(2,"0")), p => p.importo));
+  const mOut = MESI.map((_, i) => sum(sp.filter(s => s.data.slice(5,7) === String(i+1).padStart(2,"0")), s => s.importo));
+  const byCat = CATS.map(([k]) => [k, sum(sp.filter(s => (s.categoria||"altro") === k), s => s.importo)]).filter(x => x[1] > 0).sort((a,b) => b[1] - a[1]);
+  const fx = fiscoCalc(finYear);
+  const prossime = fissCfg().voci.filter(v => v.attiva).map(v => ({v, n:nextOcc(v, v.ultima)})).filter(x => !x.v.fine || x.n <= x.v.fine).sort((a,b) => a.n.localeCompare(b.n)).slice(0, 4);
+  return `
+    <div class="tiles fintiles">
+      <div class="tile static"><small>Incassato</small><b>${eur(tIn)}</b><span>${inc.length} ${inc.length===1?"pagamento":"pagamenti"} nel ${y}</span></div>
+      <div class="tile static"><small>Speso</small><b class="out">${eur(tOut)}</b><span>${sp.length} ${sp.length===1?"spesa":"spese"} nel ${y}</span></div>
+      <div class="tile static"><small>Ti resta</small><b class="${net < 0 ? "due" : ""}">${eur(net)}</b><span>incassi meno spese</span></div>
+      <div class="tile static"><small>Da incassare</small><b class="${due ? "due" : ""}">${eur(due)}</b><span>pagamenti in attesa</span></div>
+    </div>
+    <div class="box"><div class="boxhead"><h3>Mese per mese</h3><span class="legend"><i style="background:var(--brand)"></i>Entrate <i style="background:var(--accent)"></i>Spese</span></div>
+      ${finChart(mIn, mOut)}</div>
+    <div class="fingrid">
+      <div class="box"><div class="boxhead"><h3>Dove vanno i soldi</h3><button class="linkbtn" data-fsub="spese">Vedi le spese →</button></div>
+        ${byCat.length ? `<div class="catbars">${byCat.map(([k, v]) => `<button type="button" class="catbar" data-fcat="${k}"><span class="cl"><i style="background:${CAT[k].c}"></i>${esc(CAT[k].l)}</span><span class="cv">${eur(v)} <small>${Math.round(v / tOut * 100)}%</small></span><span class="track"><span style="width:${Math.max(3, v / byCat[0][1] * 100)}%;background:${CAT[k].c}"></span></span></button>`).join("")}</div>`
+          : `<div class="empty small">Nessuna spesa nel ${y}. <button class="linkbtn" data-new-spesa="1">Aggiungi la prima</button></div>`}
+      </div>
+      <div class="finside">
+        <div class="box"><div class="boxhead"><h3>Tasse da mettere da parte</h3><button class="linkbtn" data-fsub="tasse">Dettagli →</button></div>
+          <p class="big">${eur(fx.tot)}</p><p class="hint">Stima per il ${y}: circa il ${fx.perc}% di quello che incassi. Da verificare con il commercialista.</p></div>
+        <div class="box"><div class="boxhead"><h3>Prossime spese fisse</h3><button class="linkbtn" data-fsub="fisse">Gestisci →</button></div>
+          ${prossime.length ? prossime.map(({v, n}) => `<div class="nextrow"><span><b>${esc(v.nome)}</b><small>${esc(fmtDate(n+"T12:00",{day:"numeric",month:"long"}))}</small></span><span>${eur(v.importo)}</span></div>`).join("") : `<p class="hint">Nessuna spesa fissa. Aggiungi abbonamenti, quota dell'Albo o assicurazione: si registrano da sole.</p>`}
+        </div>
+      </div>
+    </div>`;
+}
+function finChart(a, b){
+  const W_ = 720, H = 230, L = 52, T = 14, B = 30, max = Math.max(10, ...a, ...b);
+  const nice = (() => { const p = Math.pow(10, Math.floor(Math.log10(max))); for (const k of [1,2,2.5,5,10]) if (k * p >= max) return k * p; return 10 * p; })();
+  const ih = H - T - B, cw = (W_ - L - 10) / 12, bw = Math.min(16, cw / 3);
+  const yy = v => T + ih - v / nice * ih;
+  const grid = [0, .25, .5, .75, 1].map(f => `<line x1="${L}" x2="${W_-10}" y1="${yy(nice*f)}" y2="${yy(nice*f)}" class="gl"/><text x="${L-8}" y="${yy(nice*f)+4}" text-anchor="end" class="gt">${(nice*f).toLocaleString("it-IT",{maximumFractionDigits:0})}</text>`).join("");
+  const bars = MESI.map((m, i) => { const x = L + i * cw + cw / 2;
+    return `<g><title>${m}: entrate ${eur(a[i])}, spese ${eur(b[i])}</title>
+      <rect x="${x - bw - 1.5}" y="${yy(a[i])}" width="${bw}" height="${Math.max(0, T + ih - yy(a[i]))}" rx="3" fill="var(--brand)"/>
+      <rect x="${x + 1.5}" y="${yy(b[i])}" width="${bw}" height="${Math.max(0, T + ih - yy(b[i]))}" rx="3" fill="var(--accent)"/>
+      <text x="${x}" y="${H - 9}" text-anchor="middle" class="gt">${m}</text></g>`; }).join("");
+  return `<div class="chartwrap"><svg class="finchart" viewBox="0 0 ${W_} ${H}" role="img" aria-label="Entrate e spese per mese">${grid}${bars}</svg></div>`;
+}
+
+function finSpese(){
+  const y = String(finYear);
+  let list = speseAnno(y);
+  if (finCat) list = list.filter(s => (s.categoria||"altro") === finCat);
+  if (finMonth) list = list.filter(s => s.data.slice(5,7) === finMonth);
+  list.sort((a,b) => b.data.localeCompare(a.data));
+  const months = [...new Set(list.map(s => s.data.slice(0,7)))];
+  return `<div class="toolbar">
+      <select id="finCat" class="fsel" aria-label="Categoria"><option value="">Tutte le categorie</option>${CATS.map(([k,l]) => `<option value="${k}" ${finCat===k?"selected":""}>${esc(l)}</option>`).join("")}</select>
+      <select id="finMonth" class="fsel" aria-label="Mese"><option value="">Tutto l'anno</option>${MESI.map((m,i) => { const v = String(i+1).padStart(2,"0"); return `<option value="${v}" ${finMonth===v?"selected":""}>${monthLabel(y+"-"+v).split(" ")[0]}</option>`; }).join("")}</select>
+      <span class="sp"></span>
+      <button class="btn btn-ghost small" id="finXls">${ic("doc")}Excel del ${y}</button>
+      <button class="btn btn-primary small" data-new-spesa="1">+ Nuova spesa</button></div>
+    <div class="box">
+      <div class="boxhead"><h3>${finCat ? esc(CAT[finCat].l) : "Tutte le spese"}${finMonth ? " · " + esc(monthLabel(y+"-"+finMonth).split(" ")[0]) : ""}</h3><b class="tot">${eur(sum(list, s => s.importo))}</b></div>
+      ${list.length ? months.map(m => { const ml = list.filter(s => s.data.startsWith(m)); return `
+        <div class="mgroup"><div class="mhead"><span>${esc(monthLabel(m))}</span><span>${eur(sum(ml, s => s.importo))}</span></div>
+        ${ml.map(s => `<button type="button" class="frow" data-open-spesa="${s.id}"><span class="d">${esc(fmtDate(s.data+"T12:00",{day:"2-digit",month:"2-digit"}))}</span><span class="t"><b>${esc(s.descr||"—")}</b>${s.fornitore ? `<small>${esc(s.fornitore)}</small>` : ""}</span><span class="c"><span class="cpill"><i style="background:${(CAT[s.categoria]||CAT.altro).c}"></i>${esc((CAT[s.categoria]||CAT.altro).l)}${s.canale ? " · " + esc(s.canale) : ""}</span>${s.fissaId ? `<span class="fx" title="Spesa fissa">${ic("clock")}</span>` : ""}${s.file ? `<span class="fx" title="Fattura allegata">${ic("clip")}</span>` : ""}</span><span class="num">${eur(s.importo)}</span></button>`).join("")}</div>`; }).join("")
+        : `<div class="empty">Nessuna spesa${finCat || finMonth ? " con questi filtri" : " nel " + y}.</div>`}
+    </div>`;
+}
+
+function finFisse(){
+  const R = fissCfg(), att = R.voci.filter(v => v.attiva);
+  const mese = sum(att, v => (Number(v.importo)||0) / (FREQ[v.freq] || FREQ.mese)[1]);
+  return `<div class="banner ok">${ic("clock")}<span>Le spese fisse si registrano <b>da sole</b> nelle Spese quando arriva la data. Le inserisci una volta e non ci pensi più.</span></div>
+    <div class="tiles fintiles">
+      <div class="tile static"><small>Spese fisse attive</small><b>${att.length}</b><span>${R.voci.length - att.length ? (R.voci.length - att.length) + " in pausa" : "tutte attive"}</span></div>
+      <div class="tile static"><small>Costano circa</small><b class="out">${eur(mese)}</b><span>al mese</span></div>
+      <div class="tile static"><small>In un anno</small><b class="out">${eur(mese * 12)}</b><span>se restano così</span></div>
+    </div>
+    <div class="box"><div class="boxhead"><h3>Le tue spese fisse</h3><button class="btn btn-primary small" data-new-fissa="1">+ Nuova spesa fissa</button></div>
+      ${R.voci.length ? R.voci.slice().sort((a,b) => (b.attiva - a.attiva) || a.nome.localeCompare(b.nome)).map(v => { const n = nextOcc(v, v.ultima), finita = v.fine && n > v.fine; return `
+        <button type="button" class="frow fissa ${v.attiva && !finita ? "" : "off"}" data-open-fissa="${v.id}"><span class="t"><b>${esc(v.nome)}</b><small>${esc((FREQ[v.freq]||FREQ.mese)[0])} · ${esc((CAT[v.categoria]||CAT.altro).l)}</small></span><span class="c">${!v.attiva ? `<span class="pill money-off">In pausa</span>` : finita ? `<span class="pill money-off">Terminata</span>` : `<small class="hint">Prossima: ${esc(fmtDate(n+"T12:00",{day:"numeric",month:"short",year:"numeric"}))}</small>`}</span><span class="num">${eur(v.importo)}</span></button>`; }).join("")
+        : `<div class="empty">Nessuna spesa fissa ancora.<br><small class="hint">Esempi: quota dell'Albo, assicurazione professionale, abbonamento a Canva, dominio del sito, commercialista.</small></div>`}
+    </div>`;
+}
+
+function finPubblicita(){
+  const y = String(finYear), ads = speseAnno(y).filter(s => s.categoria === "pubblicita");
+  const cl = W.clienti.filter(c => String(c.creato||"").startsWith(y));
+  const incCli = ids => sum(W.pagamenti.filter(p => p.stato === "pagato" && ids.includes(p.clienteId)), p => p.importo);
+  const rows = CANALI.map(k => {
+    const speso = sum(ads.filter(s => (s.canale || "Altro") === k), s => s.importo);
+    const cc = k === "Altro" ? [] : cl.filter(c => canaleDi(c.fonte) === k);
+    return {k, speso, n:cc.length, inc:incCli(cc.map(c => c.id))};
+  }).filter(r => r.speso || r.n);
+  const free = cl.filter(c => !canaleDi(c.fonte)), totSp = sum(ads, s => s.importo), totN = rows.reduce((s, r) => s + r.n, 0), totInc = rows.reduce((s, r) => s + r.inc, 0);
+  return `<div class="tiles fintiles">
+      <div class="tile static"><small>Speso in pubblicità</small><b class="out">${eur(totSp)}</b><span>nel ${y}</span></div>
+      <div class="tile static"><small>Clienti dalla pubblicità</small><b>${totN}</b><span>${totN && totSp ? eur(totSp / totN) + " a cliente" : "—"}</span></div>
+      <div class="tile static"><small>Per ogni euro speso</small><b>${totSp ? (totInc / totSp).toLocaleString("it-IT",{minimumFractionDigits:1,maximumFractionDigits:1}) + " €" : "—"}</b><span>sono tornati in incassi</span></div>
+    </div>
+    <div class="box"><h3>Canale per canale</h3><p class="sub">Confronta quanto spendi con i clienti che arrivano. Funziona se nel CRM scrivi sempre <b>“Come mi ha conosciuta”</b> (es. Facebook, Google, volantino).</p>
+      ${rows.length ? `<div class="adtable"><div class="arow ahead"><span>Canale</span><span class="num">Speso</span><span class="num">Clienti</span><span class="num">Costo a cliente</span><span class="num">Incassato da loro</span></div>
+        ${rows.map(r => `<div class="arow"><span><b>${esc(r.k)}</b></span><span class="num">${eur(r.speso)}</span><span class="num">${r.n}</span><span class="num">${r.n && r.speso ? eur(r.speso / r.n) : "—"}</span><span class="num">${eur(r.inc)}</span></div>`).join("")}
+        <div class="arow afree"><span>Senza pubblicità <small>(passaparola, sito, medici…)</small></span><span class="num">—</span><span class="num">${free.length}</span><span class="num">—</span><span class="num">${eur(incCli(free.map(c => c.id)))}</span></div></div>`
+        : `<div class="empty small">Nessuna spesa di pubblicità nel ${y}. Quando aggiungi una spesa scegli la categoria <b>Pubblicità</b> e il canale.</div>`}
+    </div>`;
+}
+
+function finTasse(){
+  const f = fiscoCfg(), x = fiscoCalc(finYear);
+  const soglia = 85000, perc = Math.min(100, x.base / soglia * 100);
+  const mesiPassati = finYear === new Date().getFullYear() ? new Date().getMonth() + 1 : 12;
+  return `<div class="banner warn">${ic("shield")}<span>È una <b>stima</b> per il regime forfettario, per sapere quanto tenere da parte. Le cifre vere, le scadenze e i minimi ENPAP li calcola il commercialista.</span></div>
+    <div class="fingrid">
+      <div class="box"><h3>Stima del ${finYear}</h3>
+        <div class="ricsum taxsum">
+          <div><span>Compensi incassati</span><b>${eur(x.base)}</b></div>
+          <div><span>Reddito tassabile (${x.coeff}% dei compensi)</span><b>${eur(x.reddito)}</b></div>
+          <div><span>Contributi ENPAP (${String(x.enpapPerc).replace(".",",")}% del reddito)</span><b>${eur(x.enpap)}</b></div>
+          <div><span>Imposta sostitutiva (${x.aliq}%)</span><b>${eur(x.imposta)}</b></div>
+          <div class="tot"><span>Da mettere da parte</span><b>${eur(x.tot)}</b></div>
+        </div>
+        <p class="hint" style="margin-top:12px">Circa il <b>${x.perc}%</b> di ogni incasso${x.tot ? `, in media ${eur(x.tot / mesiPassati)} al mese` : ""}. Contributo integrativo 2% e marca da bollo pagati dai clienti non sono contati.</p>
+        <h3 style="margin-top:26px;font-size:1.15rem">Limite del forfettario</h3>
+        <div class="soglia"><span style="width:${Math.max(1.5, perc)}%"></span></div>
+        <p class="hint">${eur(x.base)} su ${eur(soglia)} l'anno · mancano ${eur(Math.max(0, soglia - x.base))}</p>
+      </div>
+      <div class="box"><h3>Impostazioni</h3><p class="sub">Servono per la stima. Se non sai, lascia così e chiedi al commercialista.</p>
+        <div class="fld"><label for="fi-inizio">Anno di apertura della partita IVA</label><input id="fi-inizio" type="number" min="2000" max="2100" placeholder="Es. 2027" value="${esc(f.inizio)}"></div>
+        <div class="fld"><label for="fi-aliq">Imposta sostitutiva</label><select id="fi-aliq"><option value="auto" ${f.aliquota==="auto"?"selected":""}>Automatica: 5% per i primi 5 anni, poi 15%</option><option value="5" ${String(f.aliquota)==="5"?"selected":""}>5%</option><option value="15" ${String(f.aliquota)==="15"?"selected":""}>15%</option></select></div>
+        <div class="two"><div class="fld"><label for="fi-coeff">Coefficiente (%)</label><input id="fi-coeff" type="number" min="1" max="100" value="${esc(f.coeff)}"></div><div class="fld"><label for="fi-enpap">Contributo ENPAP (%)</label><input id="fi-enpap" type="number" min="0" max="50" step="0.5" value="${esc(f.enpap)}"></div></div>
+        <button class="btn btn-primary small" id="fiSave" style="margin-top:16px">Salva</button>
+      </div>
+    </div>`;
+}
+
+/* schede */
+function spesaUploadHTML(s){
+  return `<div class="fld"><label for="s-file">Fattura o scontrino (facoltativo)</label>
+    ${s.file ? `<div class="fileline">${ic("clip")}<span>${esc(s.file.nome)}</span><button type="button" class="linkbtn" data-spopen="1">Apri</button><button type="button" class="linkbtn danger" data-sprm="1">Togli</button></div>` : ""}
+    <input id="s-file" type="file" accept="application/pdf,image/*"><small class="hint">PDF o foto, massimo 20 MB.</small></div>`;
+}
+function editSpesa(s){
+  const isNew = !s;
+  s = s || {id:"spesa-" + uid(), data:todayISO(), importo:"", descr:"", fornitore:"", categoria:"pubblicita", canale:"", metodo:"Carta / POS", note:"", file:null};
+  const fissa = s.fissaId && fissCfg().voci.find(v => v.id === s.fissaId);
+  openSheet(isNew ? "Nuova spesa" : "Spesa",
+    `<div class="two">${F.text("s-data","Data",s.data,"date")}${F.text("s-imp","Importo (€) *",s.importo,"number",'step="0.01" min="0" inputmode="decimal"')}</div>
+     ${F.text("s-descr","Cosa hai pagato *",s.descr,"text",'placeholder="Es. Campagna Facebook di novembre"')}
+     <div class="two">${F.sel("s-cat","Categoria",CATS.map(([k,l]) => [k,l]),s.categoria)}${F.text("s-forn","Fornitore (facoltativo)",s.fornitore,"text",'placeholder="Es. Meta, grafica Anna Rossi"')}</div>
+     <div class="two"><div id="s-canwrap" ${s.categoria === "pubblicita" ? "" : "hidden"}>${F.sel("s-canale","Dove hai fatto pubblicità",CANALI.map(c => [c,c]),s.canale || CANALI[0])}</div>${F.sel("s-metodo","Pagata con",METODI.map(m => [m,m]),s.metodo)}</div>
+     ${spesaUploadHTML(s)}
+     ${F.text("s-note","Note (facoltative)",s.note)}
+     ${isNew ? F.sel("s-ripeti","Si ripete?",[["","No, è una spesa singola"],...Object.entries(FREQ).map(([k,[l]]) => [k, l + " (diventa una spesa fissa)"])],"") : fissa ? `<p class="hint" style="margin-top:12px">${ic("clock",'style="width:14px;vertical-align:-2px"')} Fa parte della spesa fissa “${esc(fissa.nome)}”. <button type="button" class="linkbtn" data-sheet-go="fissa|${fissa.id}">Modifica la spesa fissa</button></p>` : ""}`,
+    async () => {
+      const imp = parseFloat(String(val("s-imp")).replace(",", "."));
+      if (!(imp > 0)){ $("#sheetErr").textContent = "Inserisci l'importo."; return false; }
+      if (!val("s-descr")){ $("#sheetErr").textContent = "Scrivi cosa hai pagato."; return false; }
+      if (!val("s-data")){ $("#sheetErr").textContent = "Inserisci la data."; return false; }
+      Object.assign(s, {data:val("s-data"), importo:r2(imp), descr:val("s-descr"), categoria:val("s-cat"), fornitore:val("s-forn"), canale:val("s-cat") === "pubblicita" ? val("s-canale") : "", metodo:val("s-metodo"), note:val("s-note")});
+      if (sheetState && sheetState.rmFile) s.file = null;
+      const fi = $("#s-file"), file = fi && fi.files && fi.files[0];
+      if (file){
+        if (file.size > 20 * 1024 * 1024){ $("#sheetErr").textContent = "Il file è troppo grande (massimo 20 MB)."; return false; }
+        try { s.file = await uploadSpesaFile(s, file); } catch { $("#sheetErr").textContent = "Non sono riuscita a caricare il file. Riprova, oppure salva senza allegato."; return false; }
+      }
+      const rip = isNew ? val("s-ripeti") : "";
+      if (rip){
+        const R = fissCfg(), v = {id:uid(), nome:s.descr, importo:s.importo, categoria:s.categoria, canale:s.canale, fornitore:s.fornitore, metodo:s.metodo, freq:rip, inizio:s.data, ultima:s.data, fine:"", attiva:true};
+        R.voci.push(v); s.fissaId = v.id; await coll.put("impostazioni", R);
+      }
+      await coll.put("spese", s); finYear = Number(s.data.slice(0,4));
+      toast(rip ? "Spesa salvata: si ripeterà da sola" : "Spesa salvata");
+    },
+    isNew ? null : async () => { await coll.del("spese", s.id); toast("Spesa eliminata"); },
+    isNew ? "Salva la spesa" : "Salva");
+  sheetState.spesa = s;
+}
+function editFissa(v){
+  const isNew = !v, R = fissCfg();
+  v = v || {id:uid(), nome:"", importo:"", categoria:"albo", canale:"", fornitore:"", metodo:"Bonifico", freq:"anno", inizio:todayISO(), ultima:"", fine:"", attiva:true};
+  openSheet(isNew ? "Nuova spesa fissa" : "Spesa fissa",
+    `${F.text("v-nome","Nome *",v.nome,"text",'placeholder="Es. Quota Ordine degli Psicologi"')}
+     <div class="two">${F.text("v-imp","Importo (€) *",v.importo,"number",'step="0.01" min="0" inputmode="decimal"')}${F.sel("v-freq","Ogni quanto",Object.entries(FREQ).map(([k,[l]]) => [k,l]),v.freq)}</div>
+     <div class="two">${F.sel("v-cat","Categoria",CATS.map(([k,l]) => [k,l]),v.categoria)}${F.text("v-forn","Fornitore (facoltativo)",v.fornitore)}</div>
+     <div id="v-canwrap" ${v.categoria === "pubblicita" ? "" : "hidden"}>${F.sel("v-canale","Dove fai pubblicità",CANALI.map(c => [c,c]),v.canale || CANALI[0])}</div>
+     <div class="two">${F.text("v-inizio", isNew ? "Prima scadenza" : "Data di partenza", v.inizio, "date")}${F.text("v-fine","Fino al (facoltativo)",v.fine,"date")}</div>
+     <label class="check"><input type="checkbox" id="v-att" ${v.attiva ? "checked" : ""}>Attiva (togli la spunta per metterla in pausa)</label>
+     <p class="hint">${isNew ? "Se la prima scadenza è oggi o già passata, aggiungo subito la spesa. Poi si ripete da sola." : `Le spese già registrate restano. Le modifiche valgono dalle prossime scadenze.`}</p>`,
+    async () => {
+      const imp = parseFloat(String(val("v-imp")).replace(",", "."));
+      if (!val("v-nome")){ $("#sheetErr").textContent = "Scrivi il nome della spesa."; return false; }
+      if (!(imp > 0)){ $("#sheetErr").textContent = "Inserisci l'importo."; return false; }
+      if (!val("v-inizio")){ $("#sheetErr").textContent = "Inserisci la data."; return false; }
+      const ini = val("v-inizio");
+      if (!isNew && ini !== v.inizio) v.ultima = ini > todayISO() ? "" : (v.ultima && v.ultima >= ini ? v.ultima : "");
+      Object.assign(v, {nome:val("v-nome"), importo:r2(imp), freq:val("v-freq"), categoria:val("v-cat"), fornitore:val("v-forn"), canale:val("v-cat") === "pubblicita" ? val("v-canale") : "", inizio:ini, fine:val("v-fine"), attiva:$("#v-att").checked});
+      if (isNew) R.voci.push(v);
+      await coll.put("impostazioni", R); await genRicorrenti();
+      toast(isNew ? "Spesa fissa aggiunta" : "Spesa fissa aggiornata");
+    },
+    isNew ? null : async () => { R.voci = R.voci.filter(x => x.id !== v.id); await coll.put("impostazioni", R); toast("Spesa fissa eliminata. Le spese già registrate restano."); },
+    isNew ? "Aggiungi" : "Salva");
+}
+async function uploadSpesaFile(s, file){
+  const d = {nome:file.name, size:file.size, tipo:file.type, data:new Date().toISOString()};
+  if (store.sb){
+    const safe = file.name.normalize("NFD").replace(/[^\w.\-]+/g, "_").slice(-80);
+    d.path = `spese/${s.id}-${Date.now().toString(36)}-${safe}`;
+    const {error} = await store.sb.storage.from("documenti").upload(d.path, file, {contentType:file.type || "application/octet-stream", upsert:false});
+    if (error) throw error;
+  } else if (store.assets){ const r = await store.assets.upload(file); d.url = "/_blob/" + r.id; d.assetId = r.id; }
+  else throw new Error("nostorage");
+  return d;
+}
+async function finXls(){
+  try {
+    await loadScript("https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js");
+    const y = String(finYear), inc = pagatiAnno(y).sort((a,b) => a.data.localeCompare(b.data)), sp = speseAnno(y).sort((a,b) => a.data.localeCompare(b.data));
+    const wb = XLSX.utils.book_new(), mm = i => String(i+1).padStart(2,"0");
+    const mesi = MESI.map((_, i) => { const a = sum(inc.filter(p => p.data.slice(5,7) === mm(i)), p => p.importo), b = sum(sp.filter(s => s.data.slice(5,7) === mm(i)), s => s.importo); return [monthLabel(y+"-"+mm(i)).split(" ")[0], r2(a), r2(b), r2(a-b)]; });
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Finanze " + y + " – " + C.brand.name], [], ["Mese","Entrate (€)","Spese (€)","Differenza (€)"], ...mesi, ["Totale", r2(sum(inc, p => p.importo)), r2(sum(sp, s => s.importo)), r2(sum(inc, p => p.importo) - sum(sp, s => s.importo))]], [16,14,14,16]), "Riepilogo");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Data","Cliente","Servizio","Importo (€)","Metodo","N. fattura"], ...inc.map(p => [p.data, clientName(p.clienteId) || "—", p.descr||"", Number(p.importo)||0, p.metodo||"", p.fattura||""])], [12,24,34,12,14,12]), "Entrate");
+    XLSX.utils.book_append_sheet(wb, sheetFrom(speseRowsXls(sp), [12,34,22,24,18,12,14,10,30]), "Spese");
+    XLSX.utils.book_append_sheet(wb, sheetFrom([["Categoria","Totale (€)"], ...CATS.map(([k,l]) => [l, r2(sum(sp.filter(s => (s.categoria||"altro") === k), s => s.importo))]).filter(r => r[1])], [30,14]), "Per categoria");
+    const ok = await saveFile(`Finanze ${y} ${C.brand.name}.xlsx`, new Blob([XLSX.write(wb, {bookType:"xlsx", type:"array"})], {type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}));
+    toast(ok ? "Excel scaricato" : "Download annullato");
+  } catch { toast("Non sono riuscita a creare il file Excel. Riprova."); }
+}
+const speseRowsXls = sp => [["Data","Descrizione","Categoria","Fornitore","Canale","Importo (€)","Pagata con","Fissa","Note"], ...sp.map(s => [s.data, s.descr||"", (CAT[s.categoria]||CAT.altro).l, s.fornitore||"", s.canale||"", Number(s.importo)||0, s.metodo||"", s.fissaId ? "Sì" : "", s.note||""])];
+
+panel.addEventListener("click", async e => {
+  if (tab !== "finanze") return;
+  const t = e.target;
+  const sb = t.closest("[data-fsub]"); if (sb){ finSub = sb.dataset.fsub; renderFinanze(); return; }
+  const fy = t.closest("[data-fy]"); if (fy){ finYear += Number(fy.dataset.fy); renderFinanze(); return; }
+  const fc = t.closest("[data-fcat]"); if (fc){ finCat = fc.dataset.fcat; finMonth = ""; finSub = "spese"; renderFinanze(); return; }
+  if (t.closest("[data-new-spesa]")){ editSpesa(); return; }
+  if (t.closest("[data-new-fissa]")){ editFissa(); return; }
+  const os = t.closest("[data-open-spesa]"); if (os){ editSpesa(W.spese.find(s => s.id === os.dataset.openSpesa)); return; }
+  const of = t.closest("[data-open-fissa]"); if (of){ editFissa(fissCfg().voci.find(v => v.id === of.dataset.openFissa)); return; }
+  if (t.closest("#finXls")){ finXls(); return; }
+  if (t.closest("#fiSave")){
+    try { await coll.put("impostazioni", {id:"fisco", inizio:val("fi-inizio"), aliquota:val("fi-aliq"), coeff:Number(val("fi-coeff")) || 78, enpap:Number(String(val("fi-enpap")).replace(",", ".")) || 0}); toast("Impostazioni salvate"); renderFinanze(); }
+    catch { toast("Salvataggio non riuscito. Riprova."); }
+  }
+});
+panel.addEventListener("change", e => {
+  if (tab !== "finanze") return;
+  if (e.target.id === "finCat"){ finCat = e.target.value; renderFinanze(); }
+  if (e.target.id === "finMonth"){ finMonth = e.target.value; renderFinanze(); }
+});
+$("#sheetBody").addEventListener("change", e => {
+  if (e.target.id === "s-cat") $("#s-canwrap").hidden = e.target.value !== "pubblicita";
+  if (e.target.id === "v-cat") $("#v-canwrap").hidden = e.target.value !== "pubblicita";
+});
+$("#sheet").addEventListener("click", async e => {
+  if (e.target.closest("[data-sprm]") && sheetState){ sheetState.rmFile = true; e.target.closest(".fileline").remove(); return; }
+  if (e.target.closest("[data-spopen]") && sheetState && sheetState.spesa && sheetState.spesa.file){
+    try { const f = sheetState.spesa.file; await saveFile(f.nome, await docBlob(f)); } catch { $("#sheetErr").textContent = "Non sono riuscita ad aprire il file."; }
+    return;
+  }
+  const go = e.target.closest("[data-sheet-go^='fissa|']");
+  if (go){ const id = go.dataset.sheetGo.split("|")[1]; setTimeout(() => editFissa(fissCfg().voci.find(v => v.id === id)), 0); }
+});
 
 /* --- eventi CRM e copia di sicurezza --- */
 const crmRefreshList = () => { const el = $("#clist"); if (el) el.innerHTML = crmListHTML(); };
