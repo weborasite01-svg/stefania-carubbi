@@ -637,6 +637,108 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
 .banner span{flex:1;min-width:200px}
 .banner.warn{background:#F6EBD9;color:#6E4716}
 .banner.ok{background:#E5EFE3;color:#2F5A34}
+.grgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
+.grcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.grthumb{border:0;padding:12px;background:var(--mist);border-radius:12px;cursor:pointer;width:100%;height:230px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.grthumb:hover{background:#DCE1D5}
+.grthumb img{max-width:100%;max-height:100%;display:block;border-radius:3px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.grmeta b{display:block;font-weight:500;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grmeta small{color:var(--muted);font-size:.8rem}
+.gracts{display:flex;gap:6px}
+.gracts button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:7px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
+.gracts button.danger,.gracts2 button.danger{color:#9B3B3B}
+.grempty{text-align:center;padding:48px 26px}
+.grempty .sub{max-width:460px;margin:0 auto 20px}
+.grfmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.grfmt{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:3px;font:inherit;color:var(--ink);transition:border-color .2s,background .2s}
+.grfmt:hover{border-color:var(--brand)}
+.grfmt.on{border:2px solid var(--brand);background:var(--mist);padding:13px}
+.grfmt b{font-weight:500;font-size:.92rem}
+.grfmt small{color:var(--muted);font-size:.78rem}
+.grfmt .shape{height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.grfmt .shape i{display:block;background:var(--brand);opacity:.4;border-radius:4px}
+.grfmt.on .shape i{opacity:.8}
+.grnewgrid{display:grid;grid-template-columns:minmax(260px,1fr) 1.5fr;gap:20px;align-items:start}
+@media (max-width:980px){.grnewgrid{grid-template-columns:1fr;gap:0}}
+.grtpls{display:flex;flex-wrap:wrap;gap:14px}
+.grtpl{border:2px solid transparent;border-radius:14px;padding:10px;background:var(--paper);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font:inherit;font-size:.85rem;color:var(--ink)}
+.grtpl:hover{border-color:var(--line)}
+.grtpl.on{border-color:var(--brand);background:var(--mist)}
+.grtpl canvas{border-radius:4px;box-shadow:0 6px 18px rgba(0,0,0,.12);background:#fff;display:block}
+.gred{display:flex;flex-direction:column;gap:12px}
+.grtop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.grname{font:inherit;font-size:1rem;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);min-width:180px;flex:0 1 320px}
+.grsaved{font-size:.8rem;color:var(--muted)}
+.grsaved.busy{opacity:.6}.grsaved.err{color:#9B3B3B}
+.grdl{position:relative}
+.grdlmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.14);padding:6px;z-index:30;min-width:250px;display:flex;flex-direction:column}
+.grdlmenu button{text-align:left;padding:11px 12px;border:0;background:none;border-radius:9px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
+.grdlmenu button:hover{background:var(--paper)}
+.gradd{display:flex;flex-wrap:wrap;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px}
+.gradd button{display:flex;align-items:center;gap:8px;border:0;background:none;padding:9px 12px;border-radius:10px;font:500 .88rem var(--body);color:var(--ink);cursor:pointer}
+.gradd button:hover{background:var(--mist)}
+.gradd button svg{width:17px;height:17px}
+.gradd button b{font-family:var(--display);font-size:1.1rem;font-weight:400;line-height:1}
+.gradd button > span{font-family:var(--display);line-height:1}
+.gradd .sh{display:inline-block;width:16px;height:12px;border:1.7px solid currentColor;border-radius:2px}
+.gradd .sh.circ{width:14px;height:14px;border-radius:50%}
+.gradd .sh.line{height:0;border-width:1.7px 0 0;border-radius:0}
+.grmain{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+@media (max-width:1060px){.grmain{grid-template-columns:1fr}}
+.grstage{background:repeating-conic-gradient(#ECEEE8 0 25%,#F4F5F1 0 50%) 0 0/22px 22px;border-radius:18px;border:1px solid var(--line);padding:12px;display:flex;justify-content:center;align-items:center;min-height:420px;overflow:hidden}
+.grboard{position:relative;box-shadow:0 12px 40px rgba(0,0,0,.16);touch-action:none;user-select:none;-webkit-user-select:none}
+.grboard canvas{display:block}
+.grsel{position:absolute;border:1.5px solid #5B7FD6;pointer-events:none;box-sizing:border-box}
+.grsel i{position:absolute;width:12px;height:12px;background:#fff;border:1.5px solid #5B7FD6;border-radius:3px;pointer-events:auto;box-sizing:border-box}
+.grsel .h-nw{left:-7px;top:-7px;cursor:nwse-resize}.grsel .h-ne{right:-7px;top:-7px;cursor:nesw-resize}
+.grsel .h-sw{left:-7px;bottom:-7px;cursor:nesw-resize}.grsel .h-se{right:-7px;bottom:-7px;cursor:nwse-resize}
+.grsel .h-e{right:-7px;top:50%;margin-top:-6px;cursor:ew-resize}.grsel .h-w{left:-7px;top:50%;margin-top:-6px;cursor:ew-resize}
+.grsel:not(.txt) .h-e,.grsel:not(.txt) .h-w{display:none}
+.grsel.locked{border-style:dashed}.grsel.locked i{display:none}
+@media (pointer:coarse){.grsel i{width:22px;height:22px;border-radius:50%}.grsel .h-nw{left:-12px;top:-12px}.grsel .h-ne{right:-12px;top:-12px}.grsel .h-sw{left:-12px;bottom:-12px}.grsel .h-se{right:-12px;bottom:-12px}.grsel .h-e{right:-12px;margin-top:-11px}.grsel .h-w{left:-12px;margin-top:-11px}}
+.grguide{position:absolute;background:#D9619B;pointer-events:none}
+.grguide.v{top:0;bottom:0;width:1px}.grguide.h{left:0;right:0;height:1px}
+.grdrop{position:absolute;inset:0;background:rgba(86,104,79,.82);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;pointer-events:none}
+.grprops{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;max-height:calc(100vh - 120px);overflow:auto;position:sticky;top:16px}
+.grprops h4,.grh4{font:600 .72rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+.grprops > h4:first-child{margin-top:2px}
+.grprops textarea{width:100%;box-sizing:border-box;font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical}
+.grfld{margin:12px 0}
+.grfld label{display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:5px}
+.grfld output{color:var(--muted);font-variant-numeric:tabular-nums}
+.grfld select{width:100%;font:inherit;font-size:.92rem;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.grfld input[type=range]{width:100%;accent-color:var(--brand)}
+.grsw{display:flex;flex-wrap:wrap;gap:7px}
+.grsw button{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.16);cursor:pointer;padding:0}
+.grsw button.on{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
+.grsw button.none{background:linear-gradient(135deg,#fff 44%,#C44 44% 56%,#fff 56%)}
+.grpick{width:26px;height:26px;border-radius:50%;overflow:hidden;position:relative;background:conic-gradient(#e66,#ec6,#6c6,#6cc,#66e,#c6c,#e66);cursor:pointer;border:1px solid rgba(0,0,0,.16)}
+.grpick input{opacity:0;position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
+.grtog{display:flex;gap:4px;flex-wrap:wrap;margin:12px 0}
+.grtog button{min-width:38px;height:36px;border:1px solid var(--line);background:var(--surface);border-radius:9px;cursor:pointer;font:inherit;font-size:.9rem;color:var(--ink)}
+.grtog button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grtog .sep{width:8px}
+.grtog.wide button{flex:1;padding:0 10px;font-size:.84rem}
+.gracts2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gracts2 button{padding:9px 8px;border:1px solid var(--line);background:var(--surface);border-radius:9px;cursor:pointer;font:inherit;font-size:.82rem;color:var(--ink)}
+.gracts2 button:hover,.grtog button:not(.on):hover{background:var(--paper)}
+.grdesel{margin-top:16px;display:block;font-size:.85rem}
+.grlayers{display:flex;flex-direction:column;gap:4px}
+.grlayers button{display:flex;justify-content:space-between;gap:8px;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:8px 10px;font:inherit;font-size:.84rem;cursor:pointer;color:var(--ink)}
+.grlayers button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grbgimg{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.grbgimg img{width:64px;height:64px;object-fit:cover;border-radius:9px}
+.grupload{display:block;border:1.5px dashed var(--brand);border-radius:14px;padding:20px;cursor:pointer;background:var(--paper);text-align:center}
+.grupload:hover{background:var(--mist)}
+.grupload input{position:absolute;width:1px;height:1px;opacity:0}
+.grupload span{display:flex;flex-direction:column;align-items:center;gap:6px}
+.grupload svg{width:22px;height:22px;color:var(--brand-deep)}
+.grupload small{color:var(--muted);font-size:.8rem;max-width:380px}
+.grlib{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+.grlib button{border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;aspect-ratio:1;cursor:pointer;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/14px 14px}
+.grlib button:hover{border-color:var(--brand)}
+.grlib img{width:100%;height:100%;object-fit:contain;display:block}
+.grtip{margin:0}
 .tile b.out{color:#8A5A80}
 .fintop{gap:12px}
 .finseg{max-width:100%;overflow-x:auto;scrollbar-width:none}
@@ -1039,6 +1141,7 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
       <button class="tab" data-tab="clienti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>CRM</button>
       <button class="tab" data-tab="pagamenti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>Pagamenti</button>
       <button class="tab" data-tab="finanze"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg>Finanze</button>
+      <button class="tab" data-tab="grafiche"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="9.5" cy="9" r="2"/><path d="M20 15l-4.5-4.5L7 19"/></svg>Grafiche</button>
       <button class="tab" data-tab="richieste"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H8l-4 4V5Z"/></svg>Richieste<span class="count" id="newCount" hidden></span></button>
       <button class="tab" data-tab="backup"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>Copia di sicurezza</button>
       <span class="grp">Il sito</span>
@@ -1607,7 +1710,7 @@ $("#newReq").addEventListener("click", () => { $("#doneOk").hidden = true; $("#f
 /* ============ AREA RISERVATA ============ */
 let tab = "panoramica", requests = [], reqFilter = "tutte";
 let loggedIn = ssGet("sc_auth") === "1" || lsGet("sc_auth_keep") === "1";
-const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"CRM", pagamenti:"Pagamenti", finanze:"Finanze", backup:"Copia di sicurezza", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
+const TITLES = {panoramica:"Panoramica", calendario:"Calendario", clienti:"CRM", pagamenti:"Pagamenti", finanze:"Finanze", grafiche:"Grafiche e locandine", backup:"Copia di sicurezza", richieste:"Richieste", testi:"Testi del sito", foto:"Foto e video", sezioni:"Sezioni della pagina", metodo:"Metodo e servizi", incontri:"Incontri", contatti:"Contatti e dati", aspetto:"Colori e caratteri"};
 const DEMO_REQ = {id:"esempio", demo:true, nome:"Laura Bianchi", telefono:"+39 333 000 0000", email:"laura@example.com", citta:"Milano", perChi:"Mia madre", esigenza:"Valutare una badante h24", modalita:"Milano", messaggio:"Mia madre ha 84 anni e vive da sola. Dopo una caduta abbiamo bisogno di capire che tipo di assistenza serve e quanto costa.", stato:"nuova", note:"", ricevuta:new Date(Date.now()-3600e3*5).toISOString()};
 
 async function sha256(s){
@@ -1803,6 +1906,7 @@ function renderPanel(){
   if (tab === "backup"){ renderBackup(); return; }
   if (tab === "pagamenti"){ renderPagamenti(); return; }
   if (tab === "finanze"){ renderFinanze(); return; }
+  if (tab === "grafiche"){ renderGrafiche(); return; }
   if (tab === "calendario"){ renderCalendario(); return; }
   let h = "";
   if (tab === "testi"){
@@ -1994,8 +2098,8 @@ async function uploadImage(file){
 }
 
 /* ============ GESTIONALE: clienti, pagamenti, calendario ============ */
-const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], spese:[], loaded:false};
-const VIRT = {spese:["impostazioni","spesa-"]};
+const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], spese:[], grafiche:[], loaded:false};
+const VIRT = {spese:["impostazioni","spesa-"], grafiche:["impostazioni","grafica-"]};
 const tblOf = c => VIRT[c] ? VIRT[c][0] : c;
 const GCLIENT_DEFAULT = "441938708513-4ahllcfs7tcnukiidcfd9rsn9favre8s.apps.googleusercontent.com";
 const GS = {clientId:"", token:null, exp:0, events:[], connected:false, msg:""};
@@ -2040,7 +2144,7 @@ const coll = {
 };
 async function loadWork(force){
   if (W.loaded && !force) return;
-  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni","spese"];
+  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni","spese","grafiche"];
   const res = await Promise.all(names.map(c => coll.list(c).catch(() => [])));
   names.forEach((c,i) => W[c] = res[i]);
   const g = W.impostazioni.find(x => x.id === "google"); GS.clientId = (g && g.clientId) || GCLIENT_DEFAULT;
@@ -3244,6 +3348,697 @@ $("#sheet").addEventListener("click", async e => {
   const go = e.target.closest("[data-sheet-go^='fissa|']");
   if (go){ const id = go.dataset.sheetGo.split("|")[1]; setTimeout(() => editFissa(fissCfg().voci.find(v => v.id === id)), 0); }
 });
+
+/* ================= GRAFICHE: locandine, flyer, post, biglietti ================= */
+const GR_MARK = "data:image/png;base64,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";
+const GC = {sage:"#82947E", deep:"#56684F", mist:"#E6E9E0", paper:"#F7F5F0", lil:"#D1B6C7", lild:"#9C6F93", ink:"#2E3330", white:"#FFFFFF", muted:"#6B726C"};
+const GR_COLORS = ["#FFFFFF","#F7F5F0","#E6E9E0","#D1B6C7","#C9A6C2","#9C6F93","#A8B5A2","#82947E","#56684F","#2E3330"];
+const GR_FONTS = [["Tenor Sans","Tenor Sans (del sito)"],["Poppins","Poppins (del sito)"],["Cormorant Garamond","Cormorant"],["Playfair Display","Playfair"],["DM Serif Display","DM Serif"],["Fraunces","Fraunces"],["Montserrat","Montserrat"],["Great Vibes","Corsivo"]];
+const GR_FMT = {
+  locandina:{l:"Locandina o flyer", d:"A4, A3 o A5 da stampare", w:794, h:1123, print:true, sizes:[["A4",210,297,3.125],["A3",297,420,3.68],["A5",148,210,2.2]]},
+  post:{l:"Post quadrato", d:"Instagram e Facebook", w:1080, h:1080},
+  verticale:{l:"Post verticale", d:"Instagram, 4:5", w:1080, h:1350},
+  storia:{l:"Storia", d:"Instagram e WhatsApp", w:1080, h:1920},
+  copertina:{l:"Copertina evento", d:"Facebook, orizzontale", w:1920, h:1005},
+  cartolina:{l:"Cartolina o invito", d:"A6 orizzontale da stampare", w:1123, h:794, print:true, sizes:[["A6",148,105,1.556],["A5 orizzontale",210,148,2.2]]},
+  biglietto:{l:"Biglietto da visita", d:"85 × 55 mm da stampare", w:1004, h:650, print:true, sizes:[["Biglietto",85,55,1]]}
+};
+let grView = "list", grDoc = null, grSel = null, grHist = [], grHi = -1, grSaveT = null, grHistT = null, grNew = {fmt:"locandina", tpl:"foto", c:null};
+
+/* --- caratteri --- */
+let grFontsLink = false;
+async function grFontsReady(doc){
+  if (!grFontsLink){ grFontsLink = new Promise(res => { const l = document.createElement("link"); l.rel = "stylesheet"; l.onload = l.onerror = () => res(); l.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Tenor+Sans&display=swap"; document.head.appendChild(l); setTimeout(res, 4000); }); }
+  await grFontsLink;
+  const specs = new Set(["400 40px 'Tenor Sans'", "400 40px Poppins", "600 40px Poppins"]);
+  (doc ? doc.els : []).filter(e => e.type === "text").forEach(e => specs.add(`${e.italic ? "italic " : ""}${e.bold ? 700 : 400} 40px '${e.font}'`));
+  try { await Promise.race([Promise.all([...specs].map(s => document.fonts.load(s))), new Promise(r => setTimeout(r, 2500))]); } catch {}
+}
+
+/* --- immagini --- */
+const GR_IMG = {};
+function grImg(src, onload){
+  if (!src) return null;
+  let r = GR_IMG[src];
+  if (!r){
+    r = GR_IMG[src] = {im:new Image(), ok:false, cbs:[]};
+    if (!/^data:|^blob:/.test(src) && !src.startsWith(location.origin) && /^https?:/.test(src)) r.im.crossOrigin = "anonymous";
+    r.im.onload = () => { r.ok = true; r.cbs.splice(0).forEach(f => f()); };
+    r.im.onerror = () => { r.err = true; r.cbs.splice(0).forEach(f => f()); };
+    r.im.src = src;
+  }
+  if (!r.ok && onload && !r.err) r.cbs.push(onload);
+  return r.ok ? r.im : null;
+}
+const grImgWait = src => new Promise(res => { const im = grImg(src, () => res()); if (im || (GR_IMG[src] && GR_IMG[src].err)) res(); });
+const GR_TINT = {};
+function grMark(color){
+  const k = color || GC.sage; if (GR_TINT[k]) return GR_TINT[k];
+  const im = grImg(GR_MARK); if (!im) return null;
+  const c = document.createElement("canvas"); c.width = im.naturalWidth; c.height = im.naturalHeight;
+  const x = c.getContext("2d"); x.drawImage(im, 0, 0); x.globalCompositeOperation = "source-in"; x.fillStyle = k; x.fillRect(0, 0, c.width, c.height);
+  return GR_TINT[k] = c;
+}
+
+/* --- disegno --- */
+const grMctx = document.createElement("canvas").getContext("2d");
+function grFont(ctx, e){ ctx.font = `${e.italic ? "italic " : ""}${e.bold ? 700 : 400} ${e.size}px '${e.font}', ${/Cormorant|Playfair|Serif|Fraunces/.test(e.font) ? "Georgia, serif" : "sans-serif"}`; if ("letterSpacing" in ctx) ctx.letterSpacing = (e.ls || 0) * e.size + "px"; }
+function grLayout(ctx, e){
+  grFont(ctx, e);
+  const txt = e.upper ? String(e.text || "").toUpperCase() : String(e.text || ""), lines = [];
+  txt.split("\n").forEach(p => {
+    const words = p.split(/ +/); let cur = "";
+    words.forEach(w => { const t = cur ? cur + " " + w : w; if (cur && ctx.measureText(t).width > e.w) { lines.push(cur); cur = w; } else cur = t; });
+    lines.push(cur);
+  });
+  const lh = e.size * (e.lh || 1.2);
+  return {lines, lh, h:Math.max(lh, lines.length * lh)};
+}
+const grMeasure = e => { if (e.type === "text") e.h = grLayout(grMctx, e).h; if (e.type === "logo") e.h = e.w; return e; };
+function grPath(ctx, x, y, w, h, r){
+  r = Math.max(0, Math.min(r, w / 2, h / 2));
+  ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+}
+function grDrawImg(ctx, im, x, y, w, h, fit, px, py){
+  const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height; if (!iw || !ih) return;
+  if (fit === "contain"){ const k = Math.min(w / iw, h / ih); ctx.drawImage(im, x + (w - iw * k) / 2, y + (h - ih * k) / 2, iw * k, ih * k); return; }
+  const k = Math.max(w / iw, h / ih), sw = w / k, sh = h / k;
+  ctx.drawImage(im, (iw - sw) * (px ?? 50) / 100, (ih - sh) * (py ?? 50) / 100, sw, sh, x, y, w, h);
+}
+function grDraw(ctx, doc, s, redraw){
+  const F = GR_FMT[doc.fmt]; ctx.save(); ctx.setTransform(s, 0, 0, s, 0, 0);
+  ctx.fillStyle = doc.bg.color || "#fff"; ctx.fillRect(0, 0, F.w, F.h);
+  if (doc.bg.img){ const im = grImg(doc.bg.img, redraw); if (im){ ctx.globalAlpha = doc.bg.op ?? 1; grDrawImg(ctx, im, 0, 0, F.w, F.h, "cover", doc.bg.px, doc.bg.py); ctx.globalAlpha = 1; } }
+  for (const e of doc.els){
+    if (e.hide) continue;
+    ctx.save(); ctx.globalAlpha = e.op ?? 1;
+    if (e.type === "shape"){
+      if (e.shape === "ellipse"){ ctx.beginPath(); ctx.ellipse(e.x + e.w / 2, e.y + e.h / 2, e.w / 2, e.h / 2, 0, 0, Math.PI * 2); }
+      else grPath(ctx, e.x, e.y, e.w, e.h, e.rad || 0);
+      if (e.fill){ ctx.fillStyle = e.fill; ctx.fill(); }
+      if (e.stroke && e.sw){ ctx.strokeStyle = e.stroke; ctx.lineWidth = e.sw; ctx.stroke(); }
+    } else if (e.type === "img"){
+      const im = grImg(e.src, redraw);
+      const r = (e.rad || 0) / 100 * Math.min(e.w, e.h);
+      if ((e.rad || 0) >= 50){ ctx.beginPath(); ctx.ellipse(e.x + e.w / 2, e.y + e.h / 2, e.w / 2, e.h / 2, 0, 0, Math.PI * 2); } else grPath(ctx, e.x, e.y, e.w, e.h, r);
+      ctx.clip();
+      if (im) grDrawImg(ctx, im, e.x, e.y, e.w, e.h, e.fit, e.px, e.py);
+      else { ctx.fillStyle = "#E6E9E0"; ctx.fillRect(e.x, e.y, e.w, e.h); }
+    } else if (e.type === "logo"){
+      const im = e.variant === "round" ? grImg(PDF_LOGO, redraw) : (grImg(GR_MARK, redraw) && grMark(e.color));
+      if (im) ctx.drawImage(im, e.x, e.y, e.w, e.w);
+    } else if (e.type === "text"){
+      const L = grLayout(ctx, e); e.h = L.h;
+      ctx.fillStyle = e.color; ctx.textBaseline = "middle"; ctx.textAlign = e.align || "left";
+      const ax = e.align === "center" ? e.x + e.w / 2 : e.align === "right" ? e.x + e.w : e.x;
+      const lsx = e.align === "center" ? (e.ls || 0) * e.size / 2 : e.align === "right" ? (e.ls || 0) * e.size : 0;
+      L.lines.forEach((t, i) => ctx.fillText(t, ax + lsx, e.y + i * L.lh + L.lh / 2 + e.size * 0.04));
+    }
+    ctx.restore();
+  }
+  ctx.restore();
+}
+
+/* --- modelli --- */
+const grT = (text, o) => text ? grMeasure({id:uid(), type:"text", text, font:"Poppins", size:24, bold:false, italic:false, color:GC.ink, align:"center", upper:false, ls:0, lh:1.3, op:1, x:0, y:0, w:100, h:0, ...o}) : null;
+const grS = o => ({id:uid(), type:"shape", shape:"rect", fill:GC.sage, rad:0, stroke:"", sw:0, op:1, x:0, y:0, w:100, h:100, ...o});
+const grI = (src, o) => ({id:uid(), type:"img", src, fit:"cover", px:50, py:50, rad:0, op:1, x:0, y:0, w:300, h:300, ...o});
+const grL = o => ({id:uid(), type:"logo", variant:"round", color:GC.sage, op:1, x:0, y:0, w:120, h:120, ...o});
+function grStack(items, x, y, w, align){
+  grStackEls = items.filter(i => i && typeof i === "object");
+  items.forEach(it => {
+    if (!it) return;
+    if (typeof it === "number"){ y += it; return; }
+    if (it.type === "shape" || it.type === "logo"){ if (it.type === "logo") it.h = it.w; it.y = y; it.x = align === "center" ? x + (w - it.w) / 2 : x; y += it.h; return; }
+    Object.assign(it, {x, y, w, align}); grMeasure(it); y += it.h;
+  });
+  return y;
+}
+const grFoto = () => (C.media && C.media.about && C.media.about.src) || "famiglia.jpg";
+function grContent(){
+  const ev = (C.events && C.events.items || [])[0];
+  return {
+    occhiello:"Incontro informativo gratuito", titolo:ev ? ev.title : "Scelte consapevoli per la cura dei genitori",
+    data:ev ? grEvDate(ev) : "Sabato 21 novembre · ore 11:00", luogo:ev ? ev.place || "" : "Milano",
+    testo:ev ? ev.note || "" : "Un momento informale per chi si prende cura dei propri genitori anziani.",
+    chiusura:ev ? ev.tag || "Ingresso libero" : "Ingresso libero",
+    firma:C.brand.name, ruolo:C.brand.role || "", contatti:[C.contact.phone, C.contact.email].filter(Boolean).join("  ·  "),
+    sito:"Milano · Padova · Online"
+  };
+}
+function grEvDate(ev){
+  let d = ""; try { d = new Date(ev.date + "T12:00").toLocaleDateString("it-IT", {weekday:"long", day:"numeric", month:"long"}); d = d[0].toUpperCase() + d.slice(1); } catch {}
+  return [d, ev.time].filter(Boolean).join(" · ");
+}
+const GR_TPL = {
+  foto:{l:"Foto e testo", f(W, H, c){
+    const land = H < W * 1.15, b = Math.min(W, H) / 100, els = [];
+    if (land){
+      els.push(grI(grFoto(), {x:W * .52, y:0, w:W * .48, h:H}));
+      const x = W * .07, w = W * .4;
+      const end = grStackFit([grT(c.occhiello, {size:2.6*b, upper:true, ls:.16, color:GC.lild, font:"Poppins", bold:true}), 2*b, grT(c.titolo, {size:7.4*b, font:"Tenor Sans", color:GC.deep, lh:1.12}), 3*b, grS({w:10*b, h:.5*b, fill:GC.lil}), 3*b, grT(c.data, {size:3*b, bold:true}), grT(c.luogo, {size:2.7*b, color:GC.muted}), 2.5*b, grT(c.testo, {size:2.4*b, color:GC.muted, lh:1.45})], x, H * .14, w, "left", H - 19*b);
+      els.push(...grStackEls);
+      els.push(grL({x, y:H - 15*b, w:10*b}), grT(c.firma, {x:x + 13*b, y:H - 13.6*b, w:w, size:2.6*b, font:"Tenor Sans", color:GC.deep, align:"left"}), grT(c.contatti, {x:x + 13*b, y:H - 9.6*b, w:w, size:2*b, color:GC.muted, align:"left"}));
+      return {bg:{color:GC.paper}, els};
+    }
+    const ih = H * .44;
+    els.push(grI(grFoto(), {x:0, y:0, w:W, h:ih}));
+    els.push(grS({shape:"ellipse", fill:GC.paper, x:W / 2 - 9*b, y:ih - 9*b, w:18*b, h:18*b}), grL({x:W / 2 - 7.5*b, y:ih - 7.5*b, w:15*b}));
+    grStackFit([grT(c.occhiello, {size:2.7*b, upper:true, ls:.16, color:GC.lild, bold:true}), 1.8*b, grT(c.titolo, {size:7*b, font:"Tenor Sans", color:GC.deep, lh:1.12}), 2.6*b, grS({w:10*b, h:.5*b, fill:GC.lil}), 2.6*b, grT(c.data, {size:3.1*b, bold:true}), grT(c.luogo, {size:2.8*b, color:GC.muted}), 2*b, grT(c.testo, {size:2.5*b, color:GC.muted, lh:1.45})], W * .1, ih + 12*b, W * .8, "center", H - 19*b);
+    els.push(...grStackEls);
+    const pill = grT(c.chiusura, {size:2.5*b, bold:true, color:GC.white, upper:true, ls:.1});
+    if (pill){ grFont(grMctx, pill); const pw = grMctx.measureText(pill.text.toUpperCase()).width + 8*b; const py = H - 17*b; els.push(grS({x:(W - pw) / 2, y:py, w:pw, h:6*b, rad:3*b, fill:GC.sage})); Object.assign(pill, {x:(W - pw) / 2, y:py + 3*b - pill.h / 2, w:pw}); els.push(pill); }
+    els.push(grT(`${c.firma}  ·  ${c.contatti}`, {x:W * .05, y:H - 7*b, w:W * .9, size:2*b, color:GC.muted}));
+    return {bg:{color:GC.paper}, els};
+  }},
+  elegante:{l:"Elegante", f(W, H, c){
+    const land = H < W * 1.15, b = Math.min(W, H) / 100, m = 4*b, els = [];
+    els.push(grL({variant:"mark", color:GC.lil, op:.22, x:W / 2 - Math.min(W, H) * .42, y:H / 2 - Math.min(W, H) * .42, w:Math.min(W, H) * .84}));
+    els.push(grS({fill:"", stroke:GC.sage, sw:Math.max(1.5, .25*b), x:m, y:m, w:W - 2*m, h:H - 2*m, rad:2*b}));
+    const w = land ? W * .62 : W * .76, x = (W - w) / 2;
+    const items = [grL({w:(land ? 11 : 13)*b}), 3*b, grT(c.occhiello, {size:2.5*b, upper:true, ls:.2, color:GC.lild, bold:true}), 2*b, grT(c.titolo, {size:(land ? 7 : 7.6)*b, font:"Cormorant Garamond", italic:true, color:GC.deep, lh:1.08}), 3*b, grS({w:14*b, h:.35*b, fill:GC.lild}), 3*b, grT(c.data, {size:3*b, font:"Tenor Sans", color:GC.ink}), .6*b, grT(c.luogo, {size:2.6*b, color:GC.muted}), 2.4*b, land ? null : grT(c.testo, {size:2.4*b, color:GC.muted, lh:1.45}), land ? null : 3*b, grT(c.chiusura, {size:2.4*b, upper:true, ls:.14, bold:true, color:GC.sage})];
+    const tmp = items.map(i => i && typeof i === "object" ? {...i} : i); const hh = grStackFit(tmp, x, 0, w, "center", H - 2*m - 18*b); tmp.forEach((t, j) => { if (typeof t === "number") items[j] = t; else if (t && t.type === "text") items[j].size = t.size; }); grStackEls = [];
+    grStack(items, x, Math.max(9*b, (H - hh) / 2 - 3*b), w, "center"); els.push(...grStackEls);
+    els.push(grT(`${c.firma}  ·  ${c.contatti}`, {x:W * .08, y:H - m - 6*b, w:W * .84, size:1.9*b, color:GC.muted}));
+    return {bg:{color:GC.mist}, els};
+  }},
+  verde:{l:"Verde pieno", f(W, H, c){
+    const land = H < W * 1.15, b = Math.min(W, H) / 100, els = [];
+    els.push(grS({shape:"ellipse", fill:GC.lil, op:.35, x:-18*b, y:-18*b, w:52*b, h:52*b}), grS({shape:"ellipse", fill:GC.deep, op:.35, x:W - 30*b, y:H - 30*b, w:60*b, h:60*b}));
+    if (land){
+      const d = Math.min(H * .6, W * .36), px = W - d - 7*b; els.push(grI(grFoto(), {rad:50, x:px, y:H / 2 - d / 2, w:d, h:d}), grS({shape:"ellipse", fill:"", stroke:GC.white, sw:.5*b, x:px - 2*b, y:H / 2 - d / 2 - 2*b, w:d + 4*b, h:d + 4*b}));
+      grStackFit([grT(c.occhiello, {size:2.6*b, upper:true, ls:.18, color:GC.white, bold:true, op:.85}), 2*b, grT(c.titolo, {size:7.6*b, font:"Tenor Sans", color:GC.white, lh:1.1}), 4*b, grT(c.data, {size:3.2*b, bold:true, color:GC.white}), grT(c.luogo, {size:2.8*b, color:GC.white, op:.85}), 3*b, grT(c.chiusura, {size:2.6*b, upper:true, ls:.12, bold:true, color:GC.lil})], W * .08, H * .16, Math.min(W * .48, W - Math.min(H * .6, W * .36) - 20*b), "left", H - 14*b);
+      els.push(...grStackEls, grT(`${c.firma}  ·  ${c.contatti}`, {x:W * .08, y:H - 9*b, w:W * .5, size:2*b, color:GC.white, op:.8, align:"left"}));
+      return {bg:{color:GC.sage}, els};
+    }
+    const d = Math.min(W * .5, H * .3);
+    els.push(grS({shape:"ellipse", fill:"", stroke:GC.white, sw:.5*b, x:(W - d) / 2 - 2*b, y:H * .08 - 2*b, w:d + 4*b, h:d + 4*b}), grI(grFoto(), {rad:50, x:(W - d) / 2, y:H * .08, w:d, h:d}));
+    grStackFit([grT(c.occhiello, {size:2.7*b, upper:true, ls:.18, color:GC.white, bold:true, op:.85}), 2*b, grT(c.titolo, {size:7.2*b, font:"Tenor Sans", color:GC.white, lh:1.12}), 3.5*b, grT(c.data, {size:3.2*b, bold:true, color:GC.white}), grT(c.luogo, {size:2.8*b, color:GC.white, op:.85}), 2.4*b, grT(c.testo, {size:2.5*b, color:GC.white, op:.85, lh:1.45}), 3*b, grT(c.chiusura, {size:2.6*b, upper:true, ls:.12, bold:true, color:GC.lil})], W * .1, H * .08 + d + 7*b, W * .8, "center", H - 19*b);
+    els.push(...grStackEls, grL({variant:"mark", color:GC.white, x:W / 2 - 4*b, y:H - 16*b, w:8*b}), grT(`${c.firma}  ·  ${c.contatti}`, {x:W * .05, y:H - 7*b, w:W * .9, size:2*b, color:GC.white, op:.85}));
+    return {bg:{color:GC.sage}, els};
+  }},
+  moderno:{l:"Moderno", f(W, H, c){
+    const land = H < W * 1.15, b = Math.min(W, H) / 100, els = [];
+    els.push(grS({x:0, y:0, w:2.2*b, h:H, fill:GC.sage}));
+    const x = 9*b, w = land ? W * .5 : W - 18*b;
+    const lab = t => grT(t, {size:2*b, upper:true, ls:.18, bold:true, color:GC.lild});
+    const end = grStackFit([grT(c.occhiello, {size:2.6*b, upper:true, ls:.16, color:GC.sage, bold:true}), 2*b, grT(c.titolo, {size:(land ? 8 : 8.6)*b, font:"DM Serif Display", color:GC.ink, lh:1.05, align:"left"}), 4*b, lab("Quando"), .6*b, grT(c.data, {size:3.1*b}), 2.4*b, lab("Dove"), .6*b, grT(c.luogo, {size:3*b}), land ? null : 2.4*b, land ? null : grT(c.testo, {size:2.5*b, color:GC.muted, lh:1.45})], x, 10*b, w, "left", land ? H - 20*b : H * .64);
+    els.push(...grStackEls);
+    if (land) els.push(grI(grFoto(), {x:W * .6, y:8*b, w:W * .4 - 8*b, h:H - 16*b, rad:4}));
+    else { const top = end + 4*b, ih = H - top - 20*b; if (ih > 12*b) els.push(grI(grFoto(), {x, y:top, w, h:ih, rad:4})); }
+    els.push(grL({x, y:H - 14*b, w:9*b}), grT(c.firma, {x:x + 12*b, y:H - 13.4*b, w:W * .5, size:2.7*b, font:"Tenor Sans", color:GC.deep, align:"left"}), grT(c.contatti, {x:x + 12*b, y:H - 9.4*b, w:W * .6, size:2*b, color:GC.muted, align:"left"}));
+    const ch = grT(c.chiusura, {size:2.4*b, bold:true, upper:true, ls:.12, color:GC.sage, align:"right"});
+    if (ch) els.push(Object.assign(ch, land ? {x:W * .6, y:H - 6.6*b, w:W * .4 - 8*b} : {x:W * .5, y:H - 12.4*b, w:W * .5 - 7*b}));
+    return {bg:{color:GC.paper}, els};
+  }},
+  vuota:{l:"Pagina vuota", f(W, H){ return {bg:{color:GC.paper}, els:[]}; }}
+};
+const GR_TPL_CARD = {
+  classico:{l:"Classico", f(W, H, c){
+    const b = H / 100;
+    const els = [grS({x:0, y:0, w:W * .36, h:H, fill:GC.mist}), grL({x:W * .18 - 19*b, y:H / 2 - 19*b, w:38*b})];
+    grStack([grT(c.firma, {size:10*b, font:"Tenor Sans", color:GC.deep}), 2*b, grT(c.ruolo, {size:4.6*b, color:GC.lild, lh:1.3}), 5*b, grS({w:12*b, h:.6*b, fill:GC.lil}), 5*b, grT(c.telefono, {size:4.8*b}), 1*b, grT(c.email, {size:4.8*b}), 1*b, grT(c.sito, {size:4.2*b, color:GC.muted})], W * .43, 20*b, W * .52, "left");
+    return {bg:{color:GC.white}, els:[...els, ...grStackEls]};
+  }},
+  centrato:{l:"Centrato", f(W, H, c){
+    const b = H / 100, els = [grL({variant:"mark", color:GC.sage, x:W / 2 - 11*b, y:12*b, w:22*b})];
+    grStack([grT(c.firma, {size:10*b, font:"Tenor Sans", color:GC.deep}), 1.5*b, grT(c.ruolo, {size:4.4*b, color:GC.lild}), 5*b, grT([c.telefono, c.email].filter(Boolean).join("  ·  "), {size:4.4*b}), 1*b, grT(c.sito, {size:4*b, color:GC.muted})], W * .06, 40*b, W * .88, "center");
+    return {bg:{color:GC.mist}, els:[...els, ...grStackEls]};
+  }},
+  retro:{l:"Retro verde", f(W, H, c){
+    const b = H / 100;
+    return {bg:{color:GC.sage}, els:[grL({variant:"mark", color:GC.white, x:W / 2 - 20*b, y:16*b, w:40*b}), grT(c.firma, {x:W * .1, y:64*b, w:W * .8, size:9*b, font:"Tenor Sans", color:GC.white}), grT(c.ruolo, {x:W * .1, y:79*b, w:W * .8, size:4.2*b, color:GC.white, op:.85})]};
+  }},
+  vuota:{l:"Pagina vuota", f(){ return {bg:{color:GC.white}, els:[]}; }}
+};
+let grStackEls = [];
+function grStackFit(items, x, y, w, align, maxY){
+  let end = grStack(items, x, y, w, align);
+  for (let i = 0; i < 6 && end > maxY; i++){
+    const k = Math.max(.5, (maxY - y) / (end - y)) * .97;
+    items.forEach((it, j) => { if (typeof it === "number") items[j] = it * k; else if (it && it.type === "text") it.size *= k; });
+    end = grStack(items, x, y, w, align);
+  }
+  return end;
+}
+const grTpls = fmt => fmt === "biglietto" ? GR_TPL_CARD : GR_TPL;
+function grBuild(fmt, tpl, c){
+  const F = GR_FMT[fmt], T = grTpls(fmt)[tpl] || grTpls(fmt).vuota;
+  const r = T.f(F.w, F.h, fmt === "biglietto" ? {firma:c.firma, ruolo:c.ruolo, telefono:C.contact.phone, email:C.contact.email, sito:c.sito} : c);
+  r.els = r.els.filter(Boolean);
+  return {bg:{img:null, op:1, px:50, py:50, ...r.bg}, els:r.els};
+}
+
+/* --- elenco --- */
+async function renderGrafiche(){
+  const P = $("#panel");
+  if (grView === "edit" && grDoc) return grEditor();
+  if (grView === "new") return grNewView();
+  P.innerHTML = `<div class="empty">Caricamento…</div>`;
+  await loadWork(); if (tab !== "grafiche") return;
+  const list = W.grafiche.slice().sort((a,b) => (b.agg || "").localeCompare(a.agg || ""));
+  P.innerHTML = `<div class="toolbar"><p class="help" style="margin:0;flex:1;min-width:240px">Locandine, flyer, post e biglietti già nel tuo stile. Scegli un modello, cambia testi e foto, sposta tutto dove vuoi e scarica.</p>
+      <button class="btn btn-primary small" data-grnew="1">+ Nuova grafica</button></div>
+    ${list.length ? `<div class="grgrid">${list.map(d => `<div class="grcard"><button type="button" class="grthumb" data-gropen="${d.id}" aria-label="Apri ${esc(d.nome || "grafica")}">${d.thumb ? `<img src="${esc(d.thumb)}" alt="">` : ""}</button>
+        <div class="grmeta"><b>${esc(d.nome || "Senza nome")}</b><small>${esc(GR_FMT[d.fmt].l)} · ${esc(fmtDate(d.agg || new Date().toISOString(), {day:"numeric", month:"short"}))}</small></div>
+        <div class="gracts"><button type="button" data-grdup="${d.id}">Duplica</button><button type="button" class="danger" data-grdel="${d.id}">Elimina</button></div></div>`).join("")}</div>`
+      : `<div class="box grempty"><h3>Crea la tua prima grafica</h3><p class="sub">Per un incontro, un annuncio sui social o i biglietti da visita. Colori, caratteri e logo sono già i tuoi.</p><button class="btn btn-primary" data-grnew="1">+ Nuova grafica</button></div>`}`;
+}
+
+/* --- nuova --- */
+async function grNewView(){
+  const P = $("#panel"); await grFontsReady();
+  if (!grNew.c) grNew.c = grContent();
+  const c = grNew.c, card = grNew.fmt === "biglietto", evs = (C.events && C.events.items) || [];
+  const tpls = grTpls(grNew.fmt); if (!tpls[grNew.tpl]) grNew.tpl = Object.keys(tpls)[0];
+  P.innerHTML = `<div class="toolbar"><button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button><span class="sp"></span><button class="btn btn-primary small" data-grcreate="1">Inizia a modificare →</button></div>
+    <div class="box"><h3>1. Che cosa vuoi creare?</h3>
+      <div class="grfmts">${Object.entries(GR_FMT).map(([k, f]) => `<button type="button" class="grfmt ${grNew.fmt === k ? "on" : ""}" data-grfmt="${k}"><span class="shape"><i style="width:${Math.round(f.w * 58 / Math.max(f.w, f.h))}px;height:${Math.round(f.h * 58 / Math.max(f.w, f.h))}px"></i></span><b>${esc(f.l)}</b><small>${esc(f.d)}</small></button>`).join("")}</div></div>
+    <div class="grnewgrid">
+      <div class="box"><h3>2. I testi</h3><p class="sub">Puoi cambiarli anche dopo, direttamente sulla grafica.</p>
+        ${card ? "" : evs.length ? `<div class="fld"><label for="grEv">Prendi i dati da un incontro</label><select id="grEv"><option value="">— Scegli un incontro —</option>${evs.map((e, i) => `<option value="${i}">${esc(e.title)}${e.date ? " · " + esc(e.date.split("-").reverse().join("/")) : ""}</option>`).join("")}</select></div>` : ""}
+        ${(card ? [["firma","Nome"],["ruolo","Ruolo"],["sito","Sito o indirizzo"]] : [["occhiello","Frase sopra il titolo"],["titolo","Titolo"],["data","Data e ora"],["luogo","Luogo"],["testo","Descrizione"],["chiusura","Frase finale (es. Ingresso libero)"]]).map(([k, l]) => k === "testo" ? `<div class="fld"><label for="grc-${k}">${l}</label><textarea id="grc-${k}" data-grc="${k}" rows="3">${esc(c[k] || "")}</textarea></div>` : `<div class="fld"><label for="grc-${k}">${l}</label><input id="grc-${k}" data-grc="${k}" value="${esc(c[k] || "")}"></div>`).join("")}
+      </div>
+      <div class="box"><h3>3. Scegli il modello</h3><p class="sub">È solo il punto di partenza: poi sposti, ingrandisci e cambi tutto.</p>
+        <div class="grtpls">${Object.entries(tpls).map(([k, t]) => `<button type="button" class="grtpl ${grNew.tpl === k ? "on" : ""}" data-grtpl="${k}"><canvas data-grprev="${k}"></canvas><span>${esc(t.l)}</span></button>`).join("")}</div>
+      </div>
+    </div>`;
+  grDrawPreviews();
+}
+function grDrawPreviews(){
+  const F = GR_FMT[grNew.fmt];
+  $$("[data-grprev]").forEach(cv => {
+    const d = {fmt:grNew.fmt, ...grBuild(grNew.fmt, cv.dataset.grprev, grNew.c)};
+    const k = Math.min(220 / F.w, 260 / F.h), dpr = Math.min(2, devicePixelRatio || 1);
+    cv.width = Math.round(F.w * k * dpr); cv.height = Math.round(F.h * k * dpr); cv.style.width = Math.round(F.w * k) + "px"; cv.style.height = Math.round(F.h * k) + "px";
+    const draw = () => grDraw(cv.getContext("2d"), d, k * dpr, draw);
+    draw();
+  });
+}
+async function grCreate(){
+  const F = GR_FMT[grNew.fmt], b = grBuild(grNew.fmt, grNew.tpl, grNew.c);
+  const nome = grNew.fmt === "biglietto" ? "Biglietto da visita" : (grNew.c.titolo || F.l);
+  grDoc = {id:"grafica-" + uid(), nome, fmt:grNew.fmt, ...b, agg:new Date().toISOString()};
+  grNew.c = null; grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit";
+  await grSaveNow(); renderGrafiche();
+}
+
+/* --- editor --- */
+let grScale = 1;
+function grEditor(){
+  const P = $("#panel"), F = GR_FMT[grDoc.fmt];
+  P.innerHTML = `<div class="gred">
+    <div class="grtop">
+      <button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button>
+      <input id="grName" class="grname" value="${esc(grDoc.nome || "")}" aria-label="Nome della grafica" placeholder="Nome della grafica">
+      <span class="grsaved" id="grSaved">Salvata</span>
+      <span class="sp"></span>
+      <button class="mini-btn" data-grundo="1" title="Annulla (Ctrl+Z)" aria-label="Annulla">↶</button><button class="mini-btn" data-grredo="1" title="Ripeti" aria-label="Ripeti">↷</button>
+      <div class="grdl"><button class="btn btn-primary small" data-grdlmenu="1">${ic("doc")}Scarica</button><div class="grdlmenu" id="grDl" hidden>
+        ${F.print ? F.sizes.map(([n]) => `<button type="button" data-grexp="pdf|${n}">PDF da stampare · ${esc(n)}</button>`).join("") : ""}
+        <button type="button" data-grexp="png">Immagine PNG${F.print ? "" : " (per social)"}</button><button type="button" data-grexp="jpg">Immagine JPG (più leggera)</button></div></div>
+    </div>
+    <div class="gradd">
+      <button type="button" data-gradd="titolo"><b>T</b>Titolo</button>
+      <button type="button" data-gradd="testo"><span style="font-size:.85em">T</span>Testo</button>
+      <button type="button" data-gradd="img">${ic("clip")}Immagine</button>
+      <button type="button" data-gradd="logo">${ic("heart")}Logo</button>
+      <button type="button" data-gradd="rect"><i class="sh rect"></i>Rettangolo</button>
+      <button type="button" data-gradd="ellipse"><i class="sh circ"></i>Cerchio</button>
+      <button type="button" data-gradd="line"><i class="sh line"></i>Linea</button>
+    </div>
+    <div class="grmain">
+      <div class="grstage" id="grStage"><div class="grboard" id="grBoard"><canvas id="grCv"></canvas><div class="grsel" id="grSelBox" hidden>${["nw","ne","sw","se","e","w"].map(h => `<i data-h="${h}" class="h-${h}"></i>`).join("")}</div><div class="grguide v" id="grGv" hidden></div><div class="grguide h" id="grGh" hidden></div><div class="grdrop" id="grDrop" hidden>Lascia qui l'immagine</div></div></div>
+      <aside class="grprops" id="grProps"></aside>
+    </div>
+    <p class="hint grtip">Trascina per spostare, usa i quadratini per ingrandire. Doppio clic su un testo per modificarlo. Puoi anche trascinare un'immagine (per esempio da Canva) direttamente sulla grafica.</p>
+  </div>`;
+  grFontsReady(grDoc).then(() => { grFit(); grRender(); });
+  grFit(); grRender(); grProps();
+}
+function grFit(){
+  const st = $("#grStage"), bd = $("#grBoard"), cv = $("#grCv"); if (!st) return;
+  const F = GR_FMT[grDoc.fmt], aw = st.clientWidth - 24, ah = Math.max(380, Math.min(innerHeight - 220, 900));
+  grScale = Math.min(aw / F.w, ah / F.h);
+  const dpr = Math.min(2.5, devicePixelRatio || 1);
+  bd.style.width = F.w * grScale + "px"; bd.style.height = F.h * grScale + "px";
+  cv.width = Math.round(F.w * grScale * dpr); cv.height = Math.round(F.h * grScale * dpr);
+  cv.style.width = F.w * grScale + "px"; cv.style.height = F.h * grScale + "px"; cv._dpr = dpr;
+}
+function grRender(){
+  const cv = $("#grCv"); if (!cv || !grDoc) return;
+  const ctx = cv.getContext("2d"); ctx.clearRect(0, 0, cv.width, cv.height);
+  grDraw(ctx, grDoc, grScale * cv._dpr, grRender); grSelBox();
+}
+const grEl = () => grDoc && grDoc.els.find(e => e.id === grSel);
+function grSelBox(){
+  const b = $("#grSelBox"), e = grEl(); if (!b) return;
+  if (!e){ b.hidden = true; return; }
+  b.hidden = false; b.className = "grsel" + (e.locked ? " locked" : "") + (e.type === "text" ? " txt" : "");
+  Object.assign(b.style, {left:e.x * grScale + "px", top:e.y * grScale + "px", width:e.w * grScale + "px", height:(e.h || 0) * grScale + "px"});
+}
+function grPush(){
+  const s = JSON.stringify({bg:grDoc.bg, els:grDoc.els});
+  if (grHist[grHi] === s) return;
+  grHist = grHist.slice(0, grHi + 1); grHist.push(s); if (grHist.length > 60) grHist.shift(); grHi = grHist.length - 1;
+}
+function grChanged(hist = true, props = false){
+  grRender(); if (props) grProps();
+  if (hist){ clearTimeout(grHistT); grHistT = setTimeout(grPush, 350); }
+  const sv = $("#grSaved"); if (sv){ sv.textContent = "Salvataggio…"; sv.classList.add("busy"); }
+  clearTimeout(grSaveT); grSaveT = setTimeout(grSaveNow, 1200);
+}
+function grUndo(dir){
+  clearTimeout(grHistT); grPush();
+  const n = grHi + dir; if (n < 0 || n >= grHist.length) return;
+  grHi = n; const s = JSON.parse(grHist[n]); grDoc.bg = s.bg; grDoc.els = s.els;
+  if (!grEl()) grSel = null;
+  grRender(); grProps(); clearTimeout(grSaveT); grSaveT = setTimeout(grSaveNow, 1200);
+}
+function grThumb(doc){
+  const F = GR_FMT[doc.fmt], k = 360 / Math.max(F.w, F.h), c = document.createElement("canvas");
+  c.width = Math.round(F.w * k); c.height = Math.round(F.h * k);
+  grDraw(c.getContext("2d"), doc, k);
+  try { return c.toDataURL("image/jpeg", .72); } catch { return ""; }
+}
+const grPreload = doc => Promise.race([Promise.all([doc.bg.img, ...doc.els.filter(e => e.type === "img").map(e => e.src), PDF_LOGO, GR_MARK].filter(Boolean).map(grImgWait)), new Promise(r => setTimeout(r, 3000))]);
+async function grSaveNow(){
+  clearTimeout(grSaveT); if (!grDoc) return;
+  const d = grDoc; await grPreload(d); d.agg = new Date().toISOString(); d.thumb = grThumb(d);
+  try { await coll.put("grafiche", JSON.parse(JSON.stringify(d))); const sv = $("#grSaved"); if (sv){ sv.textContent = "Salvata"; sv.classList.remove("busy"); } }
+  catch { const sv = $("#grSaved"); if (sv){ sv.textContent = "Non salvata: controlla la connessione"; sv.classList.add("err"); } }
+}
+
+/* proprietà */
+const grSw = (key, cur, none) => `<div class="grsw">${none ? `<button type="button" class="none ${!cur ? "on" : ""}" data-grset="${key}" data-v="" title="Nessuno"></button>` : ""}${GR_COLORS.map(c => `<button type="button" style="background:${c}" class="${(cur || "").toLowerCase() === c.toLowerCase() ? "on" : ""}" data-grset="${key}" data-v="${c}" aria-label="Colore ${c}"></button>`).join("")}<label class="grpick" title="Altro colore"><input type="color" data-grcol="${key}" value="${/^#[0-9a-f]{6}$/i.test(cur || "") ? cur : "#82947E"}"></label></div>`;
+const grRange = (key, label, v, min, max, step = 1, unit = "") => `<div class="grfld"><label>${label} <output id="gro-${key}">${Math.round(v * 100) / 100}${unit}</output></label><input type="range" min="${min}" max="${max}" step="${step}" value="${v}" data-grnum="${key}" data-unit="${unit}"></div>`;
+function grProps(){
+  const P = $("#grProps"); if (!P) return;
+  const e = grEl();
+  if (!e){
+    const bg = grDoc.bg;
+    P.innerHTML = `<h4>Sfondo</h4>${grSw("bg.color", bg.color)}
+      <h4>Immagine di sfondo</h4>
+      ${bg.img ? `<div class="grbgimg"><img src="${esc(bg.img)}" alt=""><button type="button" class="linkbtn danger" data-grbgrm="1">Togli</button></div>${grRange("bg.op","Visibilità",Math.round((bg.op ?? 1) * 100),5,100,1,"%")}${grRange("bg.px","Posizione orizzontale",bg.px ?? 50,0,100)}${grRange("bg.py","Posizione verticale",bg.py ?? 50,0,100)}` : ""}
+      <button type="button" class="btn btn-ghost small" data-grpick="bg">${bg.img ? "Cambia immagine" : "Scegli un'immagine"}</button>
+      <h4>Livelli</h4><p class="hint" style="margin:-4px 0 8px">Clicca un elemento per selezionarlo, anche se è nascosto sotto un altro.</p>
+      <div class="grlayers">${grDoc.els.slice().reverse().map(x => `<button type="button" data-grpicklayer="${x.id}"><span>${grLayerName(x)}</span>${x.locked ? "🔒" : ""}</button>`).join("") || `<p class="hint">Nessun elemento. Aggiungine uno dalla barra in alto.</p>`}</div>`;
+    return;
+  }
+  const common = `<h4>Disposizione</h4><div class="gracts2">
+      <button type="button" data-grdo="cx" title="Centra in orizzontale">↔ Centra</button><button type="button" data-grdo="cy" title="Centra in verticale">↕ Centra</button>
+      <button type="button" data-grdo="up" title="Porta sopra">Porta sopra</button><button type="button" data-grdo="down" title="Porta sotto">Porta sotto</button>
+      <button type="button" data-grdo="dup">Duplica</button><button type="button" data-grdo="lock">${e.locked ? "Sblocca" : "Blocca"}</button>
+      <button type="button" data-grdo="del" class="danger">Elimina</button></div>
+    ${grRange("op","Visibilità",Math.round((e.op ?? 1) * 100),5,100,1,"%")}
+    <button type="button" class="linkbtn grdesel" data-grdesel="1">← Torna allo sfondo e ai livelli</button>`;
+  let h = "";
+  if (e.type === "text"){
+    h = `<h4>Testo</h4><textarea id="grText" rows="3" data-grtxt="1">${esc(e.text)}</textarea>
+      <div class="grfld"><label for="grFont">Carattere</label><select id="grFont" data-grsel="font">${GR_FONTS.map(([f, l]) => `<option value="${f}" ${e.font === f ? "selected" : ""} style="font-family:'${f}'">${l}</option>`).join("")}</select></div>
+      ${grRange("size","Grandezza",Math.round(e.size),8,Math.round(GR_FMT[grDoc.fmt].w / 4))}
+      <div class="grtog">
+        <button type="button" class="${e.bold ? "on" : ""}" data-grtog="bold" title="Grassetto"><b>G</b></button><button type="button" class="${e.italic ? "on" : ""}" data-grtog="italic" title="Corsivo"><i>C</i></button><button type="button" class="${e.upper ? "on" : ""}" data-grtog="upper" title="Tutto maiuscolo">AA</button>
+        <span class="sep"></span>
+        ${[["left","Allinea a sinistra","⟸"],["center","Centra","≡"],["right","Allinea a destra","⟹"]].map(([a, t, s]) => `<button type="button" class="${e.align === a ? "on" : ""}" data-gralign="${a}" title="${t}">${s}</button>`).join("")}
+      </div>
+      <h4>Colore</h4>${grSw("color", e.color)}
+      ${grRange("ls","Spazio tra le lettere",Math.round((e.ls || 0) * 100),0,40,1)}
+      ${grRange("lh","Spazio tra le righe",Math.round((e.lh || 1.2) * 100),80,220,5)}`;
+  } else if (e.type === "img"){
+    h = `<h4>Immagine</h4><button type="button" class="btn btn-ghost small" data-grpick="replace">Cambia immagine</button>
+      <div class="grtog wide" style="margin-top:12px"><button type="button" class="${e.fit !== "contain" ? "on" : ""}" data-grfit="cover">Riempi il riquadro</button><button type="button" class="${e.fit === "contain" ? "on" : ""}" data-grfit="contain">Intera</button></div>
+      ${e.fit !== "contain" ? grRange("px","Inquadratura orizzontale",e.px ?? 50,0,100) + grRange("py","Inquadratura verticale",e.py ?? 50,0,100) : ""}
+      ${grRange("rad","Angoli arrotondati (50 = cerchio)",e.rad || 0,0,50)}`;
+  } else if (e.type === "logo"){
+    h = `<h4>Logo</h4><div class="grtog wide"><button type="button" class="${e.variant === "round" ? "on" : ""}" data-grvar="round">Logo rotondo</button><button type="button" class="${e.variant !== "round" ? "on" : ""}" data-grvar="mark">Solo simbolo</button></div>
+      ${e.variant !== "round" ? `<h4>Colore del simbolo</h4>${grSw("color", e.color)}` : ""}`;
+  } else if (e.type === "shape"){
+    h = `<h4>Forma</h4><div class="grtog wide"><button type="button" class="${e.shape !== "ellipse" ? "on" : ""}" data-grshape="rect">Rettangolo</button><button type="button" class="${e.shape === "ellipse" ? "on" : ""}" data-grshape="ellipse">Cerchio</button></div>
+      <h4>Riempimento</h4>${grSw("fill", e.fill, true)}
+      <h4>Bordo</h4>${grSw("stroke", e.stroke, true)}${grRange("sw","Spessore del bordo",e.sw || 0,0,30)}
+      ${e.shape !== "ellipse" ? grRange("rad","Angoli arrotondati",e.rad || 0,0,Math.round(Math.min(e.w, e.h) / 2)) : ""}`;
+  }
+  P.innerHTML = h + common;
+}
+function grLayerName(x){
+  if (x.type === "text") return "T · " + esc(String(x.text).split("\n")[0].slice(0, 26) || "Testo");
+  return {img:"Immagine", logo:x.variant === "round" ? "Logo" : "Simbolo", shape:x.shape === "ellipse" ? "Cerchio" : "Rettangolo"}[x.type] || x.type;
+}
+function grSetPath(path, v){
+  if (path.startsWith("bg.")) grDoc.bg[path.slice(3)] = v;
+  else { const e = grEl(); if (e) e[path] = v; }
+}
+
+/* aggiungere */
+function grAdd(kind){
+  const F = GR_FMT[grDoc.fmt], b = Math.min(F.w, F.h) / 100; let e;
+  if (kind === "titolo") e = grT("Il tuo titolo", {font:"Tenor Sans", size:7*b, color:GC.deep, w:F.w * .7, lh:1.1});
+  if (kind === "testo") e = grT("Scrivi qui il tuo testo", {size:3*b, w:F.w * .6, color:GC.ink, lh:1.4});
+  if (kind === "logo") e = grL({w:16*b});
+  if (kind === "rect") e = grS({w:30*b, h:20*b, fill:GC.lil, rad:2*b});
+  if (kind === "ellipse") e = grS({shape:"ellipse", w:24*b, h:24*b, fill:GC.lil});
+  if (kind === "line") e = grS({w:30*b, h:Math.max(2, .5*b), fill:GC.sage});
+  if (!e) return;
+  grMeasure(e); e.x = (F.w - e.w) / 2; e.y = (F.h - (e.h || e.w)) / 2;
+  grDoc.els.push(e); grSel = e.id; grChanged(true, true);
+  if (e.type === "text") setTimeout(() => { const t = $("#grText"); if (t){ t.focus(); t.select(); } }, 30);
+}
+function grAddImage(src, mode){
+  const F = GR_FMT[grDoc.fmt];
+  if (mode === "bg"){ grDoc.bg.img = src; grDoc.bg.op = grDoc.bg.op ?? 1; grChanged(true, true); return; }
+  const e = grEl();
+  if (mode === "replace" && e && e.type === "img"){ e.src = src; grChanged(true, true); return; }
+  let done = false;
+  const add = () => {
+    if (done) return; done = true;
+    const im = GR_IMG[src].im, r = (im.naturalHeight / im.naturalWidth) || 1, w = Math.min(F.w * .5, F.h * .5 / r);
+    const el = grI(src, {w, h:w * r, x:(F.w - w) / 2, y:(F.h - w * r) / 2, fit:"cover"});
+    grDoc.els.push(el); grSel = el.id; grChanged(true, true);
+  };
+  if (grImg(src, add) || (GR_IMG[src] && GR_IMG[src].err)) add();
+}
+async function grUpload(file){
+  const url = URL.createObjectURL(file);
+  const im = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = url; });
+  const png = /png|webp|gif|svg/.test(file.type), max = 2400, k = Math.min(1, max / Math.max(im.naturalWidth, im.naturalHeight));
+  const cv = document.createElement("canvas"); cv.width = Math.round(im.naturalWidth * k); cv.height = Math.round(im.naturalHeight * k);
+  cv.getContext("2d").drawImage(im, 0, 0, cv.width, cv.height); URL.revokeObjectURL(url);
+  const type = png ? "image/png" : "image/jpeg";
+  if (store.sb){
+    const blob = await new Promise(r => cv.toBlob(r, type, .9));
+    const path = "grafiche/" + uid() + (png ? ".png" : ".jpg");
+    const {error} = await store.sb.storage.from("foto").upload(path, blob, {contentType:type, upsert:false});
+    if (error) throw error;
+    return store.sb.storage.from("foto").getPublicUrl(path).data.publicUrl;
+  }
+  if (store.assets){ const blob = await new Promise(r => cv.toBlob(r, type, .9)); const r = await store.assets.upload(blob); return "/_blob/" + r.id; }
+  return cv.toDataURL(type, .85);
+}
+const grLib = () => (W.impostazioni.find(x => x.id === "libreria-immagini") || {id:"libreria-immagini", imgs:[]});
+async function grLibAdd(src){ const L = grLib(); L.imgs = [src, ...L.imgs.filter(x => x !== src)].slice(0, 60); try { await coll.put("impostazioni", L); } catch {} }
+function grPicker(mode){
+  const L = grLib(), site = [grFoto(), "walk-poster.jpg"];
+  openSheet(mode === "bg" ? "Immagine di sfondo" : "Aggiungi un'immagine",
+    `<label class="grupload"><input type="file" id="grFile" accept="image/*" multiple><span>${ic("clip")}<b>Carica dal computer o dal telefono</b><small>PNG, JPG o WebP. Le immagini PNG di Canva con lo sfondo trasparente restano trasparenti.</small></span></label>
+     <p class="hint" id="grUpSt"></p>
+     ${L.imgs.length ? `<h4 class="grh4">Le tue immagini</h4><div class="grlib">${L.imgs.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+     <h4 class="grh4">Foto del sito</h4><div class="grlib">${site.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>`,
+    async () => {}, null, "Chiudi");
+  sheetState.grMode = mode;
+}
+async function grHandleFiles(files, mode){
+  const st = $("#grUpSt"), list = [...files].filter(f => /^image\//.test(f.type)); if (!list.length) return;
+  for (const f of list){
+    if (st) st.textContent = "Caricamento in corso…";
+    try { const src = await grUpload(f); await grLibAdd(src); grAddImage(src, mode); }
+    catch { if (st) st.textContent = "Caricamento non riuscito. Riprova con un'immagine più piccola."; else toast("Caricamento non riuscito"); return; }
+    mode = mode === "replace" ? "add" : mode;
+  }
+  if (sheetState && sheetState.grMode) closeSheet();
+}
+
+/* esportazione */
+async function grExport(kind){
+  const menu = $("#grDl"); if (menu) menu.hidden = true;
+  const F = GR_FMT[grDoc.fmt], [type, size] = kind.split("|");
+  toast("Preparo il file…");
+  try {
+    await grFontsReady(grDoc);
+    const srcs = [grDoc.bg.img, ...grDoc.els.filter(e => e.type === "img").map(e => e.src), PDF_LOGO, GR_MARK].filter(Boolean);
+    await Promise.all(srcs.map(grImgWait));
+    const sz = F.print ? (F.sizes.find(x => x[0] === size) || F.sizes[0]) : null;
+    const k = type === "pdf" ? sz[3] : (F.print ? Math.min(2, F.sizes[0][3]) : 1);
+    const c = document.createElement("canvas"); c.width = Math.round(F.w * k); c.height = Math.round(F.h * k);
+    const ctx = c.getContext("2d"); grDraw(ctx, grDoc, k);
+    const nome = (grDoc.nome || "Grafica").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 60);
+    let blob;
+    if (type === "pdf"){
+      await loadJsPDF();
+      const [, mw, mh] = sz, pdf = new window.jspdf.jsPDF({unit:"mm", format:[mw, mh], orientation:mw > mh ? "landscape" : "portrait", compress:true});
+      pdf.addImage(c.toDataURL("image/jpeg", .93), "JPEG", 0, 0, mw, mh);
+      blob = pdf.output("blob");
+      await saveFile(`${nome} ${size}.pdf`, blob);
+    } else {
+      blob = await new Promise((res, rej) => { try { c.toBlob(b => b ? res(b) : rej(new Error("blob")), type === "png" ? "image/png" : "image/jpeg", .92); } catch (err){ rej(err); } });
+      await saveFile(`${nome}.${type}`, blob);
+    }
+    toast("File scaricato");
+  } catch (err){ console.error(err); toast(/secur|taint/i.test(String(err)) ? "Un'immagine non si può esportare: caricala di nuovo dal computer." : "Non sono riuscita a creare il file. Riprova."); }
+}
+
+/* --- eventi --- */
+let grDrag = null;
+function grPt(ev){ const r = $("#grBoard").getBoundingClientRect(); return {x:(ev.clientX - r.left) / grScale, y:(ev.clientY - r.top) / grScale}; }
+function grHit(p){ for (let i = grDoc.els.length - 1; i >= 0; i--){ const e = grDoc.els[i]; if (e.hide) continue; const h = e.type === "logo" ? e.w : e.h; if (p.x >= e.x && p.x <= e.x + e.w && p.y >= e.y && p.y <= e.y + h) return e; } return null; }
+panel.addEventListener("pointerdown", ev => {
+  if (tab !== "grafiche" || grView !== "edit") return;
+  const bd = ev.target.closest("#grBoard"); if (!bd) return;
+  ev.preventDefault();
+  const p = grPt(ev), hd = ev.target.closest("[data-h]");
+  let e = hd ? grEl() : grHit(p);
+  if (!hd){ const prev = grSel; grSel = e ? e.id : null; if (prev !== grSel) grProps(); grSelBox(); }
+  if (!e || e.locked) return;
+  grDrag = {mode:hd ? hd.dataset.h : "move", p0:p, e0:{...e}, id:e.id, moved:false};
+  bd.setPointerCapture(ev.pointerId);
+});
+panel.addEventListener("pointermove", ev => {
+  if (!grDrag || tab !== "grafiche") return;
+  const e = grEl(); if (!e) return;
+  const p = grPt(ev), dx = p.x - grDrag.p0.x, dy = p.y - grDrag.p0.y, o = grDrag.e0, F = GR_FMT[grDoc.fmt];
+  if (Math.abs(dx) + Math.abs(dy) > .5) grDrag.moved = true;
+  const gv = $("#grGv"), gh = $("#grGh"); gv.hidden = gh.hidden = true;
+  if (grDrag.mode === "move"){
+    let x = o.x + dx, y = o.y + dy; const th = 7 / grScale, h = e.type === "logo" ? e.w : e.h;
+    const sx = [[F.w / 2 - e.w / 2, F.w / 2], [0, 0], [F.w - e.w, F.w]].find(([t]) => Math.abs(x - t) < th);
+    if (sx){ x = sx[0]; gv.hidden = false; gv.style.left = sx[1] * grScale + "px"; }
+    const sy = [[F.h / 2 - h / 2, F.h / 2], [0, 0], [F.h - h, F.h]].find(([t]) => Math.abs(y - t) < th);
+    if (sy){ y = sy[0]; gh.hidden = false; gh.style.top = sy[1] * grScale + "px"; }
+    e.x = x; e.y = y;
+  } else {
+    const m = grDrag.mode, keep = e.type === "img" || e.type === "logo";
+    let x = o.x, y = o.y, w = o.w, h = o.h || o.w;
+    if (m.includes("e")) w = Math.max(10, o.w + dx);
+    if (m.includes("w")){ w = Math.max(10, o.w - dx); x = o.x + o.w - w; }
+    if (e.type === "text"){
+      if (m.length === 2){ const k = w / o.w; e.size = Math.max(6, o.size * k); }
+      e.x = x; e.w = w; if (m.includes("n")) e.y = o.y + (o.h - grLayout(grMctx, e).h);
+    } else {
+      if (m.length === 2){
+        if (m.includes("s")) h = Math.max(10, (o.h || o.w) + dy);
+        if (m.includes("n")){ h = Math.max(10, (o.h || o.w) - dy); }
+        if (keep && o.w && (o.h || o.w)){ const r = (o.h || o.w) / o.w; if (Math.abs(dx) >= Math.abs(dy)) h = w * r; else { w = h / r; if (m.includes("w")) x = o.x + o.w - w; } }
+        if (m.includes("n")) y = o.y + (o.h || o.w) - h;
+      }
+      Object.assign(e, {x, y, w, h}); if (e.type === "logo") e.h = e.w;
+    }
+  }
+  grRender();
+});
+const grUp = () => {
+  if (!grDrag) return; const moved = grDrag.moved; grDrag = null;
+  const gv = $("#grGv"), gh = $("#grGh"); if (gv){ gv.hidden = gh.hidden = true; }
+  if (moved){ grChanged(true, false); const e = grEl(); if (e && e.type === "text"){ const o = $("#gro-size"); if (o){ o.textContent = Math.round(e.size); const r = $("[data-grnum=size]"); if (r) r.value = Math.round(e.size); } } }
+};
+panel.addEventListener("pointerup", grUp); panel.addEventListener("pointercancel", grUp);
+panel.addEventListener("dblclick", ev => {
+  if (tab !== "grafiche" || !ev.target.closest("#grBoard")) return;
+  const e = grEl(); if (e && e.type === "text"){ const t = $("#grText"); if (t){ t.focus(); t.select(); t.scrollIntoView({block:"nearest", behavior:"smooth"}); } }
+  if (e && e.type === "img") grPicker("replace");
+});
+panel.addEventListener("dragover", ev => { if (tab === "grafiche" && grView === "edit" && ev.target.closest("#grStage")){ ev.preventDefault(); $("#grDrop").hidden = false; } });
+panel.addEventListener("dragleave", ev => { if (tab === "grafiche" && grView === "edit" && (!ev.relatedTarget || !ev.relatedTarget.closest || !ev.relatedTarget.closest("#grStage"))){ const d = $("#grDrop"); if (d) d.hidden = true; } });
+panel.addEventListener("drop", ev => { if (tab !== "grafiche" || grView !== "edit" || !ev.target.closest("#grStage")) return; ev.preventDefault(); $("#grDrop").hidden = true; const f = ev.dataTransfer && ev.dataTransfer.files; if (f && f.length) grHandleFiles(f, "add"); });
+panel.addEventListener("click", async ev => {
+  if (tab !== "grafiche") return;
+  const t = ev.target;
+  if (t.closest("[data-grnew]")){ grView = "new"; grNew.c = null; renderGrafiche(); return; }
+  if (t.closest("[data-grback]")){ if (grView === "edit") await grSaveNow(); grView = "list"; grDoc = null; grSel = null; renderGrafiche(); return; }
+  const op = t.closest("[data-gropen]"); if (op){ const d = W.grafiche.find(x => x.id === op.dataset.gropen); if (d){ grDoc = JSON.parse(JSON.stringify(d)); grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; renderGrafiche(); } return; }
+  const du = t.closest("[data-grdup]"); if (du){ const d = W.grafiche.find(x => x.id === du.dataset.grdup); if (d){ const n = {...JSON.parse(JSON.stringify(d)), id:"grafica-" + uid(), nome:(d.nome || "Grafica") + " (copia)", agg:new Date().toISOString()}; n.els.forEach(e => e.id = uid()); await coll.put("grafiche", n); toast("Grafica duplicata"); renderGrafiche(); } return; }
+  const de = t.closest("[data-grdel]"); if (de){
+    if (de.dataset.sure){ await coll.del("grafiche", de.dataset.grdel); toast("Grafica eliminata"); renderGrafiche(); }
+    else { de.dataset.sure = "1"; de.textContent = "Sicura? Elimina"; setTimeout(() => { if (de.isConnected){ delete de.dataset.sure; de.textContent = "Elimina"; } }, 3500); }
+    return;
+  }
+  const fm = t.closest("[data-grfmt]"); if (fm){ grNew.fmt = fm.dataset.grfmt; grNewView(); return; }
+  const tp = t.closest("[data-grtpl]"); if (tp){ grNew.tpl = tp.dataset.grtpl; $$(".grtpl").forEach(x => x.classList.toggle("on", x === tp)); return; }
+  if (t.closest("[data-grcreate]")){ grCreate(); return; }
+  if (grView !== "edit") return;
+  const ad = t.closest("[data-gradd]"); if (ad){ if (ad.dataset.gradd === "img") grPicker("add"); else grAdd(ad.dataset.gradd); return; }
+  if (t.closest("[data-grundo]")){ grUndo(-1); return; }
+  if (t.closest("[data-grredo]")){ grUndo(1); return; }
+  if (t.closest("[data-grdlmenu]")){ const m = $("#grDl"); m.hidden = !m.hidden; return; }
+  const ex = t.closest("[data-grexp]"); if (ex){ grExport(ex.dataset.grexp); return; }
+  if (!t.closest(".grdl")){ const m = $("#grDl"); if (m) m.hidden = true; }
+  const pk = t.closest("[data-grpick]"); if (pk){ grPicker(pk.dataset.grpick); return; }
+  if (t.closest("[data-grbgrm]")){ grDoc.bg.img = null; grChanged(true, true); return; }
+  if (t.closest("[data-grdesel]")){ grSel = null; grSelBox(); grProps(); return; }
+  const ly = t.closest("[data-grpicklayer]"); if (ly){ grSel = ly.dataset.grpicklayer; grSelBox(); grProps(); return; }
+  const sw = t.closest("[data-grset]"); if (sw){ grSetPath(sw.dataset.grset, sw.dataset.v); grChanged(true, true); return; }
+  const e = grEl(); if (!e) return;
+  const tg = t.closest("[data-grtog]"); if (tg){ e[tg.dataset.grtog] = !e[tg.dataset.grtog]; grChanged(true, true); return; }
+  const al = t.closest("[data-gralign]"); if (al){ e.align = al.dataset.gralign; grChanged(true, true); return; }
+  const ft = t.closest("[data-grfit]"); if (ft){ e.fit = ft.dataset.grfit; grChanged(true, true); return; }
+  const vr = t.closest("[data-grvar]"); if (vr){ e.variant = vr.dataset.grvar; grChanged(true, true); return; }
+  const sh = t.closest("[data-grshape]"); if (sh){ e.shape = sh.dataset.grshape; grChanged(true, true); return; }
+  const dd = t.closest("[data-grdo]"); if (dd){
+    const F = GR_FMT[grDoc.fmt], i = grDoc.els.indexOf(e), a = dd.dataset.grdo;
+    if (a === "cx") e.x = (F.w - e.w) / 2;
+    if (a === "cy") e.y = (F.h - (e.type === "logo" ? e.w : e.h)) / 2;
+    if (a === "up" && i < grDoc.els.length - 1){ grDoc.els.splice(i, 1); grDoc.els.splice(i + 1, 0, e); }
+    if (a === "down" && i > 0){ grDoc.els.splice(i, 1); grDoc.els.splice(i - 1, 0, e); }
+    if (a === "dup"){ const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20, locked:false}; grDoc.els.splice(i + 1, 0, n); grSel = n.id; }
+    if (a === "lock") e.locked = !e.locked;
+    if (a === "del"){ grDoc.els.splice(i, 1); grSel = null; }
+    grChanged(true, true);
+  }
+});
+panel.addEventListener("input", ev => {
+  if (tab !== "grafiche") return;
+  const t = ev.target;
+  if (t.dataset.grc && grNew.c){ grNew.c[t.dataset.grc] = t.value; clearTimeout(grNew.t); grNew.t = setTimeout(grDrawPreviews, 250); return; }
+  if (t.id === "grName" && grDoc){ grDoc.nome = t.value; grChanged(false); return; }
+  if (grView !== "edit") return;
+  if (t.dataset.grtxt){ const e = grEl(); if (e){ e.text = t.value; grChanged(true); } return; }
+  if (t.dataset.grnum){
+    const k = t.dataset.grnum, v = Number(t.value), o = $("#gro-" + k.replace(".", "\\.")); if (o) o.textContent = v + (t.dataset.unit || "");
+    if (k === "bg.op") grDoc.bg.op = v / 100; else if (k.startsWith("bg.")) grDoc.bg[k.slice(3)] = v;
+    else { const e = grEl(); if (!e) return; e[k] = k === "op" ? v / 100 : k === "ls" ? v / 100 : k === "lh" ? v / 100 : v; }
+    grChanged(true); return;
+  }
+  if (t.dataset.grcol){ grSetPath(t.dataset.grcol, t.value); grChanged(true); }
+});
+panel.addEventListener("change", ev => {
+  if (tab !== "grafiche") return;
+  const t = ev.target;
+  if (t.id === "grEv" && t.value !== ""){
+    const e = C.events.items[Number(t.value)]; if (!e) return;
+    Object.assign(grNew.c, {titolo:e.title || "", data:grEvDate(e), luogo:e.place || "", testo:e.note || "", chiusura:e.tag || grNew.c.chiusura});
+    ["titolo","data","luogo","testo","chiusura"].forEach(k => { const f = $("#grc-" + k); if (f) f.value = grNew.c[k]; }); grDrawPreviews(); return;
+  }
+  if (t.dataset.grsel){ const e = grEl(); if (e){ e[t.dataset.grsel] = t.value; grFontsReady(grDoc).then(() => grRender()); grChanged(true); } }
+  if (t.dataset.grcol) grProps();
+});
+$("#sheet").addEventListener("click", ev => {
+  const b = ev.target.closest("[data-grlib]"); if (!b || !sheetState || !sheetState.grMode) return;
+  const mode = sheetState.grMode; closeSheet(); grAddImage(b.dataset.grlib, mode);
+});
+$("#sheet").addEventListener("change", ev => { if (ev.target.id === "grFile" && sheetState && sheetState.grMode) grHandleFiles(ev.target.files, sheetState.grMode); });
+addEventListener("keydown", ev => {
+  if (tab !== "grafiche" || grView !== "edit" || !grDoc) return;
+  if (/INPUT|TEXTAREA|SELECT/.test(document.activeElement && document.activeElement.tagName) || $("#sheet").classList.contains("open")) return;
+  const mod = ev.ctrlKey || ev.metaKey;
+  if (mod && ev.key.toLowerCase() === "z"){ ev.preventDefault(); grUndo(ev.shiftKey ? 1 : -1); return; }
+  if (mod && ev.key.toLowerCase() === "y"){ ev.preventDefault(); grUndo(1); return; }
+  const e = grEl(); if (!e) return;
+  if (ev.key === "Delete" || ev.key === "Backspace"){ ev.preventDefault(); grDoc.els = grDoc.els.filter(x => x !== e); grSel = null; grChanged(true, true); return; }
+  if (mod && ev.key.toLowerCase() === "d"){ ev.preventDefault(); const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20}; grDoc.els.push(n); grSel = n.id; grChanged(true, true); return; }
+  const mv = {ArrowLeft:[-1,0], ArrowRight:[1,0], ArrowUp:[0,-1], ArrowDown:[0,1]}[ev.key];
+  if (mv && !e.locked){ ev.preventDefault(); const k = ev.shiftKey ? 10 : 2; e.x += mv[0] * k; e.y += mv[1] * k; grChanged(true); }
+  if (ev.key === "Escape"){ grSel = null; grSelBox(); grProps(); }
+});
+addEventListener("resize", () => { if (tab === "grafiche" && grView === "edit" && grDoc){ grFit(); grRender(); } });
 
 /* --- eventi CRM e copia di sicurezza --- */
 const crmRefreshList = () => { const el = $("#clist"); if (el) el.innerHTML = crmListHTML(); };
