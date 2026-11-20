@@ -800,6 +800,27 @@ body.gr-open{overflow:hidden}
 @media (pointer:coarse){.grsel i{width:26px;height:26px}.grsel .h-nw{left:-14px;top:-14px}.grsel .h-ne{right:-14px;top:-14px}.grsel .h-sw{left:-14px;bottom:-14px}.grsel .h-se{right:-14px;bottom:-14px}.grsel .h-e{right:-14px;margin-top:-13px}.grsel .h-w{left:-14px;margin-top:-13px}}
 .grguide{position:absolute;background:#D9619B;pointer-events:none}
 .grguide.v{top:0;bottom:0;width:1px}.grguide.h{left:0;right:0;height:1px}
+.grguide.mid{background:#D9619B;box-shadow:0 0 0 .5px #D9619B}
+.grguide:not(.mid){background:#E58DB8}
+.grsel .h-r{left:50%;bottom:-44px;top:auto;margin-left:-14px;width:28px;height:28px;border-radius:50%;cursor:grab;display:flex;align-items:center;justify-content:center;font:600 15px/1 var(--body);color:#5B7FD6;font-style:normal}
+.grsel.locked .h-r{display:none}
+.grangle{position:absolute;transform:translate(-50%,-100%);background:var(--ink);color:#fff;font:600 .8rem var(--body);padding:4px 8px;border-radius:8px;pointer-events:none}
+.grfull .grsect,.grwizbody .grsect{font:600 .78rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+.grpop .grsect:first-of-type{margin-top:4px}
+.grtplwrap{display:flex;flex-direction:column;align-items:center;gap:6px}
+.grtpldel{border:0;background:none;color:#9B3B3B;font:inherit;font-size:.85rem;cursor:pointer;padding:4px 8px}
+.grcanva{justify-content:center;text-align:center;max-width:260px;min-height:260px;border:2px dashed var(--brand) !important;background:var(--surface) !important;position:relative}
+.grcanva input{position:absolute;width:1px;height:1px;opacity:0}
+.grcanva .plus{width:56px;height:56px;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-size:2rem;color:var(--brand-deep)}
+.grcanva b{font-size:1rem}
+.grcanva small{color:var(--muted);font-size:.84rem;font-weight:400;line-height:1.4}
+.grcanva .st{font-size:.85rem;color:var(--brand-deep)}
+.grmrows{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.grmrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+.grmrow span{font-size:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grmrow select{font:inherit;font-size:.9rem;padding:9px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+@media (max-width:600px){.grmrow{grid-template-columns:1fr}}
+.grupload.small{padding:14px;margin-top:10px}
 .grdrop{position:absolute;inset:0;background:rgba(86,104,79,.85);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.15rem;pointer-events:none}
 @media (max-width:820px){
   .grbar{padding:8px 10px;gap:6px}
@@ -2178,8 +2199,8 @@ async function uploadImage(file){
 }
 
 /* ============ GESTIONALE: clienti, pagamenti, calendario ============ */
-const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], spese:[], grafiche:[], loaded:false};
-const VIRT = {spese:["impostazioni","spesa-"], grafiche:["impostazioni","grafica-"]};
+const W = {clienti:[], pagamenti:[], appuntamenti:[], tariffe:[], impostazioni:[], spese:[], grafiche:[], modelli:[], loaded:false};
+const VIRT = {spese:["impostazioni","spesa-"], grafiche:["impostazioni","grafica-"], modelli:["impostazioni","modello-"]};
 const tblOf = c => VIRT[c] ? VIRT[c][0] : c;
 const GCLIENT_DEFAULT = "441938708513-4ahllcfs7tcnukiidcfd9rsn9favre8s.apps.googleusercontent.com";
 const GS = {clientId:"", token:null, exp:0, events:[], connected:false, msg:""};
@@ -2224,7 +2245,7 @@ const coll = {
 };
 async function loadWork(force){
   if (W.loaded && !force) return;
-  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni","spese","grafiche"];
+  const names = ["clienti","pagamenti","appuntamenti","tariffe","impostazioni","spese","grafiche","modelli"];
   const res = await Promise.all(names.map(c => coll.list(c).catch(() => [])));
   names.forEach((c,i) => W[c] = res[i]);
   const g = W.impostazioni.find(x => x.id === "google"); GS.clientId = (g && g.clientId) || GCLIENT_DEFAULT;
@@ -3433,7 +3454,14 @@ $("#sheet").addEventListener("click", async e => {
 const GR_MARK = "data:image/png;base64,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";
 const GC = {sage:"#82947E", deep:"#56684F", mist:"#E6E9E0", paper:"#F7F5F0", lil:"#D1B6C7", lild:"#9C6F93", ink:"#2E3330", white:"#FFFFFF", muted:"#6B726C"};
 const GR_COLORS = ["#FFFFFF","#F7F5F0","#E6E9E0","#D1B6C7","#C9A6C2","#9C6F93","#A8B5A2","#82947E","#56684F","#2E3330"];
-const GR_FONTS = [["Tenor Sans","Tenor Sans (del sito)"],["Poppins","Poppins (del sito)"],["Cormorant Garamond","Cormorant"],["Playfair Display","Playfair"],["DM Serif Display","DM Serif"],["Fraunces","Fraunces"],["Montserrat","Montserrat"],["Great Vibes","Corsivo"]];
+const GR_FONTS = [
+  ["Tenor Sans","Tenor Sans","sito",""],["Poppins","Poppins","sito","ital,wght@0,400;0,700;1,400;1,700"],
+  ["Cormorant Garamond","Cormorant","grazie","ital,wght@0,400;0,600;1,400;1,600"],["Playfair Display","Playfair","grazie","ital,wght@0,400;0,700;1,400;1,700"],["Lora","Lora","grazie","ital,wght@0,400;0,700;1,400"],["EB Garamond","Garamond","grazie","ital,wght@0,400;0,700;1,400"],["Libre Baskerville","Baskerville","grazie","ital,wght@0,400;0,700;1,400"],["Fraunces","Fraunces","grazie","ital,wght@0,400;0,700;1,400"],
+  ["Montserrat","Montserrat","moderni","ital,wght@0,400;0,700;1,400"],["Raleway","Raleway","moderni","ital,wght@0,400;0,700;1,400"],["Nunito","Nunito","moderni","ital,wght@0,400;0,700;1,400"],["Lato","Lato","moderni","ital,wght@0,400;0,700;1,400"],["Josefin Sans","Josefin Sans","moderni","ital,wght@0,400;0,700;1,400"],["Quicksand","Quicksand","moderni","wght@400;700"],
+  ["DM Serif Display","DM Serif","titoli","ital@0;1"],["Cinzel","Cinzel","titoli","wght@400;700"],["Italiana","Italiana","titoli",""],["Marcellus","Marcellus","titoli",""],["Abril Fatface","Abril","titoli",""],["Bebas Neue","Bebas Neue","titoli",""],
+  ["Great Vibes","Great Vibes","mano",""],["Dancing Script","Dancing Script","mano","wght@400;700"],["Parisienne","Parisienne","mano",""],["Allura","Allura","mano",""],["Caveat","Caveat","mano","wght@400;700"],["Amatic SC","Amatic","mano","wght@400;700"]
+];
+const GR_FCAT = [["sito","Del tuo sito"],["grazie","Eleganti"],["moderni","Moderni e puliti"],["titoli","Per i titoli"],["mano","Scritti a mano"]];
 const GR_FMT = {
   locandina:{l:"Locandina o flyer", d:"A4, A3 o A5 da stampare", w:794, h:1123, print:true, sizes:[["A4",210,297,3.125],["A3",297,420,3.68],["A5",148,210,2.2]]},
   post:{l:"Post quadrato", d:"Instagram e Facebook", w:1080, h:1080},
@@ -3446,13 +3474,41 @@ const GR_FMT = {
 let grView = "list", grDoc = null, grSel = null, grHist = [], grHi = -1, grSaveT = null, grHistT = null, grNew = {fmt:"locandina", tpl:"foto", c:null};
 
 /* --- caratteri --- */
-let grFontsLink = false;
-async function grFontsReady(doc){
-  if (!grFontsLink){ grFontsLink = new Promise(res => { const l = document.createElement("link"); l.rel = "stylesheet"; l.onload = l.onerror = () => res(); l.href = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Tenor+Sans&display=swap"; document.head.appendChild(l); setTimeout(res, 4000); }); }
-  await grFontsLink;
-  const specs = new Set(["400 40px 'Tenor Sans'", "400 40px Poppins", "600 40px Poppins"]);
+const GR_FL = {}, GR_CF = {};
+const grCustomFonts = () => ((W.impostazioni.find(x => x.id === "font-personali") || {}).list || []);
+function grLoadFam(f){
+  if (GR_FL[f]) return GR_FL[f];
+  const cf = grCustomFonts().find(x => x.nome === f);
+  if (cf) return GR_FL[f] = (typeof FontFace !== "undefined" ? new FontFace(f, `url("${cf.url}")`).load().then(ff => { document.fonts.add(ff); }).catch(() => {}) : Promise.resolve());
+  const g = GR_FONTS.find(x => x[0] === f); if (!g) return Promise.resolve();
+  return GR_FL[f] = new Promise(res => { const l = document.createElement("link"); l.rel = "stylesheet"; l.onload = l.onerror = () => res(); l.href = `https://fonts.googleapis.com/css2?family=${f.replace(/ /g, "+")}${g[3] ? ":" + g[3] : ""}&display=swap`; document.head.appendChild(l); setTimeout(res, 4000); });
+}
+async function grFontsReady(doc, all){
+  const fams = new Set(["Tenor Sans", "Poppins", "Cormorant Garamond", "Great Vibes"]);
+  if (all){ GR_FONTS.forEach(f => fams.add(f[0])); grCustomFonts().forEach(f => fams.add(f.nome)); }
+  (doc ? doc.els : []).filter(e => e.type === "text").forEach(e => fams.add(e.font));
+  await Promise.all([...fams].map(grLoadFam));
+  const specs = new Set(["400 40px 'Tenor Sans'", "400 40px Poppins", "700 40px Poppins"]);
   (doc ? doc.els : []).filter(e => e.type === "text").forEach(e => specs.add(`${e.italic ? "italic " : ""}${e.bold ? 700 : 400} 40px '${e.font}'`));
   try { await Promise.race([Promise.all([...specs].map(s => document.fonts.load(s))), new Promise(r => setTimeout(r, 2500))]); } catch {}
+}
+async function grUploadFont(file){
+  const ext = (file.name.match(/\.(ttf|otf|woff2?)$/i) || [])[1];
+  if (!ext) throw new Error("tipo");
+  if (file.size > 6 * 1024 * 1024) throw new Error("grande");
+  let nome = file.name.replace(/\.[^.]+$/, "").replace(/[-_]+(regular|book|normal|roman)$/i, "").replace(/[-_]+/g, " ").replace(/[^\w À-ÿ]/g, "").trim().slice(0, 40) || "Carattere";
+  const L = {id:"font-personali", list:grCustomFonts().slice()};
+  if (L.list.some(x => x.nome === nome)) nome += " " + (L.list.length + 1);
+  let url;
+  if (store.sb){
+    const path = "font/" + uid() + "." + ext.toLowerCase();
+    const {error} = await store.sb.storage.from("foto").upload(path, file, {contentType:{ttf:"font/ttf", otf:"font/otf", woff:"font/woff", woff2:"font/woff2"}[ext.toLowerCase()], upsert:false});
+    if (error) throw error;
+    url = store.sb.storage.from("foto").getPublicUrl(path).data.publicUrl;
+  } else url = await new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); });
+  const ff = new FontFace(nome, `url("${url}")`); await ff.load(); document.fonts.add(ff); GR_FL[nome] = Promise.resolve();
+  L.list.push({nome, url}); await coll.put("impostazioni", L);
+  return nome;
 }
 
 /* --- immagini --- */
@@ -3512,6 +3568,7 @@ function grDraw(ctx, doc, s, redraw){
   for (const e of doc.els){
     if (e.hide) continue;
     ctx.save(); ctx.globalAlpha = e.op ?? 1;
+    if (e.rot){ const cx = e.x + e.w / 2, cy = e.y + (e.type === "logo" ? e.w : (e.h || 0)) / 2; ctx.translate(cx, cy); ctx.rotate(e.rot * Math.PI / 180); ctx.translate(-cx, -cy); }
     if (e.type === "shape"){
       if (e.shape === "ellipse"){ ctx.beginPath(); ctx.ellipse(e.x + e.w / 2, e.y + e.h / 2, e.w / 2, e.h / 2, 0, 0, Math.PI * 2); }
       else grPath(ctx, e.x, e.y, e.w, e.h, e.rad || 0);
@@ -3522,6 +3579,7 @@ function grDraw(ctx, doc, s, redraw){
       const r = (e.rad || 0) / 100 * Math.min(e.w, e.h);
       if ((e.rad || 0) >= 50){ ctx.beginPath(); ctx.ellipse(e.x + e.w / 2, e.y + e.h / 2, e.w / 2, e.h / 2, 0, 0, Math.PI * 2); } else grPath(ctx, e.x, e.y, e.w, e.h, r);
       ctx.clip();
+      if (e.flip){ ctx.translate(e.x * 2 + e.w, 0); ctx.scale(-1, 1); }
       if (im) grDrawImg(ctx, im, e.x, e.y, e.w, e.h, e.fit, e.px, e.py);
       else { ctx.fillStyle = "#E6E9E0"; ctx.fillRect(e.x, e.y, e.w, e.h); }
     } else if (e.type === "logo"){
@@ -3530,6 +3588,7 @@ function grDraw(ctx, doc, s, redraw){
     } else if (e.type === "text"){
       const L = grLayout(ctx, e); e.h = L.h;
       ctx.fillStyle = e.color; ctx.textBaseline = "middle"; ctx.textAlign = e.align || "left";
+      if (e.shadow){ ctx.shadowColor = "rgba(0,0,0,.35)"; ctx.shadowBlur = e.size * .22 * s; ctx.shadowOffsetY = e.size * .06 * s; }
       const ax = e.align === "center" ? e.x + e.w / 2 : e.align === "right" ? e.x + e.w : e.x;
       const lsx = e.align === "center" ? (e.ls || 0) * e.size / 2 : e.align === "right" ? (e.ls || 0) * e.size : 0;
       L.lines.forEach((t, i) => ctx.fillText(t, ax + lsx, e.y + i * L.lh + L.lh / 2 + e.size * 0.04));
@@ -3663,6 +3722,14 @@ function grStackFit(items, x, y, w, align, maxY){
 }
 const grTpls = fmt => fmt === "biglietto" ? GR_TPL_CARD : GR_TPL;
 function grBuild(fmt, tpl, c){
+  if (String(tpl).startsWith("m:")){
+    const m = W.modelli.find(x => "m:" + x.id === tpl);
+    if (m){
+      const els = JSON.parse(JSON.stringify(m.els)).filter(e => !(e.type === "text" && e.field && !String(c[e.field] || "").trim()));
+      els.forEach(e => { e.id = uid(); if (e.type === "text" && e.field){ e.text = c[e.field]; grMeasure(e); } });
+      return {bg:JSON.parse(JSON.stringify(m.bg)), els};
+    }
+  }
   const F = GR_FMT[fmt], T = grTpls(fmt)[tpl] || grTpls(fmt).vuota;
   const r = T.f(F.w, F.h, fmt === "biglietto" ? {firma:c.firma, ruolo:c.ruolo, telefono:C.contact.phone, email:C.contact.email, sito:c.sito} : c);
   r.els = r.els.filter(Boolean);
@@ -3693,7 +3760,9 @@ async function grNewView(){
   const P = $("#panel"); document.body.classList.remove("gr-open");
   if (!grNew.c) grNew.c = grContent();
   const c = grNew.c, card = grNew.fmt === "biglietto", evs = (C.events && C.events.items) || [];
-  const tpls = grTpls(grNew.fmt); if (!tpls[grNew.tpl]) grNew.tpl = Object.keys(tpls)[0];
+  await loadWork();
+  const tpls = grTpls(grNew.fmt), mine = W.modelli.filter(m => m.fmt === grNew.fmt);
+  if (!tpls[grNew.tpl] && !mine.some(m => "m:" + m.id === grNew.tpl)) grNew.tpl = mine.length ? "m:" + mine[0].id : Object.keys(tpls)[0];
   const steps = ["Formato", "Testi", "Stile"];
   let body = "";
   if (grStep === 1) body = `<h2 class="grq">Che cosa vuoi creare?</h2>
@@ -3704,7 +3773,9 @@ async function grNewView(){
         ${(card ? [["firma","Nome"],["ruolo","Professione"],["sito","Città o sito"]] : [["titolo","Titolo","Es. Scelte consapevoli per la cura dei genitori"],["occhiello","Frase piccola sopra il titolo","Es. Incontro informativo gratuito"],["data","Data e ora","Es. Sabato 21 novembre · ore 11:00"],["luogo","Luogo","Es. Caffetteria Dall'Architetto, Milano"],["testo","Descrizione breve"],["chiusura","Frase finale","Es. Ingresso libero"]]).map(([k, l, ph]) => k === "testo" ? `<div class="fld"><label for="grc-${k}">${l}</label><textarea id="grc-${k}" data-grc="${k}" rows="3">${esc(c[k] || "")}</textarea></div>` : `<div class="fld"><label for="grc-${k}">${l}</label><input id="grc-${k}" data-grc="${k}" value="${esc(c[k] || "")}" placeholder="${esc(ph || "")}"></div>`).join("")}
       </div>`;
   if (grStep === 3) body = `<h2 class="grq">Scegli lo stile che ti piace di più</h2><p class="grqsub">È solo il punto di partenza: dopo puoi spostare, ingrandire e cambiare tutto.</p>
-      <div class="grtpls">${Object.entries(tpls).map(([k, t]) => `<button type="button" class="grtpl ${grNew.tpl === k ? "on" : ""}" data-grtpl="${k}"><canvas data-grprev="${k}"></canvas><span>${esc(t.l)}</span></button>`).join("")}</div>`;
+      ${mine.length ? `<p class="grsect">I tuoi modelli</p><div class="grtpls">${mine.map(m => `<div class="grtplwrap"><button type="button" class="grtpl ${grNew.tpl === "m:" + m.id ? "on" : ""}" data-grtpl="m:${m.id}"><canvas data-grprev="m:${m.id}"></canvas><span>${esc(m.nome)}</span></button><button type="button" class="grtpldel" data-grmdel="${m.id}">Elimina modello</button></div>`).join("")}</div><p class="grsect">Modelli pronti</p>` : ""}
+      <div class="grtpls">${Object.entries(tpls).map(([k, t]) => `<button type="button" class="grtpl ${grNew.tpl === k ? "on" : ""}" data-grtpl="${k}"><canvas data-grprev="${k}"></canvas><span>${esc(t.l)}</span></button>`).join("")}
+        <label class="grtpl grcanva"><input type="file" id="grCanvaFile" accept="image/png,image/jpeg,image/webp"><span class="plus">+</span><b>Carica un modello fatto con Canva</b><small>Su Canva scarica il disegno come PNG o JPG, senza i testi che cambiano. Poi qui li aggiungi sopra.</small><span class="st" id="grCanvaSt"></span></label></div>`;
   P.innerHTML = `<div class="grwiz">
       <div class="grwizhead"><button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button>
         <ol class="grsteps">${steps.map((s, i) => `<li class="${i + 1 === grStep ? "on" : i + 1 < grStep ? "done" : ""}"><span>${i + 1 < grStep ? "✓" : i + 1}</span>${s}</li>`).join("")}</ol></div>
@@ -3728,7 +3799,7 @@ async function grCreate(){
   const F = GR_FMT[grNew.fmt]; await grFontsReady();
   const b = grBuild(grNew.fmt, grNew.tpl, grNew.c);
   const nome = grNew.fmt === "biglietto" ? "Biglietto da visita" : (grNew.c.titolo || F.l);
-  grDoc = {id:"grafica-" + uid(), nome, fmt:grNew.fmt, ...b, agg:new Date().toISOString()};
+  grDoc = {id:"grafica-" + uid(), nome, fmt:grNew.fmt, ...b, c:{...grNew.c}, agg:new Date().toISOString()};
   grNew.c = null; grStep = 1; grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; grDrawer = null; grPopK = null;
   await grSaveNow(); renderGrafiche();
 }
@@ -3753,6 +3824,7 @@ function grEditor(){
       <input id="grName" class="grname" value="${esc(grDoc.nome || "")}" aria-label="Nome della grafica" placeholder="Nome della grafica">
       <span class="grsaved" id="grSaved">✓ Salvata</span>
       <span class="sp"></span>
+      <button class="grbtn" data-grsavemodel="1" title="Salva questa grafica come modello da riusare">☆ <span>Salva come modello</span></button>
       <button class="grbtn" data-grundo="1" title="Annulla l'ultima modifica">↶ <span>Annulla</span></button>
       <button class="grbtn" data-grredo="1" title="Ripeti">↷ <span>Ripeti</span></button>
       <div class="grdl"><button class="btn btn-primary" data-grdlmenu="1">Scarica</button><div class="grdlmenu" id="grDl" hidden>
@@ -3767,7 +3839,7 @@ function grEditor(){
       <main class="grwork">
         <div class="grctx" id="grCtx"></div>
         <div class="grpop" id="grPop" hidden></div>
-        <div class="grstage" id="grStage"><div class="grboard" id="grBoard"><canvas id="grCv"></canvas><div class="grsel" id="grSelBox" hidden>${["nw","ne","sw","se","e","w"].map(h => `<i data-h="${h}" class="h-${h}"></i>`).join("")}</div><div class="grguide v" id="grGv" hidden></div><div class="grguide h" id="grGh" hidden></div><div class="grdrop" id="grDrop" hidden>Lascia qui l'immagine</div></div></div>
+        <div class="grstage" id="grStage"><div class="grboard" id="grBoard"><canvas id="grCv"></canvas><div class="grsel" id="grSelBox" hidden>${["nw","ne","sw","se","e","w"].map(h => `<i data-h="${h}" class="h-${h}"></i>`).join("")}<i data-h="r" class="h-r" title="Ruota">↻</i></div><div class="grguide v" id="grGv" hidden></div><div class="grguide h" id="grGh" hidden></div><div class="grangle" id="grAng" hidden></div><div class="grdrop" id="grDrop" hidden>Lascia qui l'immagine</div></div></div>
       </main>
     </div>
   </div>`;
@@ -3794,7 +3866,7 @@ function grSelBox(){
   const b = $("#grSelBox"), e = grEl(); if (!b) return;
   if (!e){ b.hidden = true; return; }
   b.hidden = false; b.className = "grsel" + (e.locked ? " locked" : "") + (e.type === "text" ? " txt" : "");
-  Object.assign(b.style, {left:e.x * grScale + "px", top:e.y * grScale + "px", width:e.w * grScale + "px", height:(e.h || 0) * grScale + "px"});
+  Object.assign(b.style, {left:e.x * grScale + "px", top:e.y * grScale + "px", width:e.w * grScale + "px", height:((e.type === "logo" ? e.w : e.h) || 0) * grScale + "px", transform:e.rot ? `rotate(${e.rot}deg)` : ""});
 }
 function grSelect(id){
   const changed = grSel !== id; grSel = id;
@@ -3844,7 +3916,7 @@ function grCtxRender(){
   let h = `<span class="grctxlbl">${{text:"Testo", img:"Immagine", logo:"Logo", shape:"Forma"}[e.type]}</span>`;
   if (e.locked) h += `<span class="grctxlock">🔒 Bloccato</span>` + b("pos", "Sblocca o sposta");
   else if (e.type === "text") h += b("testo", "✎ Scrivi") + b("font", `<span style="font-family:'${e.font}'">${esc((GR_FONTS.find(f => f[0] === e.font) || [0, e.font])[1].replace(/ \(del sito\)/, ""))}</span>`) + `<span class="grsize"><button type="button" data-grsize="-1" aria-label="Più piccolo">−</button><b>${Math.round(e.size)}</b><button type="button" data-grsize="1" aria-label="Più grande">+</button></span>` + b("colore", "Colore", grDot(e.color)) + b("stile", "Stile");
-  else if (e.type === "img") h += `<button type="button" data-grimgmode="replace">Cambia foto</button>` + b("ritaglio", "Inquadratura") + b("angoli", "Angoli");
+  else if (e.type === "img") h += `<button type="button" data-grimgmode="replace">Cambia foto</button>` + b("ritaglio", "Inquadratura") + b("angoli", "Angoli") + `<button type="button" data-grdo="flip">⇋ Capovolgi</button>`;
   else if (e.type === "logo") h += b("tipo", "Tipo di logo") + (e.variant !== "round" ? b("colore", "Colore", grDot(e.color)) : "");
   else if (e.type === "shape") h += b("colore", "Colore", grDot(e.fill)) + b("bordo", "Bordo") + (e.shape !== "ellipse" ? b("angoli", "Angoli") : "");
   if (!e.locked) h += b("trasp", "Trasparenza") + b("pos", "Posizione") + `<button type="button" data-grdo="dup">Duplica</button><button type="button" class="danger" data-grdo="del">🗑 Elimina</button>`;
@@ -3859,12 +3931,15 @@ function grPopRender(){
   let t = "", h = "";
   switch (grPopK){
     case "testo": t = "Scrivi il testo"; h = `<textarea id="grText" rows="4" data-grtxt="1">${esc(e.text)}</textarea><p class="hint">Per andare a capo premi Invio.</p><button type="button" class="btn btn-primary small" data-grpopclose="1">Fatto</button>`; break;
-    case "font": t = "Carattere"; h = `<div class="grfonts">${GR_FONTS.map(([f, l]) => `<button type="button" class="${e.font === f ? "on" : ""}" data-grfont="${f}" style="font-family:'${f}'">${esc(l.replace(/ \(del sito\)/, ""))}${/del sito/.test(l) ? `<small>del sito</small>` : ""}</button>`).join("")}</div>`; break;
+    case "font": t = "Carattere"; { const fb = (f, l, small) => `<button type="button" class="${e.font === f ? "on" : ""}" data-grfont="${esc(f)}" style="font-family:'${esc(f)}'">${esc(l)}${small ? `<small>${small}</small>` : ""}</button>`;
+      h = GR_FCAT.map(([k, l]) => `<p class="grsect">${l}</p><div class="grfonts">${GR_FONTS.filter(f => f[2] === k).map(f => fb(f[0], f[1])).join("")}</div>`).join("")
+        + `<p class="grsect">I tuoi caratteri</p><div class="grfonts">${grCustomFonts().map(f => fb(f.nome, f.nome)).join("")}</div>
+        <label class="grupload small"><input type="file" id="grFontFile" accept=".ttf,.otf,.woff,.woff2"><span><b>+ Carica un tuo carattere</b><small>File .ttf, .otf o .woff (per esempio scaricato da Google Fonts o dafont)</small></span></label><p class="hint" id="grFontSt"></p>`; } break;
     case "colore":
       if (e.type === "shape"){ t = "Colore della forma"; h = sw("fill", e.fill, true); }
       else { t = e.type === "logo" ? "Colore del simbolo" : "Colore del testo"; h = sw("color", e.color); }
       break;
-    case "stile": t = "Stile del testo"; h = `<div class="grtog">${opt("grtog", "bold", e.bold, "<b>Grassetto</b>")}${opt("grtog", "italic", e.italic, "<i>Corsivo</i>")}${opt("grtog", "upper", e.upper, "MAIUSCOLO")}</div>
+    case "stile": t = "Stile del testo"; h = `<div class="grtog">${opt("grtog", "bold", e.bold, "<b>Grassetto</b>")}${opt("grtog", "italic", e.italic, "<i>Corsivo</i>")}${opt("grtog", "upper", e.upper, "MAIUSCOLO")}${opt("grtog", "shadow", e.shadow, "Ombra")}</div>
         <p class="grplbl">Allineamento</p><div class="grtog">${opt("gralign", "left", e.align === "left", "A sinistra")}${opt("gralign", "center", e.align === "center", "Al centro")}${opt("gralign", "right", e.align === "right", "A destra")}</div>
         ${range("ls", "Spazio tra le lettere", Math.round((e.ls || 0) * 100), 0, 40)}${range("lh", "Spazio tra le righe", Math.round((e.lh || 1.2) * 100), 80, 220, 5)}`; break;
     case "ritaglio": t = "Inquadratura"; h = `<div class="grtog">${opt("grfit", "cover", e.fit !== "contain", "Riempi il riquadro")}${opt("grfit", "contain", e.fit === "contain", "Foto intera")}</div>
@@ -3881,6 +3956,8 @@ function grPopRender(){
       h = `<div class="grgrid2">
           <button type="button" data-grdo="cx">↔ Centra in orizzontale</button><button type="button" data-grdo="cy">↕ Centra in verticale</button>
           <button type="button" data-grdo="up">⬆ Porta davanti</button><button type="button" data-grdo="down">⬇ Porta dietro</button></div>
+        <p class="grplbl">Rotazione</p><div class="grtog">${opt("grrot", "-15", false, "↺ −15°")}${opt("grrot", "0", !e.rot, "Dritto")}${opt("grrot", "15", false, "↻ +15°")}</div>
+        ${range("rot", "Angolo", e.rot || 0, 0, 359, 1, "°")}
         <button type="button" class="grwide ${e.locked ? "on" : ""}" data-grdo="lock">${e.locked ? "🔓 Sblocca (si potrà spostare)" : "🔒 Blocca (non si sposta per sbaglio)"}</button>`; break;
   }
   P.innerHTML = `<div class="grpophead"><b>${t}</b><button type="button" class="grx" data-grpopclose="1" aria-label="Chiudi">✕</button></div>${h}`;
@@ -3941,6 +4018,26 @@ function grLayerName(x){
 function grSetPath(path, v){
   if (path.startsWith("bg.")) grDoc.bg[path.slice(3)] = v;
   else { const e = grEl(); if (e) e[path] = v; }
+}
+
+/* salvare come modello */
+function grFieldsFor(fmt){ return fmt === "biglietto" ? [["firma","il nome"],["ruolo","la professione"],["sito","città o sito"]] : [["titolo","il titolo"],["occhiello","la frase sopra il titolo"],["data","data e ora"],["luogo","il luogo"],["testo","la descrizione"],["chiusura","la frase finale"]]; }
+function grSaveModel(){
+  const texts = grDoc.els.filter(e => e.type === "text"), c = grDoc.c || {}, fields = grFieldsFor(grDoc.fmt);
+  const guess = e => e.field || (Object.keys(c).find(k => c[k] && String(c[k]).trim() === String(e.text).trim() && fields.some(f => f[0] === k)) || "");
+  openSheet("Salva come modello",
+    `<p class="hint" style="margin-top:0">Il modello comparirà al passo 3 ogni volta che crei una nuova grafica di questo formato (${esc(GR_FMT[grDoc.fmt].l.toLowerCase())}).</p>
+     ${F.text("m-nome", "Nome del modello", grDoc.nome && !/Nuovo modello/.test(grDoc.nome) ? grDoc.nome : "Il mio modello")}
+     ${texts.length ? `<h4 class="grh4">Quali testi cambiano ogni volta?</h4><p class="hint">Scegli cosa contiene ogni testo: verrà riempito con quello che scrivi al passo 2. I testi con “Resta sempre uguale” non cambiano mai (per esempio i tuoi contatti).</p>
+       <div class="grmrows">${texts.map(e => { const g = guess(e); return `<div class="grmrow"><span style="font-family:'${esc(e.font)}'">${esc(String(e.text).slice(0, 60))}</span><select data-mfield="${e.id}"><option value="">Resta sempre uguale</option>${fields.map(([k, l]) => `<option value="${k}" ${g === k ? "selected" : ""}>Qui va ${l}</option>`).join("")}</select></div>`; }).join("")}</div>` : `<p class="hint">Non ci sono testi: il modello sarà usato così com'è.</p>`}`,
+    async () => {
+      const nome = val("m-nome") || "Il mio modello", map = {};
+      $$("[data-mfield]").forEach(s => map[s.dataset.mfield] = s.value);
+      await grPreload(grDoc);
+      const els = JSON.parse(JSON.stringify(grDoc.els)).map(e => { if (e.type === "text"){ if (map[e.id]) e.field = map[e.id]; else delete e.field; } return e; });
+      await coll.put("modelli", {id:"modello-" + uid(), nome, fmt:grDoc.fmt, bg:JSON.parse(JSON.stringify(grDoc.bg)), els, thumb:grThumb(grDoc), agg:new Date().toISOString()});
+      toast(`Modello “${nome}” salvato`);
+    }, null, "Salva il modello");
 }
 
 /* aggiungere */
@@ -4040,7 +4137,29 @@ async function grExport(kind){
 /* --- eventi --- */
 let grDrag = null;
 function grPt(ev){ const r = $("#grBoard").getBoundingClientRect(); return {x:(ev.clientX - r.left) / grScale, y:(ev.clientY - r.top) / grScale}; }
-function grHit(p){ for (let i = grDoc.els.length - 1; i >= 0; i--){ const e = grDoc.els[i]; if (e.hide) continue; const h = e.type === "logo" ? e.w : e.h; if (p.x >= e.x && p.x <= e.x + e.w && p.y >= e.y && p.y <= e.y + h) return e; } return null; }
+function grHit(p){
+  for (let i = grDoc.els.length - 1; i >= 0; i--){
+    const e = grDoc.els[i]; if (e.hide) continue; const h = e.type === "logo" ? e.w : e.h;
+    let q = p; if (e.rot){ const cx = e.x + e.w / 2, cy = e.y + h / 2, a = -e.rot * Math.PI / 180, dx = p.x - cx, dy = p.y - cy; q = {x:cx + dx * Math.cos(a) - dy * Math.sin(a), y:cy + dx * Math.sin(a) + dy * Math.cos(a)}; }
+    if (q.x >= e.x && q.x <= e.x + e.w && q.y >= e.y && q.y <= e.y + h){
+      if (e.type === "shape" && !e.fill){ const t = Math.max(12 / grScale, e.sw || 0); if (q.x - e.x > t && e.x + e.w - q.x > t && q.y - e.y > t && e.y + h - q.y > t) continue; }
+      return e;
+    }
+  }
+  return null;
+}
+function grSnap(e, x, y){
+  const F = GR_FMT[grDoc.fmt], th = 8 / grScale, h = e.type === "logo" ? e.w : e.h;
+  const vx = [0, F.w / 2, F.w], vy = [0, F.h / 2, F.h];
+  grDoc.els.forEach(o => { if (o === e || o.hide || o.rot) return; const oh = o.type === "logo" ? o.w : o.h; vx.push(o.x, o.x + o.w / 2, o.x + o.w); vy.push(o.y, o.y + oh / 2, o.y + oh); });
+  let bx = null, by = null;
+  [[0, x], [e.w / 2, x + e.w / 2], [e.w, x + e.w]].forEach(([off, v]) => vx.forEach(t => { const d = Math.abs(v - t); if (d < th && (!bx || d < bx.d)) bx = {d, x:t - off, g:t}; }));
+  [[0, y], [h / 2, y + h / 2], [h, y + h]].forEach(([off, v]) => vy.forEach(t => { const d = Math.abs(v - t); if (d < th && (!by || d < by.d)) by = {d, y:t - off, g:t}; }));
+  const gv = $("#grGv"), gh = $("#grGh");
+  if (bx){ x = bx.x; gv.hidden = false; gv.style.left = bx.g * grScale + "px"; gv.classList.toggle("mid", Math.abs(bx.g - F.w / 2) < .5); }
+  if (by){ y = by.y; gh.hidden = false; gh.style.top = by.g * grScale + "px"; gh.classList.toggle("mid", Math.abs(by.g - F.h / 2) < .5); }
+  return {x, y};
+}
 panel.addEventListener("pointerdown", ev => {
   if (tab !== "grafiche" || grView !== "edit") return;
   const bd = ev.target.closest("#grBoard");
@@ -4059,14 +4178,18 @@ panel.addEventListener("pointermove", ev => {
   const p = grPt(ev), dx = p.x - grDrag.p0.x, dy = p.y - grDrag.p0.y, o = grDrag.e0, F = GR_FMT[grDoc.fmt];
   if (Math.abs(dx) + Math.abs(dy) > .5) grDrag.moved = true;
   const gv = $("#grGv"), gh = $("#grGh"); gv.hidden = gh.hidden = true;
+  const ang = $("#grAng"); if (ang) ang.hidden = true;
   if (grDrag.mode === "move"){
-    let x = o.x + dx, y = o.y + dy; const th = 7 / grScale, h = e.type === "logo" ? e.w : e.h;
-    const sx = [[F.w / 2 - e.w / 2, F.w / 2], [0, 0], [F.w - e.w, F.w]].find(([t]) => Math.abs(x - t) < th);
-    if (sx){ x = sx[0]; gv.hidden = false; gv.style.left = sx[1] * grScale + "px"; }
-    const sy = [[F.h / 2 - h / 2, F.h / 2], [0, 0], [F.h - h, F.h]].find(([t]) => Math.abs(y - t) < th);
-    if (sy){ y = sy[0]; gh.hidden = false; gh.style.top = sy[1] * grScale + "px"; }
-    e.x = x; e.y = y;
+    const r = grSnap(e, o.x + dx, o.y + dy); e.x = r.x; e.y = r.y;
+  } else if (grDrag.mode === "r"){
+    const h0 = e.type === "logo" ? o.w : o.h, cx = o.x + o.w / 2, cy = o.y + h0 / 2;
+    let a = Math.atan2(p.y - cy, p.x - cx) * 180 / Math.PI + 90; a = ((a % 360) + 360) % 360;
+    const near = [0, 45, 90, 135, 180, 225, 270, 315, 360].find(t => Math.abs(a - t) < 4); if (near !== undefined) a = near % 360;
+    e.rot = Math.round(a);
+    if (ang){ ang.hidden = false; ang.textContent = e.rot + "°"; ang.style.left = cx * grScale + "px"; ang.style.top = (o.y - 12) * grScale + "px"; }
   } else {
+    const ra = -(o.rot || 0) * Math.PI / 180, ldx = dx * Math.cos(ra) - dy * Math.sin(ra), ldy = dx * Math.sin(ra) + dy * Math.cos(ra);
+    { const dx = ldx, dy = ldy;
     const m = grDrag.mode, keep = e.type === "img" || e.type === "logo";
     let x = o.x, y = o.y, w = o.w, h = o.h || o.w;
     if (m.includes("e")) w = Math.max(10, o.w + dx);
@@ -4083,12 +4206,13 @@ panel.addEventListener("pointermove", ev => {
       }
       Object.assign(e, {x, y, w, h}); if (e.type === "logo") e.h = e.w;
     }
+    }
   }
   grRender();
 });
 const grUp = () => {
   if (!grDrag) return; const moved = grDrag.moved; grDrag = null;
-  const gv = $("#grGv"), gh = $("#grGh"); if (gv){ gv.hidden = gh.hidden = true; }
+  const gv = $("#grGv"), gh = $("#grGh"); if (gv){ gv.hidden = gh.hidden = true; } const an = $("#grAng"); if (an) an.hidden = true;
   if (moved) grChanged(true, true);
 };
 panel.addEventListener("pointerup", grUp); panel.addEventListener("pointercancel", grUp);
@@ -4117,12 +4241,18 @@ panel.addEventListener("click", async ev => {
   const stp = t.closest("[data-grstep]"); if (stp){ grStep = Math.min(3, Math.max(1, grStep + Number(stp.dataset.grstep))); grNewView(); scrollTo({top:0, behavior:"smooth"}); return; }
   const tp = t.closest("[data-grtpl]"); if (tp){ grNew.tpl = tp.dataset.grtpl; $$(".grtpl").forEach(x => x.classList.toggle("on", x === tp)); return; }
   if (t.closest("[data-grcreate]")){ grCreate(); return; }
+  const md = t.closest("[data-grmdel]"); if (md){
+    if (md.dataset.sure){ await coll.del("modelli", md.dataset.grmdel); toast("Modello eliminato"); grNewView(); }
+    else { md.dataset.sure = "1"; md.textContent = "Sicura? Clicca di nuovo"; setTimeout(() => { if (md.isConnected){ delete md.dataset.sure; md.textContent = "Elimina modello"; } }, 3500); }
+    return;
+  }
   if (grView !== "edit") return;
   if (!t.closest(".grdl")){ const m = $("#grDl"); if (m) m.hidden = true; }
   const dr = t.closest("[data-grdrawer]"); if (dr){ const k = dr.dataset.grdrawer; grDrawer = grDrawer === k ? null : k; if (k === "img") grImgMode = "add"; if (grDrawer && grPopK){ grPopK = null; grCtxRender(); grPopRender(); } grDrawerRender(); return; }
   const im = t.closest("[data-grimgmode]"); if (im){ const m = im.dataset.grimgmode; if (m === "add"){ grDrawer = grImgMode === "bg" ? "sfondo" : null; grImgMode = "add"; } else { grImgMode = m; grDrawer = "img"; } grDrawerRender(); return; }
   const ad = t.closest("[data-gradd]"); if (ad){ grAdd(ad.dataset.gradd); return; }
   const lb = t.closest("[data-grlib]"); if (lb){ grAddImage(lb.dataset.grlib, grImgMode); return; }
+  if (t.closest("[data-grsavemodel]")){ grSaveModel(); return; }
   if (t.closest("[data-grundo]")){ grUndo(-1); return; }
   if (t.closest("[data-grredo]")){ grUndo(1); return; }
   if (t.closest("[data-grdlmenu]")){ const m = $("#grDl"); m.hidden = !m.hidden; return; }
@@ -4131,7 +4261,7 @@ panel.addEventListener("click", async ev => {
   const ly = t.closest("[data-grpicklayer]"); if (ly){ grSelect(ly.dataset.grpicklayer); grDrawerRender(); return; }
   const lm = t.closest("[data-grlayermv]"); if (lm){ const [id, d] = lm.dataset.grlayermv.split("|"), i = grDoc.els.findIndex(x => x.id === id), j = i + Number(d); if (i >= 0 && j >= 0 && j < grDoc.els.length){ const [x] = grDoc.els.splice(i, 1); grDoc.els.splice(j, 0, x); grChanged(true, true); } return; }
   if (t.closest("[data-grpopclose]")){ grPopK = null; grCtxRender(); grPopRender(); return; }
-  const pp = t.closest("[data-grpop]"); if (pp){ grPopK = grPopK === pp.dataset.grpop ? null : pp.dataset.grpop; if (grPopK && grDrawer && innerWidth < 820){ grDrawer = null; grDrawerRender(); } grCtxRender(); grPopRender(); if (grPopK === "testo") setTimeout(() => { const x = $("#grText"); if (x) x.focus(); }, 30); return; }
+  const pp = t.closest("[data-grpop]"); if (pp){ grPopK = grPopK === pp.dataset.grpop ? null : pp.dataset.grpop; if (grPopK && grDrawer && innerWidth < 820){ grDrawer = null; grDrawerRender(); } if (grPopK === "font") grFontsReady(null, true); grCtxRender(); grPopRender(); if (grPopK === "testo") setTimeout(() => { const x = $("#grText"); if (x) x.focus(); }, 30); return; }
   const sw = t.closest("[data-grset]"); if (sw){ grSetPath(sw.dataset.grset, sw.dataset.v); grChanged(true, true); return; }
   const e = grEl(); if (!e) return;
   const sz = t.closest("[data-grsize]"); if (sz){ const st = Math.max(1, Math.round(e.size * .08)); e.size = Math.max(6, Math.round(e.size + st * Number(sz.dataset.grsize))); grChanged(true, true); return; }
@@ -4141,6 +4271,7 @@ panel.addEventListener("click", async ev => {
   const ft = t.closest("[data-grfit]"); if (ft){ e.fit = ft.dataset.grfit; grChanged(true, true); return; }
   const rd = t.closest("[data-grrad]"); if (rd){ e.rad = Number(rd.dataset.grrad); grChanged(true, true); return; }
   const vr = t.closest("[data-grvar]"); if (vr){ e.variant = vr.dataset.grvar; if (e.variant === "mark" && !e.color) e.color = GC.sage; grChanged(true, true); return; }
+  const ro = t.closest("[data-grrot]"); if (ro){ const v = Number(ro.dataset.grrot); e.rot = v === 0 ? 0 : (((e.rot || 0) + v) % 360 + 360) % 360; grChanged(true, true); return; }
   const dd = t.closest("[data-grdo]"); if (dd){
     const F = GR_FMT[grDoc.fmt], i = grDoc.els.indexOf(e), a = dd.dataset.grdo;
     if (a === "cx") e.x = (F.w - e.w) / 2;
@@ -4149,6 +4280,7 @@ panel.addEventListener("click", async ev => {
     if (a === "down" && i > 0){ grDoc.els.splice(i, 1); grDoc.els.splice(i - 1, 0, e); toast("Portato dietro"); }
     if (a === "dup"){ const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20, locked:false}; grDoc.els.splice(i + 1, 0, n); grSel = n.id; grPopK = null; }
     if (a === "lock") e.locked = !e.locked;
+    if (a === "flip") e.flip = !e.flip;
     if (a === "del"){ grDoc.els.splice(i, 1); grSel = null; grPopK = null; toast("Eliminato. Puoi recuperarlo con Annulla."); }
     grChanged(true, true);
   }
@@ -4163,13 +4295,24 @@ panel.addEventListener("input", ev => {
   if (t.dataset.grnum){
     const k = t.dataset.grnum, v = Number(t.value), o = $("#gro-" + k.replace(".", "\\.")); if (o) o.textContent = v + (t.dataset.unit || "");
     if (k === "bg.op") grDoc.bg.op = v / 100; else if (k.startsWith("bg.")) grDoc.bg[k.slice(3)] = v;
-    else { const e = grEl(); if (!e) return; e[k] = (k === "op" || k === "ls" || k === "lh") ? v / 100 : v; }
+    else { const e = grEl(); if (!e) return; e[k] = (k === "op" || k === "ls" || k === "lh") ? v / 100 : v; if (k === "rot") grSelBox(); }
     grChanged(true); return;
   }
   if (t.dataset.grcol){ grSetPath(t.dataset.grcol, t.value); grChanged(true); }
 });
-panel.addEventListener("change", ev => {
+panel.addEventListener("change", async ev => {
   if (tab !== "grafiche") return;
+  if (ev.target.id === "grCanvaFile" && ev.target.files[0]){
+    const st = $("#grCanvaSt"); if (st) st.textContent = "Caricamento…";
+    try {
+      const src = await grUpload(ev.target.files[0]); await grLibAdd(src);
+      grDoc = {id:"grafica-" + uid(), nome:"Nuovo modello da Canva", fmt:grNew.fmt, bg:{color:"#FFFFFF", img:src, op:1, px:50, py:50}, els:[], c:{...grNew.c}, agg:new Date().toISOString()};
+      grNew.c = null; grStep = 1; grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; grDrawer = "testo"; grPopK = null;
+      await grSaveNow(); renderGrafiche();
+      toast("Ora aggiungi i testi sopra, poi premi «Salva come modello»");
+    } catch { const s2 = $("#grCanvaSt"); if (s2) s2.textContent = "Caricamento non riuscito. Riprova."; }
+    return;
+  }
   const t = ev.target;
   if (t.id === "grEv" && t.value !== ""){
     const e = C.events.items[Number(t.value)]; if (!e) return;
@@ -4177,6 +4320,12 @@ panel.addEventListener("change", ev => {
     ["titolo","data","luogo","testo","chiusura"].forEach(k => { const f = $("#grc-" + k); if (f) f.value = grNew.c[k]; }); return;
   }
   if (t.id === "grFile"){ grHandleFiles(t.files, grImgMode); return; }
+  if (t.id === "grFontFile" && t.files[0]){
+    const st = $("#grFontSt"); if (st) st.textContent = "Caricamento del carattere…";
+    try { const nome = await grUploadFont(t.files[0]); const e = grEl(); if (e && e.type === "text"){ e.font = nome; grChanged(true, true); } else grPopRender(); toast(`Carattere “${nome}” aggiunto`); }
+    catch (err){ const s2 = $("#grFontSt"); if (s2) s2.textContent = /tipo/.test(err.message) ? "Questo file non è un carattere: servono file .ttf, .otf o .woff." : /grande/.test(err.message) ? "Il file è troppo grande (massimo 6 MB)." : "Caricamento non riuscito. Riprova."; }
+    return;
+  }
   if (t.dataset.grcol) grChanged(true, true);
 });
 addEventListener("keydown", ev => {
