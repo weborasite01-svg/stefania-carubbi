@@ -637,108 +637,187 @@ button.aitem:hover,a.aitem:hover{border-color:var(--brand)}
 .banner span{flex:1;min-width:200px}
 .banner.warn{background:#F6EBD9;color:#6E4716}
 .banner.ok{background:#E5EFE3;color:#2F5A34}
-.grgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}
-.grcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;display:flex;flex-direction:column;gap:10px}
-.grthumb{border:0;padding:12px;background:var(--mist);border-radius:12px;cursor:pointer;width:100%;height:230px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.grhead{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.grgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.grcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.grthumb{border:0;padding:14px;background:var(--mist);border-radius:14px;cursor:pointer;width:100%;height:240px;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .grthumb:hover{background:#DCE1D5}
 .grthumb img{max-width:100%;max-height:100%;display:block;border-radius:3px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
-.grmeta b{display:block;font-weight:500;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.grmeta small{color:var(--muted);font-size:.8rem}
-.gracts{display:flex;gap:6px}
-.gracts button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:7px;font:inherit;font-size:.8rem;cursor:pointer;color:var(--ink)}
-.gracts button.danger,.gracts2 button.danger{color:#9B3B3B}
-.grempty{text-align:center;padding:48px 26px}
-.grempty .sub{max-width:460px;margin:0 auto 20px}
-.grfmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.grfmt{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:3px;font:inherit;color:var(--ink);transition:border-color .2s,background .2s}
+.grmeta b{display:block;font-weight:500;font-size:1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grmeta small{color:var(--muted);font-size:.85rem}
+.grcardopen{justify-content:center}
+.gracts{display:flex;gap:8px}
+.gracts button{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px;font:inherit;font-size:.88rem;cursor:pointer;color:var(--ink)}
+.gracts button.danger{color:#9B3B3B}
+.grempty{text-align:center;padding:56px 26px}
+.grempty .sub{max-width:480px;margin:0 auto 22px;font-size:1rem}
+/* procedura guidata */
+.grwiz{max-width:980px;margin:0 auto}
+.grwizhead{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.grsteps{display:flex;gap:8px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.grsteps li{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.92rem;color:var(--muted)}
+.grsteps li span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--mist);font-weight:600;font-size:.85rem}
+.grsteps li.on{border-color:var(--brand);color:var(--ink);font-weight:500}
+.grsteps li.on span{background:var(--brand-deep);color:#fff}
+.grsteps li.done span{background:var(--brand);color:#fff}
+.grwizbody{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:34px}
+.grq{font-family:var(--display);font-weight:var(--display-weight);font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 8px;color:var(--ink)}
+.grqsub{color:var(--muted);margin:0 0 24px;font-size:1rem}
+.grwizbody > .grq:first-child + .grfmts{margin-top:22px}
+.grwizfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:22px}
+.grfmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.grfmt{border:1.5px solid var(--line);border-radius:18px;background:var(--surface);padding:18px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;font:inherit;color:var(--ink);transition:border-color .2s,background .2s}
 .grfmt:hover{border-color:var(--brand)}
-.grfmt.on{border:2px solid var(--brand);background:var(--mist);padding:13px}
-.grfmt b{font-weight:500;font-size:.92rem}
-.grfmt small{color:var(--muted);font-size:.78rem}
-.grfmt .shape{height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
-.grfmt .shape i{display:block;background:var(--brand);opacity:.4;border-radius:4px}
-.grfmt.on .shape i{opacity:.8}
-.grnewgrid{display:grid;grid-template-columns:minmax(260px,1fr) 1.5fr;gap:20px;align-items:start}
-@media (max-width:980px){.grnewgrid{grid-template-columns:1fr;gap:0}}
-.grtpls{display:flex;flex-wrap:wrap;gap:14px}
-.grtpl{border:2px solid transparent;border-radius:14px;padding:10px;background:var(--paper);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:8px;font:inherit;font-size:.85rem;color:var(--ink)}
+.grfmt.on{border:2.5px solid var(--brand-deep);background:var(--mist);padding:17px}
+.grfmt b{font-weight:600;font-size:1.02rem}
+.grfmt small{color:var(--muted);font-size:.86rem}
+.grfmt .shape{height:84px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.grfmt .shape i{display:block;background:var(--brand);opacity:.35;border-radius:5px}
+.grfmt.on .shape i{opacity:.85}
+.grform{max-width:620px}
+.grform .fld{margin-top:16px}
+.grform label{font-size:.95rem}
+.grform input,.grform textarea,.grevbox select{font-size:1rem;padding:13px 14px}
+.grevbox{background:var(--mist);border-radius:16px;padding:16px 18px;margin-bottom:8px}
+.grevbox label{display:block;font-size:.95rem;margin-bottom:8px;font-weight:500}
+.grevbox select{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:inherit;color:var(--ink)}
+.grtpls{display:flex;flex-wrap:wrap;gap:18px}
+.grtpl{border:2.5px solid transparent;border-radius:18px;padding:12px;background:var(--paper);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;font:inherit;font-size:.95rem;color:var(--ink)}
 .grtpl:hover{border-color:var(--line)}
-.grtpl.on{border-color:var(--brand);background:var(--mist)}
-.grtpl canvas{border-radius:4px;box-shadow:0 6px 18px rgba(0,0,0,.12);background:#fff;display:block}
-.gred{display:flex;flex-direction:column;gap:12px}
-.grtop{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.grname{font:inherit;font-size:1rem;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);min-width:180px;flex:0 1 320px}
-.grsaved{font-size:.8rem;color:var(--muted)}
-.grsaved.busy{opacity:.6}.grsaved.err{color:#9B3B3B}
+.grtpl.on{border-color:var(--brand-deep);background:var(--mist);font-weight:600}
+.grtpl canvas{border-radius:5px;box-shadow:0 8px 22px rgba(0,0,0,.13);background:#fff;display:block}
+@media (max-width:640px){.grwizbody{padding:22px 18px}.grfmts{grid-template-columns:1fr 1fr}.grfmt{padding:14px}.grfmt.on{padding:13px}.grfmt .shape{height:64px}}
+/* editor a tutto schermo */
+body.gr-open{overflow:hidden}
+.grfull{position:fixed;inset:0;z-index:80;background:#EEF0EB;display:flex;flex-direction:column;font-size:1rem}
+.grbar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.grbtn{display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:500 .95rem var(--body);color:var(--ink);cursor:pointer}
+.grbtn:hover{background:var(--paper)}
+.grname{font:inherit;font-size:1rem;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);min-width:160px;flex:0 1 340px}
+.grsaved{font-size:.85rem;color:var(--brand-deep)}
+.grsaved.busy{color:var(--muted)}.grsaved.err{color:#9B3B3B}
 .grdl{position:relative}
-.grdlmenu{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.14);padding:6px;z-index:30;min-width:250px;display:flex;flex-direction:column}
-.grdlmenu button{text-align:left;padding:11px 12px;border:0;background:none;border-radius:9px;font:inherit;font-size:.9rem;cursor:pointer;color:var(--ink)}
-.grdlmenu button:hover{background:var(--paper)}
-.gradd{display:flex;flex-wrap:wrap;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px}
-.gradd button{display:flex;align-items:center;gap:8px;border:0;background:none;padding:9px 12px;border-radius:10px;font:500 .88rem var(--body);color:var(--ink);cursor:pointer}
-.gradd button:hover{background:var(--mist)}
-.gradd button svg{width:17px;height:17px}
-.gradd button b{font-family:var(--display);font-size:1.1rem;font-weight:400;line-height:1}
-.gradd button > span{font-family:var(--display);line-height:1}
-.gradd .sh{display:inline-block;width:16px;height:12px;border:1.7px solid currentColor;border-radius:2px}
-.gradd .sh.circ{width:14px;height:14px;border-radius:50%}
-.gradd .sh.line{height:0;border-width:1.7px 0 0;border-radius:0}
-.grmain{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
-@media (max-width:1060px){.grmain{grid-template-columns:1fr}}
-.grstage{background:repeating-conic-gradient(#ECEEE8 0 25%,#F4F5F1 0 50%) 0 0/22px 22px;border-radius:18px;border:1px solid var(--line);padding:12px;display:flex;justify-content:center;align-items:center;min-height:420px;overflow:hidden}
-.grboard{position:relative;box-shadow:0 12px 40px rgba(0,0,0,.16);touch-action:none;user-select:none;-webkit-user-select:none}
-.grboard canvas{display:block}
-.grsel{position:absolute;border:1.5px solid #5B7FD6;pointer-events:none;box-sizing:border-box}
-.grsel i{position:absolute;width:12px;height:12px;background:#fff;border:1.5px solid #5B7FD6;border-radius:3px;pointer-events:auto;box-sizing:border-box}
-.grsel .h-nw{left:-7px;top:-7px;cursor:nwse-resize}.grsel .h-ne{right:-7px;top:-7px;cursor:nesw-resize}
-.grsel .h-sw{left:-7px;bottom:-7px;cursor:nesw-resize}.grsel .h-se{right:-7px;bottom:-7px;cursor:nwse-resize}
-.grsel .h-e{right:-7px;top:50%;margin-top:-6px;cursor:ew-resize}.grsel .h-w{left:-7px;top:50%;margin-top:-6px;cursor:ew-resize}
-.grsel:not(.txt) .h-e,.grsel:not(.txt) .h-w{display:none}
-.grsel.locked{border-style:dashed}.grsel.locked i{display:none}
-@media (pointer:coarse){.grsel i{width:22px;height:22px;border-radius:50%}.grsel .h-nw{left:-12px;top:-12px}.grsel .h-ne{right:-12px;top:-12px}.grsel .h-sw{left:-12px;bottom:-12px}.grsel .h-se{right:-12px;bottom:-12px}.grsel .h-e{right:-12px;margin-top:-11px}.grsel .h-w{left:-12px;margin-top:-11px}}
-.grguide{position:absolute;background:#D9619B;pointer-events:none}
-.grguide.v{top:0;bottom:0;width:1px}.grguide.h{left:0;right:0;height:1px}
-.grdrop{position:absolute;inset:0;background:rgba(86,104,79,.82);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;pointer-events:none}
-.grprops{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;max-height:calc(100vh - 120px);overflow:auto;position:sticky;top:16px}
-.grprops h4,.grh4{font:600 .72rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
-.grprops > h4:first-child{margin-top:2px}
-.grprops textarea{width:100%;box-sizing:border-box;font:inherit;font-size:.95rem;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);resize:vertical}
-.grfld{margin:12px 0}
-.grfld label{display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:5px}
-.grfld output{color:var(--muted);font-variant-numeric:tabular-nums}
-.grfld select{width:100%;font:inherit;font-size:.92rem;padding:9px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
-.grfld input[type=range]{width:100%;accent-color:var(--brand)}
-.grsw{display:flex;flex-wrap:wrap;gap:7px}
-.grsw button{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.16);cursor:pointer;padding:0}
-.grsw button.on{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--ink)}
-.grsw button.none{background:linear-gradient(135deg,#fff 44%,#C44 44% 56%,#fff 56%)}
-.grpick{width:26px;height:26px;border-radius:50%;overflow:hidden;position:relative;background:conic-gradient(#e66,#ec6,#6c6,#6cc,#66e,#c6c,#e66);cursor:pointer;border:1px solid rgba(0,0,0,.16)}
-.grpick input{opacity:0;position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
-.grtog{display:flex;gap:4px;flex-wrap:wrap;margin:12px 0}
-.grtog button{min-width:38px;height:36px;border:1px solid var(--line);background:var(--surface);border-radius:9px;cursor:pointer;font:inherit;font-size:.9rem;color:var(--ink)}
-.grtog button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.grtog .sep{width:8px}
-.grtog.wide button{flex:1;padding:0 10px;font-size:.84rem}
-.gracts2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.gracts2 button{padding:9px 8px;border:1px solid var(--line);background:var(--surface);border-radius:9px;cursor:pointer;font:inherit;font-size:.82rem;color:var(--ink)}
-.gracts2 button:hover,.grtog button:not(.on):hover{background:var(--paper)}
-.grdesel{margin-top:16px;display:block;font-size:.85rem}
-.grlayers{display:flex;flex-direction:column;gap:4px}
-.grlayers button{display:flex;justify-content:space-between;gap:8px;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:8px 10px;font:inherit;font-size:.84rem;cursor:pointer;color:var(--ink)}
-.grlayers button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.grbgimg{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.grbgimg img{width:64px;height:64px;object-fit:cover;border-radius:9px}
-.grupload{display:block;border:1.5px dashed var(--brand);border-radius:14px;padding:20px;cursor:pointer;background:var(--paper);text-align:center}
+.grdl > .btn{height:44px;padding:0 22px}
+.grdlmenu{position:absolute;right:0;top:calc(100% + 8px);background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.16);padding:8px;z-index:30;width:290px;display:flex;flex-direction:column}
+.grdlmenu p{margin:6px 12px 8px;font-size:.85rem;color:var(--muted)}
+.grdlmenu button{text-align:left;padding:12px 14px;border:0;background:none;border-radius:11px;font:inherit;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;gap:2px}
+.grdlmenu button b{font-weight:600;font-size:.98rem}
+.grdlmenu button small{color:var(--muted);font-size:.84rem}
+.grdlmenu button:hover{background:var(--mist)}
+.grbody{flex:1;min-height:0;display:flex}
+.grrail{width:92px;flex:none;background:var(--surface);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px;padding:10px 8px;overflow-y:auto}
+.grrail button{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 4px;border:0;border-radius:14px;background:none;font:500 .82rem var(--body);color:var(--ink);cursor:pointer}
+.grrail button svg{width:26px;height:26px;color:var(--brand-deep)}
+.grrail button:hover{background:var(--paper)}
+.grrail button.on{background:var(--mist);color:var(--brand-deep);font-weight:600}
+.grdrawer{width:320px;flex:none;background:var(--surface);border-right:1px solid var(--line);padding:18px;overflow-y:auto}
+.grdhead{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:16px}
+.grdhead b{display:block;font-size:1.12rem;font-weight:600}
+.grdhead small{display:block;color:var(--muted);font-size:.86rem;margin-top:3px}
+.grx{width:36px;height:36px;flex:none;border-radius:50%;border:0;background:var(--paper);cursor:pointer;font-size:1rem;color:var(--ink)}
+.grx:hover{background:var(--mist)}
+.grtiles1{display:flex;flex-direction:column;gap:10px}
+.grtiles1 button{text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--paper);cursor:pointer;color:var(--ink);font-family:var(--body);line-height:1.2}
+.grtiles1 button:hover,.grtiles2 button:hover{border-color:var(--brand);background:var(--mist)}
+.grtiles2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grtiles2 button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px 8px;min-height:120px;border:1px solid var(--line);border-radius:14px;background:var(--paper);cursor:pointer;font:500 .85rem var(--body);color:var(--ink)}
+.grtiles2 img{width:58px;height:58px}
+.grtiles2 .mk{width:58px;height:58px;background:var(--c);-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat}
+.grtiles2 button.dark{background:var(--brand)}
+.grtiles2 button.dark span:last-child{color:#fff}
+.grtiles2.shapes i{display:block;width:62px;height:42px;background:var(--lilac,#D1B6C7)}
+.grfull .grplbl{font:600 .78rem var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:20px 0 10px}
+.grupload{display:block;border:2px dashed var(--brand);border-radius:16px;padding:20px 14px;cursor:pointer;background:var(--paper);text-align:center}
 .grupload:hover{background:var(--mist)}
 .grupload input{position:absolute;width:1px;height:1px;opacity:0}
 .grupload span{display:flex;flex-direction:column;align-items:center;gap:6px}
-.grupload svg{width:22px;height:22px;color:var(--brand-deep)}
-.grupload small{color:var(--muted);font-size:.8rem;max-width:380px}
-.grlib{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
-.grlib button{border:1px solid var(--line);border-radius:10px;padding:0;overflow:hidden;aspect-ratio:1;cursor:pointer;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/14px 14px}
-.grlib button:hover{border-color:var(--brand)}
-.grlib img{width:100%;height:100%;object-fit:contain;display:block}
-.grtip{margin:0}
+.grupload svg{width:30px;height:30px;color:var(--brand-deep)}
+.grupload b{font-size:.98rem}
+.grupload small{color:var(--muted);font-size:.84rem}
+.grlib{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.grlib button{border:1.5px solid var(--line);border-radius:12px;padding:0;overflow:hidden;aspect-ratio:1;cursor:pointer;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/14px 14px}
+.grlib button:hover{border-color:var(--brand-deep)}
+.grlib img{width:100%;height:100%;object-fit:cover;display:block}
+.grbgimg{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.grbgimg img{width:76px;height:76px;object-fit:cover;border-radius:12px}
+.grlayers{display:flex;flex-direction:column;gap:6px}
+.grlayer{display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:4px}
+.grlayer.on{border-color:var(--brand-deep);background:var(--mist)}
+.grlayer .nm{flex:1;min-width:0;text-align:left;border:0;background:none;padding:9px 10px;font:inherit;font-size:.92rem;color:var(--ink);cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.grlayer button:not(.nm){width:34px;height:34px;border:0;border-radius:9px;background:var(--surface);cursor:pointer;color:var(--muted)}
+.grwork{flex:1;min-width:0;display:flex;flex-direction:column;position:relative}
+.grctx{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--surface);border-bottom:1px solid var(--line);min-height:64px;overflow-x:auto;flex-wrap:nowrap}
+.grctx > button,.grsize{flex:none;display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);font:500 .92rem var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
+.grctx > button:hover{background:var(--paper)}
+.grctx > button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grctx > button.danger{color:#9B3B3B}
+.grctx .dot{width:20px;height:20px;border-radius:50%;border:1px solid rgba(0,0,0,.2);display:inline-block}
+.grctxlbl{flex:none;font:600 .74rem var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.grctxlock{flex:none;font-size:.9rem;color:var(--muted);margin-right:4px}
+.grctxhint{margin:0;color:var(--muted);font-size:.95rem}
+.grctxhint b{color:var(--ink);font-weight:500}
+.grsize{padding:0 4px;gap:4px;cursor:default}
+.grsize button{width:36px;height:36px;border:0;border-radius:9px;background:var(--paper);font-size:1.25rem;cursor:pointer;color:var(--ink)}
+.grsize b{min-width:34px;text-align:center;font-variant-numeric:tabular-nums}
+.grpop{position:absolute;top:72px;left:50%;transform:translateX(-50%);width:min(380px,calc(100% - 24px));background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 22px 50px rgba(0,0,0,.18);padding:16px 18px 18px;z-index:20;max-height:calc(100% - 90px);overflow-y:auto}
+.grpophead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.grpophead b{font-size:1.05rem;font-weight:600}
+.grpop textarea{width:100%;box-sizing:border-box;font:inherit;font-size:1.05rem;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);resize:vertical}
+.grpop .hint{margin:6px 0 12px}
+.grfonts{display:flex;flex-direction:column;gap:6px}
+.grfonts button{display:flex;justify-content:space-between;align-items:center;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);cursor:pointer;font-size:1.25rem;color:var(--ink)}
+.grfonts button small{font:400 .75rem var(--body);color:var(--muted)}
+.grfonts button.on{border:2px solid var(--brand-deep);background:var(--mist);padding:11px 13px}
+.grsw{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.grsw button{aspect-ratio:1;width:100%;border-radius:50%;border:1px solid rgba(0,0,0,.18);cursor:pointer;padding:0}
+.grsw button.on{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--ink)}
+.grsw button.none{background:linear-gradient(135deg,#fff 44%,#C44 44% 56%,#fff 56%)}
+.grpickrow{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:.92rem;cursor:pointer}
+.grpick{width:34px;height:34px;flex:none;border-radius:50%;overflow:hidden;position:relative;background:conic-gradient(#e66,#ec6,#6c6,#6cc,#66e,#c6c,#e66);border:1px solid rgba(0,0,0,.16)}
+.grpick input{opacity:0;position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border:0;padding:0}
+.grtog{display:flex;gap:6px;flex-wrap:wrap}
+.grtog button{flex:1;min-height:46px;padding:0 12px;border:1px solid var(--line);background:var(--surface);border-radius:12px;cursor:pointer;font:inherit;font-size:.92rem;color:var(--ink)}
+.grtog button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grfld{margin:16px 0 4px}
+.grfld label{display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:8px}
+.grfld output{color:var(--muted);font-variant-numeric:tabular-nums}
+.grfld input[type=range]{width:100%;accent-color:var(--brand-deep);height:28px}
+.grgrid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grgrid2 button,.grwide{min-height:52px;padding:8px 10px;border:1px solid var(--line);background:var(--surface);border-radius:12px;cursor:pointer;font:inherit;font-size:.9rem;color:var(--ink)}
+.grwide{width:100%;margin-top:8px}
+.grwide.on{background:var(--mist)}
+.grgrid2 button:hover,.grwide:hover,.grtog button:not(.on):hover{background:var(--paper)}
+.grstage{flex:1;min-height:0;display:flex;justify-content:center;align-items:center;overflow:hidden;padding:20px}
+.grboard{position:relative;box-shadow:0 14px 44px rgba(0,0,0,.18);touch-action:none;user-select:none;-webkit-user-select:none;background:#fff}
+.grboard canvas{display:block}
+.grsel{position:absolute;border:2px solid #5B7FD6;pointer-events:none;box-sizing:border-box}
+.grsel i{position:absolute;width:16px;height:16px;background:#fff;border:2px solid #5B7FD6;border-radius:50%;pointer-events:auto;box-sizing:border-box}
+.grsel .h-nw{left:-9px;top:-9px;cursor:nwse-resize}.grsel .h-ne{right:-9px;top:-9px;cursor:nesw-resize}
+.grsel .h-sw{left:-9px;bottom:-9px;cursor:nesw-resize}.grsel .h-se{right:-9px;bottom:-9px;cursor:nwse-resize}
+.grsel .h-e{right:-9px;top:50%;margin-top:-8px;cursor:ew-resize;border-radius:5px}.grsel .h-w{left:-9px;top:50%;margin-top:-8px;cursor:ew-resize;border-radius:5px}
+.grsel:not(.txt) .h-e,.grsel:not(.txt) .h-w{display:none}
+.grsel.locked{border-style:dashed}.grsel.locked i{display:none}
+@media (pointer:coarse){.grsel i{width:26px;height:26px}.grsel .h-nw{left:-14px;top:-14px}.grsel .h-ne{right:-14px;top:-14px}.grsel .h-sw{left:-14px;bottom:-14px}.grsel .h-se{right:-14px;bottom:-14px}.grsel .h-e{right:-14px;margin-top:-13px}.grsel .h-w{left:-14px;margin-top:-13px}}
+.grguide{position:absolute;background:#D9619B;pointer-events:none}
+.grguide.v{top:0;bottom:0;width:1px}.grguide.h{left:0;right:0;height:1px}
+.grdrop{position:absolute;inset:0;background:rgba(86,104,79,.85);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.15rem;pointer-events:none}
+@media (max-width:820px){
+  .grbar{padding:8px 10px;gap:6px}
+  .grbtn span,.grsaved{display:none}
+  .grbtn{padding:0 12px}
+  .grname{flex:1 1 60px;min-width:0;padding:0 10px;font-size:.92rem}
+  .grdl > .btn{padding:0 14px}
+  .grbar{flex-wrap:nowrap}
+  .grbody{flex-direction:column-reverse}
+  .grrail{width:auto;flex-direction:row;border-right:0;border-top:1px solid var(--line);padding:6px;justify-content:space-around;overflow-x:auto}
+  .grrail button{padding:8px 6px;min-width:58px;font-size:.74rem}
+  .grrail button svg{width:22px;height:22px}
+  .grdrawer{position:absolute;left:0;right:0;bottom:70px;width:auto;max-height:58vh;border:0;border-top:1px solid var(--line);border-radius:22px 22px 0 0;box-shadow:0 -14px 40px rgba(0,0,0,.18);z-index:25}
+  .grbody{position:relative}
+  .grctx{padding:8px 10px;min-height:60px}
+  .grpop{top:66px}
+  .grstage{padding:12px}
+}
 .tile b.out{color:#8A5A80}
 .fintop{gap:12px}
 .finseg{max-width:100%;overflow-x:auto;scrollbar-width:none}
@@ -1898,6 +1977,7 @@ const PALETTES = [["salvia","Salvia (volantino)","#82947E","#56684F","#D1B6C7","
 const FONTS = [["volantino","Come il volantino","'Tenor Sans',sans-serif"],["elegante","Elegante","'Cormorant Garamond',serif"],["morbido","Morbido","'Fraunces',serif"],["classico","Classico","'Playfair Display',serif"],["moderno","Moderno","'DM Serif Display',serif"]];
 
 function renderPanel(){
+  if (tab !== "grafiche" || grView !== "edit") document.body.classList.remove("gr-open");
   $("#panelTitle").textContent = TITLES[tab];
   const P = $("#panel");
   if (tab === "richieste"){ renderRequests(); return; }
@@ -3590,95 +3670,114 @@ function grBuild(fmt, tpl, c){
 }
 
 /* --- elenco --- */
+let grStep = 1, grDrawer = null, grImgMode = "add", grPopK = null;
 async function renderGrafiche(){
   const P = $("#panel");
   if (grView === "edit" && grDoc) return grEditor();
   if (grView === "new") return grNewView();
+  document.body.classList.remove("gr-open");
   P.innerHTML = `<div class="empty">Caricamento…</div>`;
   await loadWork(); if (tab !== "grafiche") return;
   const list = W.grafiche.slice().sort((a,b) => (b.agg || "").localeCompare(a.agg || ""));
-  P.innerHTML = `<div class="toolbar"><p class="help" style="margin:0;flex:1;min-width:240px">Locandine, flyer, post e biglietti già nel tuo stile. Scegli un modello, cambia testi e foto, sposta tutto dove vuoi e scarica.</p>
-      <button class="btn btn-primary small" data-grnew="1">+ Nuova grafica</button></div>
+  P.innerHTML = `<div class="grhead"><div><p class="help" style="margin:0">Locandine, flyer, post e biglietti già nel tuo stile.</p></div>
+      <button class="btn btn-primary" data-grnew="1">+ Crea una nuova grafica</button></div>
     ${list.length ? `<div class="grgrid">${list.map(d => `<div class="grcard"><button type="button" class="grthumb" data-gropen="${d.id}" aria-label="Apri ${esc(d.nome || "grafica")}">${d.thumb ? `<img src="${esc(d.thumb)}" alt="">` : ""}</button>
         <div class="grmeta"><b>${esc(d.nome || "Senza nome")}</b><small>${esc(GR_FMT[d.fmt].l)} · ${esc(fmtDate(d.agg || new Date().toISOString(), {day:"numeric", month:"short"}))}</small></div>
+        <button type="button" class="btn btn-primary small grcardopen" data-gropen="${d.id}">Apri e modifica</button>
         <div class="gracts"><button type="button" data-grdup="${d.id}">Duplica</button><button type="button" class="danger" data-grdel="${d.id}">Elimina</button></div></div>`).join("")}</div>`
-      : `<div class="box grempty"><h3>Crea la tua prima grafica</h3><p class="sub">Per un incontro, un annuncio sui social o i biglietti da visita. Colori, caratteri e logo sono già i tuoi.</p><button class="btn btn-primary" data-grnew="1">+ Nuova grafica</button></div>`}`;
+      : `<div class="box grempty"><h3>Crea la tua prima grafica</h3><p class="sub">Per un incontro, un annuncio sui social o i biglietti da visita. Colori, caratteri e logo sono già i tuoi: scegli, scrivi e scarica.</p><button class="btn btn-primary" data-grnew="1">+ Crea una nuova grafica</button></div>`}`;
 }
 
-/* --- nuova --- */
+/* --- nuova grafica: 3 passaggi --- */
 async function grNewView(){
-  const P = $("#panel"); await grFontsReady();
+  const P = $("#panel"); document.body.classList.remove("gr-open");
   if (!grNew.c) grNew.c = grContent();
   const c = grNew.c, card = grNew.fmt === "biglietto", evs = (C.events && C.events.items) || [];
   const tpls = grTpls(grNew.fmt); if (!tpls[grNew.tpl]) grNew.tpl = Object.keys(tpls)[0];
-  P.innerHTML = `<div class="toolbar"><button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button><span class="sp"></span><button class="btn btn-primary small" data-grcreate="1">Inizia a modificare →</button></div>
-    <div class="box"><h3>1. Che cosa vuoi creare?</h3>
-      <div class="grfmts">${Object.entries(GR_FMT).map(([k, f]) => `<button type="button" class="grfmt ${grNew.fmt === k ? "on" : ""}" data-grfmt="${k}"><span class="shape"><i style="width:${Math.round(f.w * 58 / Math.max(f.w, f.h))}px;height:${Math.round(f.h * 58 / Math.max(f.w, f.h))}px"></i></span><b>${esc(f.l)}</b><small>${esc(f.d)}</small></button>`).join("")}</div></div>
-    <div class="grnewgrid">
-      <div class="box"><h3>2. I testi</h3><p class="sub">Puoi cambiarli anche dopo, direttamente sulla grafica.</p>
-        ${card ? "" : evs.length ? `<div class="fld"><label for="grEv">Prendi i dati da un incontro</label><select id="grEv"><option value="">— Scegli un incontro —</option>${evs.map((e, i) => `<option value="${i}">${esc(e.title)}${e.date ? " · " + esc(e.date.split("-").reverse().join("/")) : ""}</option>`).join("")}</select></div>` : ""}
-        ${(card ? [["firma","Nome"],["ruolo","Ruolo"],["sito","Sito o indirizzo"]] : [["occhiello","Frase sopra il titolo"],["titolo","Titolo"],["data","Data e ora"],["luogo","Luogo"],["testo","Descrizione"],["chiusura","Frase finale (es. Ingresso libero)"]]).map(([k, l]) => k === "testo" ? `<div class="fld"><label for="grc-${k}">${l}</label><textarea id="grc-${k}" data-grc="${k}" rows="3">${esc(c[k] || "")}</textarea></div>` : `<div class="fld"><label for="grc-${k}">${l}</label><input id="grc-${k}" data-grc="${k}" value="${esc(c[k] || "")}"></div>`).join("")}
-      </div>
-      <div class="box"><h3>3. Scegli il modello</h3><p class="sub">È solo il punto di partenza: poi sposti, ingrandisci e cambi tutto.</p>
-        <div class="grtpls">${Object.entries(tpls).map(([k, t]) => `<button type="button" class="grtpl ${grNew.tpl === k ? "on" : ""}" data-grtpl="${k}"><canvas data-grprev="${k}"></canvas><span>${esc(t.l)}</span></button>`).join("")}</div>
-      </div>
+  const steps = ["Formato", "Testi", "Stile"];
+  let body = "";
+  if (grStep === 1) body = `<h2 class="grq">Che cosa vuoi creare?</h2>
+      <div class="grfmts">${Object.entries(GR_FMT).map(([k, f]) => `<button type="button" class="grfmt ${grNew.fmt === k ? "on" : ""}" data-grfmt="${k}"><span class="shape"><i style="width:${Math.round(f.w * 74 / Math.max(f.w, f.h))}px;height:${Math.round(f.h * 74 / Math.max(f.w, f.h))}px"></i></span><b>${esc(f.l)}</b><small>${esc(f.d)}</small></button>`).join("")}</div>`;
+  if (grStep === 2) body = `<h2 class="grq">Scrivi i testi</h2><p class="grqsub">Potrai cambiarli anche dopo, direttamente sulla grafica. Lascia vuoto quello che non ti serve.</p>
+      <div class="grform">
+        ${card ? "" : evs.length ? `<div class="grevbox"><label for="grEv">Hai già inserito l'incontro nel sito? Sceglilo e compilo io i campi.</label><select id="grEv"><option value="">— Scegli un incontro —</option>${evs.map((e, i) => `<option value="${i}">${esc(e.title)}${e.date ? " · " + esc(e.date.split("-").reverse().join("/")) : ""}</option>`).join("")}</select></div>` : ""}
+        ${(card ? [["firma","Nome"],["ruolo","Professione"],["sito","Città o sito"]] : [["titolo","Titolo","Es. Scelte consapevoli per la cura dei genitori"],["occhiello","Frase piccola sopra il titolo","Es. Incontro informativo gratuito"],["data","Data e ora","Es. Sabato 21 novembre · ore 11:00"],["luogo","Luogo","Es. Caffetteria Dall'Architetto, Milano"],["testo","Descrizione breve"],["chiusura","Frase finale","Es. Ingresso libero"]]).map(([k, l, ph]) => k === "testo" ? `<div class="fld"><label for="grc-${k}">${l}</label><textarea id="grc-${k}" data-grc="${k}" rows="3">${esc(c[k] || "")}</textarea></div>` : `<div class="fld"><label for="grc-${k}">${l}</label><input id="grc-${k}" data-grc="${k}" value="${esc(c[k] || "")}" placeholder="${esc(ph || "")}"></div>`).join("")}
+      </div>`;
+  if (grStep === 3) body = `<h2 class="grq">Scegli lo stile che ti piace di più</h2><p class="grqsub">È solo il punto di partenza: dopo puoi spostare, ingrandire e cambiare tutto.</p>
+      <div class="grtpls">${Object.entries(tpls).map(([k, t]) => `<button type="button" class="grtpl ${grNew.tpl === k ? "on" : ""}" data-grtpl="${k}"><canvas data-grprev="${k}"></canvas><span>${esc(t.l)}</span></button>`).join("")}</div>`;
+  P.innerHTML = `<div class="grwiz">
+      <div class="grwizhead"><button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button>
+        <ol class="grsteps">${steps.map((s, i) => `<li class="${i + 1 === grStep ? "on" : i + 1 < grStep ? "done" : ""}"><span>${i + 1 < grStep ? "✓" : i + 1}</span>${s}</li>`).join("")}</ol></div>
+      <div class="grwizbody">${body}</div>
+      <div class="grwizfoot">${grStep > 1 ? `<button class="btn btn-ghost" data-grstep="-1">← Indietro</button>` : "<span></span>"}
+        ${grStep < 3 ? `<button class="btn btn-primary" data-grstep="1">Avanti →</button>` : `<button class="btn btn-primary" data-grcreate="1">Crea e inizia a modificare →</button>`}</div>
     </div>`;
-  grDrawPreviews();
+  if (grStep === 3){ await grFontsReady(); grDrawPreviews(); }
 }
 function grDrawPreviews(){
   const F = GR_FMT[grNew.fmt];
   $$("[data-grprev]").forEach(cv => {
     const d = {fmt:grNew.fmt, ...grBuild(grNew.fmt, cv.dataset.grprev, grNew.c)};
-    const k = Math.min(220 / F.w, 260 / F.h), dpr = Math.min(2, devicePixelRatio || 1);
+    const k = Math.min(280 / F.w, 340 / F.h), dpr = Math.min(2, devicePixelRatio || 1);
     cv.width = Math.round(F.w * k * dpr); cv.height = Math.round(F.h * k * dpr); cv.style.width = Math.round(F.w * k) + "px"; cv.style.height = Math.round(F.h * k) + "px";
     const draw = () => grDraw(cv.getContext("2d"), d, k * dpr, draw);
     draw();
   });
 }
 async function grCreate(){
-  const F = GR_FMT[grNew.fmt], b = grBuild(grNew.fmt, grNew.tpl, grNew.c);
+  const F = GR_FMT[grNew.fmt]; await grFontsReady();
+  const b = grBuild(grNew.fmt, grNew.tpl, grNew.c);
   const nome = grNew.fmt === "biglietto" ? "Biglietto da visita" : (grNew.c.titolo || F.l);
   grDoc = {id:"grafica-" + uid(), nome, fmt:grNew.fmt, ...b, agg:new Date().toISOString()};
-  grNew.c = null; grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit";
+  grNew.c = null; grStep = 1; grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; grDrawer = null; grPopK = null;
   await grSaveNow(); renderGrafiche();
 }
 
-/* --- editor --- */
+/* --- editor a tutto schermo --- */
 let grScale = 1;
+const GR_ICO = {
+  testo:'<path d="M5 6V4h14v2M12 4v16M9 20h6"/>',
+  img:'<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5L5 20"/>',
+  logo:'<circle cx="12" cy="12" r="8.5"/><path d="M12 6v12M6 12h12"/>',
+  forme:'<rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/><circle cx="15.5" cy="15.5" r="5"/>',
+  sfondo:'<path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 2-2s-1-1.6-1-2.6 1-1.4 2-1.4h2a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="15" cy="7.5" r="1.2"/>',
+  livelli:'<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>'
+};
+const grIco = (k, extra = "") => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" ${extra}>${GR_ICO[k]}</svg>`;
 function grEditor(){
   const P = $("#panel"), F = GR_FMT[grDoc.fmt];
-  P.innerHTML = `<div class="gred">
-    <div class="grtop">
-      <button class="btn btn-ghost small" data-grback="1">← Le tue grafiche</button>
+  document.body.classList.add("gr-open");
+  P.innerHTML = `<div class="grfull">
+    <header class="grbar">
+      <button class="grbtn" data-grback="1">← <span>Esci</span></button>
       <input id="grName" class="grname" value="${esc(grDoc.nome || "")}" aria-label="Nome della grafica" placeholder="Nome della grafica">
-      <span class="grsaved" id="grSaved">Salvata</span>
+      <span class="grsaved" id="grSaved">✓ Salvata</span>
       <span class="sp"></span>
-      <button class="mini-btn" data-grundo="1" title="Annulla (Ctrl+Z)" aria-label="Annulla">↶</button><button class="mini-btn" data-grredo="1" title="Ripeti" aria-label="Ripeti">↷</button>
-      <div class="grdl"><button class="btn btn-primary small" data-grdlmenu="1">${ic("doc")}Scarica</button><div class="grdlmenu" id="grDl" hidden>
-        ${F.print ? F.sizes.map(([n]) => `<button type="button" data-grexp="pdf|${n}">PDF da stampare · ${esc(n)}</button>`).join("") : ""}
-        <button type="button" data-grexp="png">Immagine PNG${F.print ? "" : " (per social)"}</button><button type="button" data-grexp="jpg">Immagine JPG (più leggera)</button></div></div>
+      <button class="grbtn" data-grundo="1" title="Annulla l'ultima modifica">↶ <span>Annulla</span></button>
+      <button class="grbtn" data-grredo="1" title="Ripeti">↷ <span>Ripeti</span></button>
+      <div class="grdl"><button class="btn btn-primary" data-grdlmenu="1">Scarica</button><div class="grdlmenu" id="grDl" hidden>
+        <p>Come vuoi scaricarla?</p>
+        ${F.print ? F.sizes.map(([n]) => `<button type="button" data-grexp="pdf|${n}"><b>PDF da stampare</b><small>${esc(n)} · alta qualità</small></button>`).join("") : ""}
+        <button type="button" data-grexp="png"><b>Immagine</b><small>${F.print ? "PNG, per WhatsApp o email" : "PNG, per Instagram e Facebook"}</small></button>
+        <button type="button" data-grexp="jpg"><b>Immagine leggera</b><small>JPG, più piccola da inviare</small></button></div></div>
+    </header>
+    <div class="grbody">
+      <nav class="grrail" aria-label="Aggiungi">${[["testo","Testo"],["img","Immagini"],["logo","Logo"],["forme","Forme"],["sfondo","Sfondo"],["livelli","Livelli"]].map(([k, l]) => `<button type="button" data-grdrawer="${k}" class="${grDrawer === k ? "on" : ""}">${grIco(k)}<span>${l}</span></button>`).join("")}</nav>
+      <aside class="grdrawer" id="grDrawer" ${grDrawer ? "" : "hidden"}></aside>
+      <main class="grwork">
+        <div class="grctx" id="grCtx"></div>
+        <div class="grpop" id="grPop" hidden></div>
+        <div class="grstage" id="grStage"><div class="grboard" id="grBoard"><canvas id="grCv"></canvas><div class="grsel" id="grSelBox" hidden>${["nw","ne","sw","se","e","w"].map(h => `<i data-h="${h}" class="h-${h}"></i>`).join("")}</div><div class="grguide v" id="grGv" hidden></div><div class="grguide h" id="grGh" hidden></div><div class="grdrop" id="grDrop" hidden>Lascia qui l'immagine</div></div></div>
+      </main>
     </div>
-    <div class="gradd">
-      <button type="button" data-gradd="titolo"><b>T</b>Titolo</button>
-      <button type="button" data-gradd="testo"><span style="font-size:.85em">T</span>Testo</button>
-      <button type="button" data-gradd="img">${ic("clip")}Immagine</button>
-      <button type="button" data-gradd="logo">${ic("heart")}Logo</button>
-      <button type="button" data-gradd="rect"><i class="sh rect"></i>Rettangolo</button>
-      <button type="button" data-gradd="ellipse"><i class="sh circ"></i>Cerchio</button>
-      <button type="button" data-gradd="line"><i class="sh line"></i>Linea</button>
-    </div>
-    <div class="grmain">
-      <div class="grstage" id="grStage"><div class="grboard" id="grBoard"><canvas id="grCv"></canvas><div class="grsel" id="grSelBox" hidden>${["nw","ne","sw","se","e","w"].map(h => `<i data-h="${h}" class="h-${h}"></i>`).join("")}</div><div class="grguide v" id="grGv" hidden></div><div class="grguide h" id="grGh" hidden></div><div class="grdrop" id="grDrop" hidden>Lascia qui l'immagine</div></div></div>
-      <aside class="grprops" id="grProps"></aside>
-    </div>
-    <p class="hint grtip">Trascina per spostare, usa i quadratini per ingrandire. Doppio clic su un testo per modificarlo. Puoi anche trascinare un'immagine (per esempio da Canva) direttamente sulla grafica.</p>
   </div>`;
+  grDrawerRender(); grCtxRender();
+  requestAnimationFrame(() => { grFit(); grRender(); });
   grFontsReady(grDoc).then(() => { grFit(); grRender(); });
-  grFit(); grRender(); grProps();
 }
 function grFit(){
   const st = $("#grStage"), bd = $("#grBoard"), cv = $("#grCv"); if (!st) return;
-  const F = GR_FMT[grDoc.fmt], aw = st.clientWidth - 24, ah = Math.max(380, Math.min(innerHeight - 220, 900));
+  const F = GR_FMT[grDoc.fmt], aw = Math.max(200, st.clientWidth - 40), ah = Math.max(240, st.clientHeight - 40);
   grScale = Math.min(aw / F.w, ah / F.h);
   const dpr = Math.min(2.5, devicePixelRatio || 1);
   bd.style.width = F.w * grScale + "px"; bd.style.height = F.h * grScale + "px";
@@ -3686,7 +3785,7 @@ function grFit(){
   cv.style.width = F.w * grScale + "px"; cv.style.height = F.h * grScale + "px"; cv._dpr = dpr;
 }
 function grRender(){
-  const cv = $("#grCv"); if (!cv || !grDoc) return;
+  const cv = $("#grCv"); if (!cv || !grDoc || !cv._dpr) return;
   const ctx = cv.getContext("2d"); ctx.clearRect(0, 0, cv.width, cv.height);
   grDraw(ctx, grDoc, grScale * cv._dpr, grRender); grSelBox();
 }
@@ -3697,23 +3796,29 @@ function grSelBox(){
   b.hidden = false; b.className = "grsel" + (e.locked ? " locked" : "") + (e.type === "text" ? " txt" : "");
   Object.assign(b.style, {left:e.x * grScale + "px", top:e.y * grScale + "px", width:e.w * grScale + "px", height:(e.h || 0) * grScale + "px"});
 }
+function grSelect(id){
+  const changed = grSel !== id; grSel = id;
+  if (changed){ grPopK = null; grCtxRender(); grPopRender(); if (grDrawer === "livelli") grDrawerRender(); }
+  grSelBox();
+}
 function grPush(){
   const s = JSON.stringify({bg:grDoc.bg, els:grDoc.els});
   if (grHist[grHi] === s) return;
   grHist = grHist.slice(0, grHi + 1); grHist.push(s); if (grHist.length > 60) grHist.shift(); grHi = grHist.length - 1;
 }
-function grChanged(hist = true, props = false){
-  grRender(); if (props) grProps();
+function grChanged(hist = true, ui = false){
+  grRender();
+  if (ui){ grCtxRender(); grPopRender(); if (grDrawer === "livelli" || grDrawer === "sfondo") grDrawerRender(); }
   if (hist){ clearTimeout(grHistT); grHistT = setTimeout(grPush, 350); }
-  const sv = $("#grSaved"); if (sv){ sv.textContent = "Salvataggio…"; sv.classList.add("busy"); }
+  const sv = $("#grSaved"); if (sv){ sv.textContent = "Salvataggio…"; sv.className = "grsaved busy"; }
   clearTimeout(grSaveT); grSaveT = setTimeout(grSaveNow, 1200);
 }
 function grUndo(dir){
   clearTimeout(grHistT); grPush();
-  const n = grHi + dir; if (n < 0 || n >= grHist.length) return;
+  const n = grHi + dir; if (n < 0 || n >= grHist.length){ toast(dir < 0 ? "Niente da annullare" : "Niente da ripetere"); return; }
   grHi = n; const s = JSON.parse(grHist[n]); grDoc.bg = s.bg; grDoc.els = s.els;
   if (!grEl()) grSel = null;
-  grRender(); grProps(); clearTimeout(grSaveT); grSaveT = setTimeout(grSaveNow, 1200);
+  grRender(); grCtxRender(); grPopRender(); grDrawerRender(); clearTimeout(grSaveT); grSaveT = setTimeout(grSaveNow, 1200);
 }
 function grThumb(doc){
   const F = GR_FMT[doc.fmt], k = 360 / Math.max(F.w, F.h), c = document.createElement("canvas");
@@ -3725,65 +3830,113 @@ const grPreload = doc => Promise.race([Promise.all([doc.bg.img, ...doc.els.filte
 async function grSaveNow(){
   clearTimeout(grSaveT); if (!grDoc) return;
   const d = grDoc; await grPreload(d); d.agg = new Date().toISOString(); d.thumb = grThumb(d);
-  try { await coll.put("grafiche", JSON.parse(JSON.stringify(d))); const sv = $("#grSaved"); if (sv){ sv.textContent = "Salvata"; sv.classList.remove("busy"); } }
-  catch { const sv = $("#grSaved"); if (sv){ sv.textContent = "Non salvata: controlla la connessione"; sv.classList.add("err"); } }
+  try { await coll.put("grafiche", JSON.parse(JSON.stringify(d))); const sv = $("#grSaved"); if (sv){ sv.textContent = "✓ Salvata"; sv.className = "grsaved"; } }
+  catch { const sv = $("#grSaved"); if (sv){ sv.textContent = "Non salvata: controlla la connessione"; sv.className = "grsaved err"; } }
 }
 
-/* proprietà */
-const grSw = (key, cur, none) => `<div class="grsw">${none ? `<button type="button" class="none ${!cur ? "on" : ""}" data-grset="${key}" data-v="" title="Nessuno"></button>` : ""}${GR_COLORS.map(c => `<button type="button" style="background:${c}" class="${(cur || "").toLowerCase() === c.toLowerCase() ? "on" : ""}" data-grset="${key}" data-v="${c}" aria-label="Colore ${c}"></button>`).join("")}<label class="grpick" title="Altro colore"><input type="color" data-grcol="${key}" value="${/^#[0-9a-f]{6}$/i.test(cur || "") ? cur : "#82947E"}"></label></div>`;
-const grRange = (key, label, v, min, max, step = 1, unit = "") => `<div class="grfld"><label>${label} <output id="gro-${key}">${Math.round(v * 100) / 100}${unit}</output></label><input type="range" min="${min}" max="${max}" step="${step}" value="${v}" data-grnum="${key}" data-unit="${unit}"></div>`;
-function grProps(){
-  const P = $("#grProps"); if (!P) return;
+/* barra delle modifiche dell'elemento selezionato */
+const grDot = c => `<i class="dot" style="background:${c || "transparent"}${c ? "" : ";background-image:linear-gradient(135deg,#fff 44%,#C44 44% 56%,#fff 56%)"}"></i>`;
+function grCtxRender(){
+  const el = $("#grCtx"); if (!el) return;
   const e = grEl();
-  if (!e){
-    const bg = grDoc.bg;
-    P.innerHTML = `<h4>Sfondo</h4>${grSw("bg.color", bg.color)}
-      <h4>Immagine di sfondo</h4>
-      ${bg.img ? `<div class="grbgimg"><img src="${esc(bg.img)}" alt=""><button type="button" class="linkbtn danger" data-grbgrm="1">Togli</button></div>${grRange("bg.op","Visibilità",Math.round((bg.op ?? 1) * 100),5,100,1,"%")}${grRange("bg.px","Posizione orizzontale",bg.px ?? 50,0,100)}${grRange("bg.py","Posizione verticale",bg.py ?? 50,0,100)}` : ""}
-      <button type="button" class="btn btn-ghost small" data-grpick="bg">${bg.img ? "Cambia immagine" : "Scegli un'immagine"}</button>
-      <h4>Livelli</h4><p class="hint" style="margin:-4px 0 8px">Clicca un elemento per selezionarlo, anche se è nascosto sotto un altro.</p>
-      <div class="grlayers">${grDoc.els.slice().reverse().map(x => `<button type="button" data-grpicklayer="${x.id}"><span>${grLayerName(x)}</span>${x.locked ? "🔒" : ""}</button>`).join("") || `<p class="hint">Nessun elemento. Aggiungine uno dalla barra in alto.</p>`}</div>`;
-    return;
+  if (!e){ el.innerHTML = `<p class="grctxhint">👆 <b>Clicca su un testo, una foto o una forma</b> per modificarla. Per aggiungere qualcosa usa i pulsanti a sinistra.</p>`; return; }
+  const b = (k, label, extra = "") => `<button type="button" class="${grPopK === k ? "on" : ""}" data-grpop="${k}">${extra}${label}</button>`;
+  let h = `<span class="grctxlbl">${{text:"Testo", img:"Immagine", logo:"Logo", shape:"Forma"}[e.type]}</span>`;
+  if (e.locked) h += `<span class="grctxlock">🔒 Bloccato</span>` + b("pos", "Sblocca o sposta");
+  else if (e.type === "text") h += b("testo", "✎ Scrivi") + b("font", `<span style="font-family:'${e.font}'">${esc((GR_FONTS.find(f => f[0] === e.font) || [0, e.font])[1].replace(/ \(del sito\)/, ""))}</span>`) + `<span class="grsize"><button type="button" data-grsize="-1" aria-label="Più piccolo">−</button><b>${Math.round(e.size)}</b><button type="button" data-grsize="1" aria-label="Più grande">+</button></span>` + b("colore", "Colore", grDot(e.color)) + b("stile", "Stile");
+  else if (e.type === "img") h += `<button type="button" data-grimgmode="replace">Cambia foto</button>` + b("ritaglio", "Inquadratura") + b("angoli", "Angoli");
+  else if (e.type === "logo") h += b("tipo", "Tipo di logo") + (e.variant !== "round" ? b("colore", "Colore", grDot(e.color)) : "");
+  else if (e.type === "shape") h += b("colore", "Colore", grDot(e.fill)) + b("bordo", "Bordo") + (e.shape !== "ellipse" ? b("angoli", "Angoli") : "");
+  if (!e.locked) h += b("trasp", "Trasparenza") + b("pos", "Posizione") + `<button type="button" data-grdo="dup">Duplica</button><button type="button" class="danger" data-grdo="del">🗑 Elimina</button>`;
+  el.innerHTML = h;
+}
+function grPopRender(){
+  const P = $("#grPop"); if (!P) return;
+  const e = grEl(); if (!grPopK || !e){ P.hidden = true; return; }
+  const range = (key, label, v, min, max, step = 1, unit = "") => `<div class="grfld"><label>${label} <output id="gro-${key}">${Math.round(v)}${unit}</output></label><input type="range" min="${min}" max="${max}" step="${step}" value="${v}" data-grnum="${key}" data-unit="${unit}"></div>`;
+  const sw = (key, cur, none) => `<div class="grsw">${none ? `<button type="button" class="none ${!cur ? "on" : ""}" data-grset="${key}" data-v="" title="Nessun colore"></button>` : ""}${GR_COLORS.map(c => `<button type="button" style="background:${c}" class="${(cur || "").toLowerCase() === c.toLowerCase() ? "on" : ""}" data-grset="${key}" data-v="${c}" aria-label="Colore ${c}"></button>`).join("")}</div><label class="grpickrow"><span class="grpick"><input type="color" data-grcol="${key}" value="${/^#[0-9a-f]{6}$/i.test(cur || "") ? cur : "#82947E"}"></span>Scegli un altro colore</label>`;
+  const opt = (attr, val, cur, label) => `<button type="button" class="${cur ? "on" : ""}" data-${attr}="${val}">${label}</button>`;
+  let t = "", h = "";
+  switch (grPopK){
+    case "testo": t = "Scrivi il testo"; h = `<textarea id="grText" rows="4" data-grtxt="1">${esc(e.text)}</textarea><p class="hint">Per andare a capo premi Invio.</p><button type="button" class="btn btn-primary small" data-grpopclose="1">Fatto</button>`; break;
+    case "font": t = "Carattere"; h = `<div class="grfonts">${GR_FONTS.map(([f, l]) => `<button type="button" class="${e.font === f ? "on" : ""}" data-grfont="${f}" style="font-family:'${f}'">${esc(l.replace(/ \(del sito\)/, ""))}${/del sito/.test(l) ? `<small>del sito</small>` : ""}</button>`).join("")}</div>`; break;
+    case "colore":
+      if (e.type === "shape"){ t = "Colore della forma"; h = sw("fill", e.fill, true); }
+      else { t = e.type === "logo" ? "Colore del simbolo" : "Colore del testo"; h = sw("color", e.color); }
+      break;
+    case "stile": t = "Stile del testo"; h = `<div class="grtog">${opt("grtog", "bold", e.bold, "<b>Grassetto</b>")}${opt("grtog", "italic", e.italic, "<i>Corsivo</i>")}${opt("grtog", "upper", e.upper, "MAIUSCOLO")}</div>
+        <p class="grplbl">Allineamento</p><div class="grtog">${opt("gralign", "left", e.align === "left", "A sinistra")}${opt("gralign", "center", e.align === "center", "Al centro")}${opt("gralign", "right", e.align === "right", "A destra")}</div>
+        ${range("ls", "Spazio tra le lettere", Math.round((e.ls || 0) * 100), 0, 40)}${range("lh", "Spazio tra le righe", Math.round((e.lh || 1.2) * 100), 80, 220, 5)}`; break;
+    case "ritaglio": t = "Inquadratura"; h = `<div class="grtog">${opt("grfit", "cover", e.fit !== "contain", "Riempi il riquadro")}${opt("grfit", "contain", e.fit === "contain", "Foto intera")}</div>
+        ${e.fit !== "contain" ? range("px", "Sposta a destra / sinistra", e.px ?? 50, 0, 100) + range("py", "Sposta in alto / in basso", e.py ?? 50, 0, 100) : `<p class="hint">La foto si vede tutta, senza tagli.</p>`}`; break;
+    case "angoli":
+      t = "Angoli";
+      if (e.type === "img") h = `<div class="grtog">${opt("grrad", "0", !e.rad, "Dritti")}${opt("grrad", "8", e.rad > 0 && e.rad < 50, "Arrotondati")}${opt("grrad", "50", e.rad >= 50, "Cerchio")}</div>${range("rad", "Quanto arrotondati", e.rad || 0, 0, 50)}`;
+      else h = range("rad", "Quanto arrotondati", e.rad || 0, 0, Math.round(Math.min(e.w, e.h) / 2));
+      break;
+    case "tipo": t = "Tipo di logo"; h = `<div class="grtog">${opt("grvar", "round", e.variant === "round", "Logo rotondo")}${opt("grvar", "mark", e.variant !== "round", "Solo il simbolo")}</div>`; break;
+    case "bordo": t = "Bordo"; h = sw("stroke", e.stroke, true) + range("sw", "Spessore", e.sw || 0, 0, 30); break;
+    case "trasp": t = "Trasparenza"; h = range("op", "Quanto si vede", Math.round((e.op ?? 1) * 100), 5, 100, 1, "%"); break;
+    case "pos": t = "Posizione";
+      h = `<div class="grgrid2">
+          <button type="button" data-grdo="cx">↔ Centra in orizzontale</button><button type="button" data-grdo="cy">↕ Centra in verticale</button>
+          <button type="button" data-grdo="up">⬆ Porta davanti</button><button type="button" data-grdo="down">⬇ Porta dietro</button></div>
+        <button type="button" class="grwide ${e.locked ? "on" : ""}" data-grdo="lock">${e.locked ? "🔓 Sblocca (si potrà spostare)" : "🔒 Blocca (non si sposta per sbaglio)"}</button>`; break;
   }
-  const common = `<h4>Disposizione</h4><div class="gracts2">
-      <button type="button" data-grdo="cx" title="Centra in orizzontale">↔ Centra</button><button type="button" data-grdo="cy" title="Centra in verticale">↕ Centra</button>
-      <button type="button" data-grdo="up" title="Porta sopra">Porta sopra</button><button type="button" data-grdo="down" title="Porta sotto">Porta sotto</button>
-      <button type="button" data-grdo="dup">Duplica</button><button type="button" data-grdo="lock">${e.locked ? "Sblocca" : "Blocca"}</button>
-      <button type="button" data-grdo="del" class="danger">Elimina</button></div>
-    ${grRange("op","Visibilità",Math.round((e.op ?? 1) * 100),5,100,1,"%")}
-    <button type="button" class="linkbtn grdesel" data-grdesel="1">← Torna allo sfondo e ai livelli</button>`;
+  P.innerHTML = `<div class="grpophead"><b>${t}</b><button type="button" class="grx" data-grpopclose="1" aria-label="Chiudi">✕</button></div>${h}`;
+  P.hidden = false;
+}
+
+/* pannello a sinistra */
+function grDrawerRender(){
+  const D = $("#grDrawer"); if (!D) return;
+  $$(".grrail [data-grdrawer]").forEach(b => b.classList.toggle("on", b.dataset.grdrawer === grDrawer));
+  if (!grDrawer){ D.hidden = true; requestAnimationFrame(() => { grFit(); grRender(); }); return; }
+  const F = GR_FMT[grDoc.fmt], head = (t, s) => `<div class="grdhead"><div><b>${t}</b>${s ? `<small>${s}</small>` : ""}</div><button type="button" class="grx" data-grdrawer="${grDrawer}" aria-label="Chiudi">✕</button></div>`;
   let h = "";
-  if (e.type === "text"){
-    h = `<h4>Testo</h4><textarea id="grText" rows="3" data-grtxt="1">${esc(e.text)}</textarea>
-      <div class="grfld"><label for="grFont">Carattere</label><select id="grFont" data-grsel="font">${GR_FONTS.map(([f, l]) => `<option value="${f}" ${e.font === f ? "selected" : ""} style="font-family:'${f}'">${l}</option>`).join("")}</select></div>
-      ${grRange("size","Grandezza",Math.round(e.size),8,Math.round(GR_FMT[grDoc.fmt].w / 4))}
-      <div class="grtog">
-        <button type="button" class="${e.bold ? "on" : ""}" data-grtog="bold" title="Grassetto"><b>G</b></button><button type="button" class="${e.italic ? "on" : ""}" data-grtog="italic" title="Corsivo"><i>C</i></button><button type="button" class="${e.upper ? "on" : ""}" data-grtog="upper" title="Tutto maiuscolo">AA</button>
-        <span class="sep"></span>
-        ${[["left","Allinea a sinistra","⟸"],["center","Centra","≡"],["right","Allinea a destra","⟹"]].map(([a, t, s]) => `<button type="button" class="${e.align === a ? "on" : ""}" data-gralign="${a}" title="${t}">${s}</button>`).join("")}
-      </div>
-      <h4>Colore</h4>${grSw("color", e.color)}
-      ${grRange("ls","Spazio tra le lettere",Math.round((e.ls || 0) * 100),0,40,1)}
-      ${grRange("lh","Spazio tra le righe",Math.round((e.lh || 1.2) * 100),80,220,5)}`;
-  } else if (e.type === "img"){
-    h = `<h4>Immagine</h4><button type="button" class="btn btn-ghost small" data-grpick="replace">Cambia immagine</button>
-      <div class="grtog wide" style="margin-top:12px"><button type="button" class="${e.fit !== "contain" ? "on" : ""}" data-grfit="cover">Riempi il riquadro</button><button type="button" class="${e.fit === "contain" ? "on" : ""}" data-grfit="contain">Intera</button></div>
-      ${e.fit !== "contain" ? grRange("px","Inquadratura orizzontale",e.px ?? 50,0,100) + grRange("py","Inquadratura verticale",e.py ?? 50,0,100) : ""}
-      ${grRange("rad","Angoli arrotondati (50 = cerchio)",e.rad || 0,0,50)}`;
-  } else if (e.type === "logo"){
-    h = `<h4>Logo</h4><div class="grtog wide"><button type="button" class="${e.variant === "round" ? "on" : ""}" data-grvar="round">Logo rotondo</button><button type="button" class="${e.variant !== "round" ? "on" : ""}" data-grvar="mark">Solo simbolo</button></div>
-      ${e.variant !== "round" ? `<h4>Colore del simbolo</h4>${grSw("color", e.color)}` : ""}`;
-  } else if (e.type === "shape"){
-    h = `<h4>Forma</h4><div class="grtog wide"><button type="button" class="${e.shape !== "ellipse" ? "on" : ""}" data-grshape="rect">Rettangolo</button><button type="button" class="${e.shape === "ellipse" ? "on" : ""}" data-grshape="ellipse">Cerchio</button></div>
-      <h4>Riempimento</h4>${grSw("fill", e.fill, true)}
-      <h4>Bordo</h4>${grSw("stroke", e.stroke, true)}${grRange("sw","Spessore del bordo",e.sw || 0,0,30)}
-      ${e.shape !== "ellipse" ? grRange("rad","Angoli arrotondati",e.rad || 0,0,Math.round(Math.min(e.w, e.h) / 2)) : ""}`;
+  if (grDrawer === "testo") h = head("Aggiungi un testo", "Clicca per aggiungerlo al centro") + `<div class="grtiles1">
+      <button type="button" data-gradd="titolo" style="font-family:'Tenor Sans';font-size:1.7rem;color:#56684F">Titolo</button>
+      <button type="button" data-gradd="sottotitolo" style="font-family:'Cormorant Garamond';font-style:italic;font-size:1.45rem;color:#56684F">Sottotitolo elegante</button>
+      <button type="button" data-gradd="testo" style="font-size:1rem">Testo normale, per le descrizioni</button>
+      <button type="button" data-gradd="etichetta" style="font-size:.78rem;letter-spacing:.16em;font-weight:600;color:#9C6F93">FRASE PICCOLA</button>
+      <button type="button" data-gradd="corsivo" style="font-family:'Great Vibes';font-size:1.8rem;color:#9C6F93">Scritta a mano</button></div>`;
+  if (grDrawer === "img"){
+    const L = grLib(), site = [grFoto(), "walk-poster.jpg"];
+    h = head(grImgMode === "replace" ? "Cambia la foto" : grImgMode === "bg" ? "Immagine di sfondo" : "Aggiungi un'immagine", grImgMode === "add" ? "Clicca un'immagine per aggiungerla" : "Clicca l'immagine che vuoi usare") + `
+      <label class="grupload"><input type="file" id="grFile" accept="image/*" multiple><span>${grIco("img")}<b>Carica dal computer o dal telefono</b><small>Anche le immagini fatte con Canva. Puoi pure trascinarle sulla grafica.</small></span></label>
+      <p class="hint" id="grUpSt"></p>
+      ${L.imgs.length ? `<p class="grplbl">Le tue immagini</p><div class="grlib">${L.imgs.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
+      <p class="grplbl">Foto del sito</p><div class="grlib">${site.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>
+      ${grImgMode !== "add" ? `<button type="button" class="linkbtn" data-grimgmode="add" style="margin-top:14px">Annulla</button>` : ""}`;
   }
-  P.innerHTML = h + common;
+  if (grDrawer === "logo") h = head("Aggiungi il logo", "Clicca per aggiungerlo") + `<div class="grtiles2">
+      <button type="button" data-gradd="logo|round"><img src="${PDF_LOGO}" alt=""><span>Logo rotondo</span></button>
+      <button type="button" data-gradd="logo|#82947E"><span class="mk" style="--c:#82947E;--m:url('${GR_MARK}')"></span><span>Simbolo verde</span></button>
+      <button type="button" data-gradd="logo|#C9A6C2"><span class="mk" style="--c:#C9A6C2;--m:url('${GR_MARK}')"></span><span>Simbolo rosa</span></button>
+      <button type="button" data-gradd="logo|#FFFFFF" class="dark"><span class="mk" style="--c:#FFFFFF;--m:url('${GR_MARK}')"></span><span>Simbolo bianco</span></button></div>`;
+  if (grDrawer === "forme") h = head("Aggiungi una forma", "Utili per riquadri, cornici e decorazioni") + `<div class="grtiles2 shapes">
+      <button type="button" data-gradd="rect"><i style="border-radius:3px"></i><span>Riquadro</span></button>
+      <button type="button" data-gradd="round"><i style="border-radius:14px"></i><span>Riquadro arrotondato</span></button>
+      <button type="button" data-gradd="ellipse"><i style="border-radius:50%;width:52px"></i><span>Cerchio</span></button>
+      <button type="button" data-gradd="line"><i style="height:4px;border-radius:2px"></i><span>Linea</span></button>
+      <button type="button" data-gradd="frame"><i style="background:none;border:3px solid #82947E;border-radius:6px"></i><span>Cornice</span></button>
+      <button type="button" data-gradd="pill"><i style="height:22px;border-radius:99px;width:70px"></i><span>Etichetta</span></button></div>`;
+  if (grDrawer === "sfondo"){
+    const bg = grDoc.bg;
+    h = head("Sfondo", "Il colore o la foto dietro a tutto") + `<p class="grplbl">Colore</p><div class="grsw big">${GR_COLORS.map(c => `<button type="button" style="background:${c}" class="${(bg.color || "").toLowerCase() === c.toLowerCase() ? "on" : ""}" data-grset="bg.color" data-v="${c}" aria-label="Colore ${c}"></button>`).join("")}</div>
+      <label class="grpickrow"><span class="grpick"><input type="color" data-grcol="bg.color" value="${/^#[0-9a-f]{6}$/i.test(bg.color || "") ? bg.color : "#82947E"}"></span>Scegli un altro colore</label>
+      <p class="grplbl">Foto di sfondo</p>
+      ${bg.img ? `<div class="grbgimg"><img src="${esc(bg.img)}" alt=""><div><button type="button" class="btn btn-ghost small" data-grimgmode="bg">Cambia</button> <button type="button" class="linkbtn danger" data-grbgrm="1">Togli</button></div></div>
+        <div class="grfld"><label>Quanto si vede <output id="gro-bg.op">${Math.round((bg.op ?? 1) * 100)}%</output></label><input type="range" min="5" max="100" value="${Math.round((bg.op ?? 1) * 100)}" data-grnum="bg.op" data-unit="%"></div>`
+        : `<button type="button" class="btn btn-ghost small" data-grimgmode="bg">Scegli una foto di sfondo</button>`}`;
+  }
+  if (grDrawer === "livelli") h = head("Livelli", "Dall'alto (davanti) al basso (dietro). Clicca per selezionare.") + `<div class="grlayers">${grDoc.els.slice().reverse().map(x => `<div class="grlayer ${x.id === grSel ? "on" : ""}"><button type="button" class="nm" data-grpicklayer="${x.id}">${grLayerName(x)}${x.locked ? " 🔒" : ""}</button><button type="button" data-grlayermv="${x.id}|1" aria-label="Porta davanti">▲</button><button type="button" data-grlayermv="${x.id}|-1" aria-label="Porta dietro">▼</button></div>`).join("") || `<p class="hint">La grafica è vuota. Aggiungi un testo o un'immagine dai pulsanti a sinistra.</p>`}</div>`;
+  D.innerHTML = h; D.hidden = false;
+  requestAnimationFrame(() => { grFit(); grRender(); });
 }
 function grLayerName(x){
-  if (x.type === "text") return "T · " + esc(String(x.text).split("\n")[0].slice(0, 26) || "Testo");
-  return {img:"Immagine", logo:x.variant === "round" ? "Logo" : "Simbolo", shape:x.shape === "ellipse" ? "Cerchio" : "Rettangolo"}[x.type] || x.type;
+  if (x.type === "text") return "<b>T</b> " + esc(String(x.text).split("\n")[0].slice(0, 30) || "Testo");
+  return {img:"🖼 Immagine", logo:x.variant === "round" ? "◎ Logo" : "◎ Simbolo", shape:x.shape === "ellipse" ? "● Cerchio" : "■ Forma"}[x.type] || x.type;
 }
 function grSetPath(path, v){
   if (path.startsWith("bg.")) grDoc.bg[path.slice(3)] = v;
@@ -3793,28 +3946,38 @@ function grSetPath(path, v){
 /* aggiungere */
 function grAdd(kind){
   const F = GR_FMT[grDoc.fmt], b = Math.min(F.w, F.h) / 100; let e;
-  if (kind === "titolo") e = grT("Il tuo titolo", {font:"Tenor Sans", size:7*b, color:GC.deep, w:F.w * .7, lh:1.1});
-  if (kind === "testo") e = grT("Scrivi qui il tuo testo", {size:3*b, w:F.w * .6, color:GC.ink, lh:1.4});
-  if (kind === "logo") e = grL({w:16*b});
-  if (kind === "rect") e = grS({w:30*b, h:20*b, fill:GC.lil, rad:2*b});
-  if (kind === "ellipse") e = grS({shape:"ellipse", w:24*b, h:24*b, fill:GC.lil});
-  if (kind === "line") e = grS({w:30*b, h:Math.max(2, .5*b), fill:GC.sage});
+  const [k, v] = kind.split("|");
+  if (k === "titolo") e = grT("Il tuo titolo", {font:"Tenor Sans", size:7*b, color:GC.deep, w:F.w * .7, lh:1.1});
+  if (k === "sottotitolo") e = grT("Un sottotitolo elegante", {font:"Cormorant Garamond", italic:true, size:4.6*b, color:GC.deep, w:F.w * .7, lh:1.15});
+  if (k === "testo") e = grT("Scrivi qui il tuo testo", {size:3*b, w:F.w * .6, color:GC.ink, lh:1.4});
+  if (k === "etichetta") e = grT("Frase piccola", {size:2.4*b, w:F.w * .6, bold:true, upper:true, ls:.16, color:GC.lild});
+  if (k === "corsivo") e = grT("Con affetto", {font:"Great Vibes", size:7*b, w:F.w * .6, color:GC.lild});
+  if (k === "logo") e = v === "round" ? grL({w:16*b}) : grL({variant:"mark", color:v, w:16*b});
+  if (k === "rect") e = grS({w:30*b, h:20*b, fill:GC.lil});
+  if (k === "round") e = grS({w:30*b, h:20*b, fill:GC.lil, rad:3*b});
+  if (k === "ellipse") e = grS({shape:"ellipse", w:24*b, h:24*b, fill:GC.lil});
+  if (k === "line") e = grS({w:30*b, h:Math.max(2, .5*b), fill:GC.sage});
+  if (k === "frame") e = grS({w:F.w - 8*b, h:F.h - 8*b, fill:"", stroke:GC.sage, sw:Math.max(2, .3*b), rad:2*b});
+  if (k === "pill") e = grS({w:28*b, h:6*b, fill:GC.sage, rad:3*b});
   if (!e) return;
   grMeasure(e); e.x = (F.w - e.w) / 2; e.y = (F.h - (e.h || e.w)) / 2;
-  grDoc.els.push(e); grSel = e.id; grChanged(true, true);
-  if (e.type === "text") setTimeout(() => { const t = $("#grText"); if (t){ t.focus(); t.select(); } }, 30);
+  grDoc.els.push(e); grSel = e.id; grPopK = e.type === "text" ? "testo" : null;
+  if (innerWidth < 820){ grDrawer = null; grDrawerRender(); }
+  grChanged(true, true);
+  if (e.type === "text") setTimeout(() => { const t = $("#grText"); if (t){ t.focus(); t.select(); } }, 40);
 }
 function grAddImage(src, mode){
   const F = GR_FMT[grDoc.fmt];
-  if (mode === "bg"){ grDoc.bg.img = src; grDoc.bg.op = grDoc.bg.op ?? 1; grChanged(true, true); return; }
-  const e = grEl();
-  if (mode === "replace" && e && e.type === "img"){ e.src = src; grChanged(true, true); return; }
+  const finish = () => { if (mode !== "add" || innerWidth < 820){ grImgMode = "add"; grDrawer = mode === "bg" ? "sfondo" : null; grDrawerRender(); } };
+  if (mode === "bg"){ grDoc.bg.img = src; grDoc.bg.op = grDoc.bg.op ?? 1; finish(); grChanged(true, true); return; }
+  const cur = grEl();
+  if (mode === "replace" && cur && cur.type === "img"){ cur.src = src; finish(); grChanged(true, true); return; }
   let done = false;
   const add = () => {
     if (done) return; done = true;
     const im = GR_IMG[src].im, r = (im.naturalHeight / im.naturalWidth) || 1, w = Math.min(F.w * .5, F.h * .5 / r);
     const el = grI(src, {w, h:w * r, x:(F.w - w) / 2, y:(F.h - w * r) / 2, fit:"cover"});
-    grDoc.els.push(el); grSel = el.id; grChanged(true, true);
+    grDoc.els.push(el); grSel = el.id; grPopK = null; finish(); grChanged(true, true);
   };
   if (grImg(src, add) || (GR_IMG[src] && GR_IMG[src].err)) add();
 }
@@ -3837,25 +4000,16 @@ async function grUpload(file){
 }
 const grLib = () => (W.impostazioni.find(x => x.id === "libreria-immagini") || {id:"libreria-immagini", imgs:[]});
 async function grLibAdd(src){ const L = grLib(); L.imgs = [src, ...L.imgs.filter(x => x !== src)].slice(0, 60); try { await coll.put("impostazioni", L); } catch {} }
-function grPicker(mode){
-  const L = grLib(), site = [grFoto(), "walk-poster.jpg"];
-  openSheet(mode === "bg" ? "Immagine di sfondo" : "Aggiungi un'immagine",
-    `<label class="grupload"><input type="file" id="grFile" accept="image/*" multiple><span>${ic("clip")}<b>Carica dal computer o dal telefono</b><small>PNG, JPG o WebP. Le immagini PNG di Canva con lo sfondo trasparente restano trasparenti.</small></span></label>
-     <p class="hint" id="grUpSt"></p>
-     ${L.imgs.length ? `<h4 class="grh4">Le tue immagini</h4><div class="grlib">${L.imgs.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>` : ""}
-     <h4 class="grh4">Foto del sito</h4><div class="grlib">${site.map(s => `<button type="button" data-grlib="${esc(s)}"><img src="${esc(s)}" alt="" loading="lazy"></button>`).join("")}</div>`,
-    async () => {}, null, "Chiudi");
-  sheetState.grMode = mode;
-}
 async function grHandleFiles(files, mode){
   const st = $("#grUpSt"), list = [...files].filter(f => /^image\//.test(f.type)); if (!list.length) return;
   for (const f of list){
     if (st) st.textContent = "Caricamento in corso…";
     try { const src = await grUpload(f); await grLibAdd(src); grAddImage(src, mode); }
-    catch { if (st) st.textContent = "Caricamento non riuscito. Riprova con un'immagine più piccola."; else toast("Caricamento non riuscito"); return; }
-    mode = mode === "replace" ? "add" : mode;
+    catch { const s2 = $("#grUpSt"); if (s2) s2.textContent = "Caricamento non riuscito. Riprova con un'immagine più piccola."; else toast("Caricamento non riuscito"); return; }
+    mode = "add";
   }
-  if (sheetState && sheetState.grMode) closeSheet();
+  const s3 = $("#grUpSt"); if (s3) s3.textContent = "";
+  if (grDrawer === "img") grDrawerRender();
 }
 
 /* esportazione */
@@ -3864,23 +4018,19 @@ async function grExport(kind){
   const F = GR_FMT[grDoc.fmt], [type, size] = kind.split("|");
   toast("Preparo il file…");
   try {
-    await grFontsReady(grDoc);
-    const srcs = [grDoc.bg.img, ...grDoc.els.filter(e => e.type === "img").map(e => e.src), PDF_LOGO, GR_MARK].filter(Boolean);
-    await Promise.all(srcs.map(grImgWait));
+    await grFontsReady(grDoc); await grPreload(grDoc);
     const sz = F.print ? (F.sizes.find(x => x[0] === size) || F.sizes[0]) : null;
     const k = type === "pdf" ? sz[3] : (F.print ? Math.min(2, F.sizes[0][3]) : 1);
     const c = document.createElement("canvas"); c.width = Math.round(F.w * k); c.height = Math.round(F.h * k);
-    const ctx = c.getContext("2d"); grDraw(ctx, grDoc, k);
+    grDraw(c.getContext("2d"), grDoc, k);
     const nome = (grDoc.nome || "Grafica").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 60);
-    let blob;
     if (type === "pdf"){
       await loadJsPDF();
       const [, mw, mh] = sz, pdf = new window.jspdf.jsPDF({unit:"mm", format:[mw, mh], orientation:mw > mh ? "landscape" : "portrait", compress:true});
       pdf.addImage(c.toDataURL("image/jpeg", .93), "JPEG", 0, 0, mw, mh);
-      blob = pdf.output("blob");
-      await saveFile(`${nome} ${size}.pdf`, blob);
+      await saveFile(`${nome} ${size}.pdf`, pdf.output("blob"));
     } else {
-      blob = await new Promise((res, rej) => { try { c.toBlob(b => b ? res(b) : rej(new Error("blob")), type === "png" ? "image/png" : "image/jpeg", .92); } catch (err){ rej(err); } });
+      const blob = await new Promise((res, rej) => { try { c.toBlob(b => b ? res(b) : rej(new Error("blob")), type === "png" ? "image/png" : "image/jpeg", .92); } catch (err){ rej(err); } });
       await saveFile(`${nome}.${type}`, blob);
     }
     toast("File scaricato");
@@ -3893,11 +4043,12 @@ function grPt(ev){ const r = $("#grBoard").getBoundingClientRect(); return {x:(e
 function grHit(p){ for (let i = grDoc.els.length - 1; i >= 0; i--){ const e = grDoc.els[i]; if (e.hide) continue; const h = e.type === "logo" ? e.w : e.h; if (p.x >= e.x && p.x <= e.x + e.w && p.y >= e.y && p.y <= e.y + h) return e; } return null; }
 panel.addEventListener("pointerdown", ev => {
   if (tab !== "grafiche" || grView !== "edit") return;
-  const bd = ev.target.closest("#grBoard"); if (!bd) return;
+  const bd = ev.target.closest("#grBoard");
+  if (!bd){ if (ev.target.closest("#grStage")) grSelect(null); return; }
   ev.preventDefault();
   const p = grPt(ev), hd = ev.target.closest("[data-h]");
-  let e = hd ? grEl() : grHit(p);
-  if (!hd){ const prev = grSel; grSel = e ? e.id : null; if (prev !== grSel) grProps(); grSelBox(); }
+  const e = hd ? grEl() : grHit(p);
+  if (!hd) grSelect(e ? e.id : null);
   if (!e || e.locked) return;
   grDrag = {mode:hd ? hd.dataset.h : "move", p0:p, e0:{...e}, id:e.id, moved:false};
   bd.setPointerCapture(ev.pointerId);
@@ -3926,7 +4077,7 @@ panel.addEventListener("pointermove", ev => {
     } else {
       if (m.length === 2){
         if (m.includes("s")) h = Math.max(10, (o.h || o.w) + dy);
-        if (m.includes("n")){ h = Math.max(10, (o.h || o.w) - dy); }
+        if (m.includes("n")) h = Math.max(10, (o.h || o.w) - dy);
         if (keep && o.w && (o.h || o.w)){ const r = (o.h || o.w) / o.w; if (Math.abs(dx) >= Math.abs(dy)) h = w * r; else { w = h / r; if (m.includes("w")) x = o.x + o.w - w; } }
         if (m.includes("n")) y = o.y + (o.h || o.w) - h;
       }
@@ -3938,13 +4089,14 @@ panel.addEventListener("pointermove", ev => {
 const grUp = () => {
   if (!grDrag) return; const moved = grDrag.moved; grDrag = null;
   const gv = $("#grGv"), gh = $("#grGh"); if (gv){ gv.hidden = gh.hidden = true; }
-  if (moved){ grChanged(true, false); const e = grEl(); if (e && e.type === "text"){ const o = $("#gro-size"); if (o){ o.textContent = Math.round(e.size); const r = $("[data-grnum=size]"); if (r) r.value = Math.round(e.size); } } }
+  if (moved) grChanged(true, true);
 };
 panel.addEventListener("pointerup", grUp); panel.addEventListener("pointercancel", grUp);
 panel.addEventListener("dblclick", ev => {
   if (tab !== "grafiche" || !ev.target.closest("#grBoard")) return;
-  const e = grEl(); if (e && e.type === "text"){ const t = $("#grText"); if (t){ t.focus(); t.select(); t.scrollIntoView({block:"nearest", behavior:"smooth"}); } }
-  if (e && e.type === "img") grPicker("replace");
+  const e = grEl(); if (!e || e.locked) return;
+  if (e.type === "text"){ grPopK = "testo"; grCtxRender(); grPopRender(); setTimeout(() => { const t = $("#grText"); if (t){ t.focus(); t.select(); } }, 30); }
+  if (e.type === "img"){ grImgMode = "replace"; grDrawer = "img"; grDrawerRender(); }
 });
 panel.addEventListener("dragover", ev => { if (tab === "grafiche" && grView === "edit" && ev.target.closest("#grStage")){ ev.preventDefault(); $("#grDrop").hidden = false; } });
 panel.addEventListener("dragleave", ev => { if (tab === "grafiche" && grView === "edit" && (!ev.relatedTarget || !ev.relatedTarget.closest || !ev.relatedTarget.closest("#grStage"))){ const d = $("#grDrop"); if (d) d.hidden = true; } });
@@ -3952,59 +4104,66 @@ panel.addEventListener("drop", ev => { if (tab !== "grafiche" || grView !== "edi
 panel.addEventListener("click", async ev => {
   if (tab !== "grafiche") return;
   const t = ev.target;
-  if (t.closest("[data-grnew]")){ grView = "new"; grNew.c = null; renderGrafiche(); return; }
-  if (t.closest("[data-grback]")){ if (grView === "edit") await grSaveNow(); grView = "list"; grDoc = null; grSel = null; renderGrafiche(); return; }
-  const op = t.closest("[data-gropen]"); if (op){ const d = W.grafiche.find(x => x.id === op.dataset.gropen); if (d){ grDoc = JSON.parse(JSON.stringify(d)); grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; renderGrafiche(); } return; }
+  if (t.closest("[data-grnew]")){ grView = "new"; grStep = 1; grNew.c = null; renderGrafiche(); return; }
+  if (t.closest("[data-grback]")){ if (grView === "edit") await grSaveNow(); grView = "list"; grDoc = null; grSel = null; grDrawer = null; grPopK = null; document.body.classList.remove("gr-open"); renderGrafiche(); return; }
+  const op = t.closest("[data-gropen]"); if (op){ const d = W.grafiche.find(x => x.id === op.dataset.gropen); if (d){ grDoc = JSON.parse(JSON.stringify(d)); grSel = null; grHist = []; grHi = -1; grPush(); grView = "edit"; grDrawer = null; grPopK = null; renderGrafiche(); } return; }
   const du = t.closest("[data-grdup]"); if (du){ const d = W.grafiche.find(x => x.id === du.dataset.grdup); if (d){ const n = {...JSON.parse(JSON.stringify(d)), id:"grafica-" + uid(), nome:(d.nome || "Grafica") + " (copia)", agg:new Date().toISOString()}; n.els.forEach(e => e.id = uid()); await coll.put("grafiche", n); toast("Grafica duplicata"); renderGrafiche(); } return; }
   const de = t.closest("[data-grdel]"); if (de){
     if (de.dataset.sure){ await coll.del("grafiche", de.dataset.grdel); toast("Grafica eliminata"); renderGrafiche(); }
     else { de.dataset.sure = "1"; de.textContent = "Sicura? Elimina"; setTimeout(() => { if (de.isConnected){ delete de.dataset.sure; de.textContent = "Elimina"; } }, 3500); }
     return;
   }
-  const fm = t.closest("[data-grfmt]"); if (fm){ grNew.fmt = fm.dataset.grfmt; grNewView(); return; }
+  const fm = t.closest("[data-grfmt]"); if (fm){ grNew.fmt = fm.dataset.grfmt; $$(".grfmt").forEach(x => x.classList.toggle("on", x === fm)); return; }
+  const stp = t.closest("[data-grstep]"); if (stp){ grStep = Math.min(3, Math.max(1, grStep + Number(stp.dataset.grstep))); grNewView(); scrollTo({top:0, behavior:"smooth"}); return; }
   const tp = t.closest("[data-grtpl]"); if (tp){ grNew.tpl = tp.dataset.grtpl; $$(".grtpl").forEach(x => x.classList.toggle("on", x === tp)); return; }
   if (t.closest("[data-grcreate]")){ grCreate(); return; }
   if (grView !== "edit") return;
-  const ad = t.closest("[data-gradd]"); if (ad){ if (ad.dataset.gradd === "img") grPicker("add"); else grAdd(ad.dataset.gradd); return; }
+  if (!t.closest(".grdl")){ const m = $("#grDl"); if (m) m.hidden = true; }
+  const dr = t.closest("[data-grdrawer]"); if (dr){ const k = dr.dataset.grdrawer; grDrawer = grDrawer === k ? null : k; if (k === "img") grImgMode = "add"; if (grDrawer && grPopK){ grPopK = null; grCtxRender(); grPopRender(); } grDrawerRender(); return; }
+  const im = t.closest("[data-grimgmode]"); if (im){ const m = im.dataset.grimgmode; if (m === "add"){ grDrawer = grImgMode === "bg" ? "sfondo" : null; grImgMode = "add"; } else { grImgMode = m; grDrawer = "img"; } grDrawerRender(); return; }
+  const ad = t.closest("[data-gradd]"); if (ad){ grAdd(ad.dataset.gradd); return; }
+  const lb = t.closest("[data-grlib]"); if (lb){ grAddImage(lb.dataset.grlib, grImgMode); return; }
   if (t.closest("[data-grundo]")){ grUndo(-1); return; }
   if (t.closest("[data-grredo]")){ grUndo(1); return; }
   if (t.closest("[data-grdlmenu]")){ const m = $("#grDl"); m.hidden = !m.hidden; return; }
   const ex = t.closest("[data-grexp]"); if (ex){ grExport(ex.dataset.grexp); return; }
-  if (!t.closest(".grdl")){ const m = $("#grDl"); if (m) m.hidden = true; }
-  const pk = t.closest("[data-grpick]"); if (pk){ grPicker(pk.dataset.grpick); return; }
   if (t.closest("[data-grbgrm]")){ grDoc.bg.img = null; grChanged(true, true); return; }
-  if (t.closest("[data-grdesel]")){ grSel = null; grSelBox(); grProps(); return; }
-  const ly = t.closest("[data-grpicklayer]"); if (ly){ grSel = ly.dataset.grpicklayer; grSelBox(); grProps(); return; }
+  const ly = t.closest("[data-grpicklayer]"); if (ly){ grSelect(ly.dataset.grpicklayer); grDrawerRender(); return; }
+  const lm = t.closest("[data-grlayermv]"); if (lm){ const [id, d] = lm.dataset.grlayermv.split("|"), i = grDoc.els.findIndex(x => x.id === id), j = i + Number(d); if (i >= 0 && j >= 0 && j < grDoc.els.length){ const [x] = grDoc.els.splice(i, 1); grDoc.els.splice(j, 0, x); grChanged(true, true); } return; }
+  if (t.closest("[data-grpopclose]")){ grPopK = null; grCtxRender(); grPopRender(); return; }
+  const pp = t.closest("[data-grpop]"); if (pp){ grPopK = grPopK === pp.dataset.grpop ? null : pp.dataset.grpop; if (grPopK && grDrawer && innerWidth < 820){ grDrawer = null; grDrawerRender(); } grCtxRender(); grPopRender(); if (grPopK === "testo") setTimeout(() => { const x = $("#grText"); if (x) x.focus(); }, 30); return; }
   const sw = t.closest("[data-grset]"); if (sw){ grSetPath(sw.dataset.grset, sw.dataset.v); grChanged(true, true); return; }
   const e = grEl(); if (!e) return;
+  const sz = t.closest("[data-grsize]"); if (sz){ const st = Math.max(1, Math.round(e.size * .08)); e.size = Math.max(6, Math.round(e.size + st * Number(sz.dataset.grsize))); grChanged(true, true); return; }
+  const fo = t.closest("[data-grfont]"); if (fo){ e.font = fo.dataset.grfont; grFontsReady(grDoc).then(() => grRender()); grChanged(true, true); return; }
   const tg = t.closest("[data-grtog]"); if (tg){ e[tg.dataset.grtog] = !e[tg.dataset.grtog]; grChanged(true, true); return; }
   const al = t.closest("[data-gralign]"); if (al){ e.align = al.dataset.gralign; grChanged(true, true); return; }
   const ft = t.closest("[data-grfit]"); if (ft){ e.fit = ft.dataset.grfit; grChanged(true, true); return; }
-  const vr = t.closest("[data-grvar]"); if (vr){ e.variant = vr.dataset.grvar; grChanged(true, true); return; }
-  const sh = t.closest("[data-grshape]"); if (sh){ e.shape = sh.dataset.grshape; grChanged(true, true); return; }
+  const rd = t.closest("[data-grrad]"); if (rd){ e.rad = Number(rd.dataset.grrad); grChanged(true, true); return; }
+  const vr = t.closest("[data-grvar]"); if (vr){ e.variant = vr.dataset.grvar; if (e.variant === "mark" && !e.color) e.color = GC.sage; grChanged(true, true); return; }
   const dd = t.closest("[data-grdo]"); if (dd){
     const F = GR_FMT[grDoc.fmt], i = grDoc.els.indexOf(e), a = dd.dataset.grdo;
     if (a === "cx") e.x = (F.w - e.w) / 2;
     if (a === "cy") e.y = (F.h - (e.type === "logo" ? e.w : e.h)) / 2;
-    if (a === "up" && i < grDoc.els.length - 1){ grDoc.els.splice(i, 1); grDoc.els.splice(i + 1, 0, e); }
-    if (a === "down" && i > 0){ grDoc.els.splice(i, 1); grDoc.els.splice(i - 1, 0, e); }
-    if (a === "dup"){ const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20, locked:false}; grDoc.els.splice(i + 1, 0, n); grSel = n.id; }
+    if (a === "up" && i < grDoc.els.length - 1){ grDoc.els.splice(i, 1); grDoc.els.splice(i + 1, 0, e); toast("Portato davanti"); }
+    if (a === "down" && i > 0){ grDoc.els.splice(i, 1); grDoc.els.splice(i - 1, 0, e); toast("Portato dietro"); }
+    if (a === "dup"){ const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20, locked:false}; grDoc.els.splice(i + 1, 0, n); grSel = n.id; grPopK = null; }
     if (a === "lock") e.locked = !e.locked;
-    if (a === "del"){ grDoc.els.splice(i, 1); grSel = null; }
+    if (a === "del"){ grDoc.els.splice(i, 1); grSel = null; grPopK = null; toast("Eliminato. Puoi recuperarlo con Annulla."); }
     grChanged(true, true);
   }
 });
 panel.addEventListener("input", ev => {
   if (tab !== "grafiche") return;
   const t = ev.target;
-  if (t.dataset.grc && grNew.c){ grNew.c[t.dataset.grc] = t.value; clearTimeout(grNew.t); grNew.t = setTimeout(grDrawPreviews, 250); return; }
+  if (t.dataset.grc && grNew.c){ grNew.c[t.dataset.grc] = t.value; return; }
   if (t.id === "grName" && grDoc){ grDoc.nome = t.value; grChanged(false); return; }
   if (grView !== "edit") return;
   if (t.dataset.grtxt){ const e = grEl(); if (e){ e.text = t.value; grChanged(true); } return; }
   if (t.dataset.grnum){
     const k = t.dataset.grnum, v = Number(t.value), o = $("#gro-" + k.replace(".", "\\.")); if (o) o.textContent = v + (t.dataset.unit || "");
     if (k === "bg.op") grDoc.bg.op = v / 100; else if (k.startsWith("bg.")) grDoc.bg[k.slice(3)] = v;
-    else { const e = grEl(); if (!e) return; e[k] = k === "op" ? v / 100 : k === "ls" ? v / 100 : k === "lh" ? v / 100 : v; }
+    else { const e = grEl(); if (!e) return; e[k] = (k === "op" || k === "ls" || k === "lh") ? v / 100 : v; }
     grChanged(true); return;
   }
   if (t.dataset.grcol){ grSetPath(t.dataset.grcol, t.value); grChanged(true); }
@@ -4015,16 +4174,11 @@ panel.addEventListener("change", ev => {
   if (t.id === "grEv" && t.value !== ""){
     const e = C.events.items[Number(t.value)]; if (!e) return;
     Object.assign(grNew.c, {titolo:e.title || "", data:grEvDate(e), luogo:e.place || "", testo:e.note || "", chiusura:e.tag || grNew.c.chiusura});
-    ["titolo","data","luogo","testo","chiusura"].forEach(k => { const f = $("#grc-" + k); if (f) f.value = grNew.c[k]; }); grDrawPreviews(); return;
+    ["titolo","data","luogo","testo","chiusura"].forEach(k => { const f = $("#grc-" + k); if (f) f.value = grNew.c[k]; }); return;
   }
-  if (t.dataset.grsel){ const e = grEl(); if (e){ e[t.dataset.grsel] = t.value; grFontsReady(grDoc).then(() => grRender()); grChanged(true); } }
-  if (t.dataset.grcol) grProps();
+  if (t.id === "grFile"){ grHandleFiles(t.files, grImgMode); return; }
+  if (t.dataset.grcol) grChanged(true, true);
 });
-$("#sheet").addEventListener("click", ev => {
-  const b = ev.target.closest("[data-grlib]"); if (!b || !sheetState || !sheetState.grMode) return;
-  const mode = sheetState.grMode; closeSheet(); grAddImage(b.dataset.grlib, mode);
-});
-$("#sheet").addEventListener("change", ev => { if (ev.target.id === "grFile" && sheetState && sheetState.grMode) grHandleFiles(ev.target.files, sheetState.grMode); });
 addEventListener("keydown", ev => {
   if (tab !== "grafiche" || grView !== "edit" || !grDoc) return;
   if (/INPUT|TEXTAREA|SELECT/.test(document.activeElement && document.activeElement.tagName) || $("#sheet").classList.contains("open")) return;
@@ -4032,11 +4186,10 @@ addEventListener("keydown", ev => {
   if (mod && ev.key.toLowerCase() === "z"){ ev.preventDefault(); grUndo(ev.shiftKey ? 1 : -1); return; }
   if (mod && ev.key.toLowerCase() === "y"){ ev.preventDefault(); grUndo(1); return; }
   const e = grEl(); if (!e) return;
-  if (ev.key === "Delete" || ev.key === "Backspace"){ ev.preventDefault(); grDoc.els = grDoc.els.filter(x => x !== e); grSel = null; grChanged(true, true); return; }
-  if (mod && ev.key.toLowerCase() === "d"){ ev.preventDefault(); const n = {...JSON.parse(JSON.stringify(e)), id:uid(), x:e.x + 20, y:e.y + 20}; grDoc.els.push(n); grSel = n.id; grChanged(true, true); return; }
+  if ((ev.key === "Delete" || ev.key === "Backspace") && !e.locked){ ev.preventDefault(); grDoc.els = grDoc.els.filter(x => x !== e); grSel = null; grPopK = null; grChanged(true, true); return; }
   const mv = {ArrowLeft:[-1,0], ArrowRight:[1,0], ArrowUp:[0,-1], ArrowDown:[0,1]}[ev.key];
   if (mv && !e.locked){ ev.preventDefault(); const k = ev.shiftKey ? 10 : 2; e.x += mv[0] * k; e.y += mv[1] * k; grChanged(true); }
-  if (ev.key === "Escape"){ grSel = null; grSelBox(); grProps(); }
+  if (ev.key === "Escape"){ grSelect(null); }
 });
 addEventListener("resize", () => { if (tab === "grafiche" && grView === "edit" && grDoc){ grFit(); grRender(); } });
 
